@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ecpo="http://purl.org/ontology/ecpo#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vann="http://purl.org/vocab/vann/">
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
+    <rdfs:label>Enumeration and Chronology of Periodicals Ontology</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
+    <rdfs:label>ECPO</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
+    <vann:preferredNamespacePrefix>ecpo</vann:preferredNamespacePrefix>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Bestandsverlauf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Bestandsverlauf">
+    <rdfs:label>Bestandsverlauf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Bestandsverlauf">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlauf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlauf">
+    <rdfs:label>hasBestandsverlauf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlauf">
+    <rdfs:range rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlauf">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlaufGap">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlaufGap">
+    <rdfs:label>hasBestandsverlaufGap</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlaufGap">
+    <rdfs:range rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBestandsverlaufGap">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdfs:label>hasSubBestandsverlauf</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdfs:range rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubBestandsverlauf">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdfs:label>hasBeginVolumeNumbering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdfs:comment xml:lang="en">The numbering of the beginning volume</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeNumbering">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdfs:label>hasBeginVolumeExtension</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdfs:comment xml:lang="en">A textual descrimination of the beginning volume</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginVolumeExtension">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdfs:label>hasBeginIssueNumbering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdfs:comment xml:lang="en">The numbering of the beginning issue</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueNumbering">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdfs:label>hasBeginIssueExtension</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdfs:comment xml:lang="en">A textual descrimination of the beginning issue</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginIssueExtension">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdfs:label>hasBeginTemporal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdfs:comment xml:lang="en">A temporal information, like a year</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginTemporal">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdfs:label>hasBeginDayCount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdfs:comment xml:lang="en">The day count of the beginning group</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginDayCount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdfs:label>hasBeginMonthCount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdfs:comment xml:lang="en">The month count of the beginning group</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonthCount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdfs:label>hasBeginComment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdfs:comment xml:lang="en">A comment to the beginning group</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdfs:label>hasEndVolumeNumbering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdfs:comment xml:lang="en">The numbering of the ending volume</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeNumbering">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdfs:label>hasEndVolumeExtension</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdfs:comment xml:lang="en">A textual descrimination of the endning volume</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndVolumeExtension">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdfs:label>hasEndIssueNumbering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdfs:comment xml:lang="en">The numbering of the ending issue</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueNumbering">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdfs:label>hasEndIssueExtension</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdfs:comment xml:lang="en">A textual descrimination of the ending issue</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndIssueExtension">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdfs:label>hasEndTemporal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdfs:comment xml:lang="en">A temporal information, like a year</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndTemporal">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdfs:label>hasEndDayCount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdfs:comment xml:lang="en">The day count of the ending group</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndDayCount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdfs:label>hasEndMonthCount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdfs:comment xml:lang="en">The month count of the ending group</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonthCount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdfs:label>hasEndComment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Bestandsverlauf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdfs:comment xml:lang="en">A comment to the ending group.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
+  </rdf:Description>
+</rdf:RDF>
