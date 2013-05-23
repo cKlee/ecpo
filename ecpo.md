@@ -12,6 +12,7 @@ A document using this ontology shall give answers to the questions:
 
   -  What units of a periodical are held by an agent?
   -  What units of a periodical are not held by an agent?
+  -  Is the chronology of a holding of a periodical closed or open?
   
 A Question a document using this ontology might not answer:
 
@@ -72,6 +73,7 @@ A Bestandsverlauf is the description of enumeration and chronology of a periodic
 
 	ecpo:Bestandsverlauf a owl:Class ;
 		rdfs:label "Bestandsverlauf" ;
+		rdfs:comment "A Bestandsverlauf is the description of enumeration and chronology of a periodical."@en ;
 		rdfs:isDefinedBy <> .
 
 # Properties
@@ -80,34 +82,49 @@ A Bestandsverlauf is the description of enumeration and chronology of a periodic
 
 [hasBestandsverlauf]: #hasBestandsverlauf
 
-This property relates a holding description to a [Bestandsverlauf]. Having this property means that the described periodical units by the [Bestandsverlauf] are held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
+Relation between a document and a [Bestandsverlauf]. Having this property means that the described periodical units by the [Bestandsverlauf] are held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
 
 	ecpo:hasBestandsverlauf a owl:ObjectProperty ;
 		rdfs:label "hasBestandsverlauf" ;
 		rdfs:range ecpo:Bestandsverlauf ;
+		rdfs:comment "Relation between a document and a Bestandsverlauf"@en ;
+		rdfs:isDefinedBy <> .
+
+## hasBestandsverlaufOpen
+
+[hasBestandsverlaufOpen]: #hasBestandsverlaufOpen
+
+Relation between a document and a [Bestandsverlauf], indication the [Bestandsverlauf] is running. Having this property means that the described periodical units by the [Bestandsverlauf] are held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
+
+	ecpo:hasBestandsverlaufOpen a owl:ObjectProperty ;
+		rdfs:label "hasBestandsverlaufOpen" ;
+		rdfs:range ecpo:Bestandsverlauf ;
+		rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is running"@en ;
 		rdfs:isDefinedBy <> .
 
 ## hasBestandsverlaufGap
 
 [hasBestandsverlaufGap]: #hasBestandsverlaufGap
 
-This property relates a holding description to a [Bestandsverlauf]. Having this property means that the described periodical units by the [Bestandsverlauf] are not held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
+Relation between a document and a [Bestandsverlauf], indicating the [Bestandsverlauf] is a gap. Having this property means that the described periodical units by the [Bestandsverlauf] are not held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
 
 	ecpo:hasBestandsverlaufGap a owl:ObjectProperty ;
 		rdfs:label "hasBestandsverlaufGap" ;
 		rdfs:range ecpo:Bestandsverlauf ;
+		rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is a gap"@en ;
 		rdfs:isDefinedBy <> .
 		
 ## hasSubBestandsverlauf
 
 [hasSubBestandsverlauf]: #hasSubBestandsverlauf
 
-This property relates a [Bestandsverlauf] to a [Bestandsverlauf]. Meaning the object is a subpart to the subject.
+Relation between a [Bestandsverlauf] and a [Bestandsverlauf]. Meaning the object is a subpart to the subject.
 
 	ecpo:hasSubBestandsverlauf a owl:ObjectProperty ;
 		rdfs:label "hasSubBestandsverlauf" ;
 		rdfs:domain ecpo:Bestandsverlauf ;
 		rdfs:range ecpo:Bestandsverlauf ;
+		rdfs:comment "Relation between a Bestandsverlauf and a Bestandsverlauf"@en ;
 		rdfs:subPropertyOf dcterms:hasPart ;
 		rdfs:isDefinedBy <> .
 
@@ -328,4 +345,3 @@ March 1997 <http://tools.ietf.org/html/rfc2119>.
 
 * **[RFC 2396]** T. Berners-Lee et al.: *Uniform Resource Identifiers (URI): Generic Syntax*.
 August 1998 <http://tools.ietf.org/html/rfc2396>.
-
