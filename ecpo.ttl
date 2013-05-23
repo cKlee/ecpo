@@ -12,6 +12,7 @@
 
 ecpo:Bestandsverlauf
     a owl:Class ;
+    rdfs:comment "A Bestandsverlauf is the description of enumeration and chronology of a periodical."@en ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "Bestandsverlauf" .
 
@@ -81,14 +82,23 @@ ecpo:hasBeginVolumeNumbering
 
 ecpo:hasBestandsverlauf
     a owl:ObjectProperty ;
+    rdfs:comment "Relation between a document and a Bestandsverlauf"@en ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "hasBestandsverlauf" ;
     rdfs:range ecpo:Bestandsverlauf .
 
 ecpo:hasBestandsverlaufGap
     a owl:ObjectProperty ;
+    rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is a gap"@en ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "hasBestandsverlaufGap" ;
+    rdfs:range ecpo:Bestandsverlauf .
+
+ecpo:hasBestandsverlaufOpen
+    a owl:ObjectProperty ;
+    rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is running"@en ;
+    rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
+    rdfs:label "hasBestandsverlaufOpen" ;
     rdfs:range ecpo:Bestandsverlauf .
 
 ecpo:hasEndComment
@@ -157,6 +167,7 @@ ecpo:hasEndVolumeNumbering
 
 ecpo:hasSubBestandsverlauf
     a owl:ObjectProperty ;
+    rdfs:comment "Relation between a Bestandsverlauf and a Bestandsverlauf"@en ;
     rdfs:domain ecpo:Bestandsverlauf ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "hasSubBestandsverlauf" ;
