@@ -118,6 +118,8 @@ A [Chronology] is the description of enumeration and chronology of a periodical.
 		rdfs:label "Bestandsverlauf"@de ;
 		rdfs:comment "A Chronology is the description of enumeration and chronology of a periodical."@en ;
 		rdfs:isDefinedBy <> .
+
+## RunningChronology
 		
 [RunningChronology]: #runningchronology
 
@@ -141,6 +143,7 @@ A [RunningChronology] is a [Chronology] which must not have a property describin
 		] ;
 		rdfs:isDefinedBy <> .
 		
+## ClosedChronology
 		
 [ClosedChronology]: #closedchronology
 
