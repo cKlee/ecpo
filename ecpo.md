@@ -70,11 +70,11 @@ The following diagram illustrates the classes and properties defined in this ont
 	| any document class +------------------->|        Chronology       +------------------+
 	+---+------------+---+                    | +---------------------+ |                  |
 	    |            |		                  | |                     | |<-----------------+
-	hasChronolgy     |                        | |   RunningChronolgy  +---------+
+	hasChronology    |                        | |   RunningChronology  +---------+
 		|            |                        | |                     | |       |
 		v            |                        | +---------------------+ |       |
 	+-----------+    |                        | +---------------------+ |       |
-	|  Running  |    |     hasChronolgyGap    | |                     | |       |
+	|  Running  |    |    hasChronologyGap    | |                     | |       |
 	|  Closed   |    +------------------------->|  ClosedChronology   +---------+
 	+-----------+                             | |                     | |       |
 	                                          | +----------+----------+ |       |
@@ -97,7 +97,7 @@ The following diagram illustrates the classes and properties defined in this ont
 																   Literal
 ```
 
-A document might have a [Chronology] which is related to closed chronolgies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronolgy] or a [RunningChronology].
+A document might have a [Chronology] which is related to closed chronolgies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronology] or a [RunningChronology].
   
 While the property [hasChronology] states that the described units of the document are held by someone, the property [hasChronologyGap] states that the described units of the document are not held by someone.
 
