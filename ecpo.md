@@ -13,7 +13,7 @@ A document using this ontology shall give answers to the questions:
   -  What units of a periodical are held by an agent?
   -  What units of a periodical are not held by an agent?
   -  Is the chronology of a holding of a periodical closed or open?
-  
+ 
 A Question a document using this ontology might not answer:
 
   -  Does an agent hold a specific unit of a periodical?
@@ -35,10 +35,6 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in RFC 2119.
 
-## Notes
-
-In favour of brevity the comprehensive German term "Bestandsverlauf" is used instead of an English description.
-
 ## Namespaces and ontology
 
 The URI namespace of this ontology is <http://purl.org/ontology/ecpo#>. The
@@ -51,289 +47,460 @@ is <http://purl.org/ontology/ecpo>.
 The following namspace prefixes are used to refer to [related ontologies]:
 
 	@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+	@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 	@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 	@prefix vann:  <http://purl.org/vocab/vann/> .
 	@prefix dcterms: <http://purl.org/dc/terms/> .
+	@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/Turtle as following:
 
 	<> a owl:Ontology ;
-		rdfs:label "Enumeration and Chronology of Periodicals Ontology" ;
+		rdfs:label "Enumeration and Chronology of Periodicals Ontology"@en ;
 		rdfs:label "ECPO" ;
 		vann:preferredNamespacePrefix "ecpo" .
 
+# Overview
+
+The following diagram illustrates the classes and properties defined in this ontology.
+
+``` {.ditaa}
+	
+	+--------------------+   hasChronology    +-------------------------+   hasSubChronology
+	| any document class +------------------->|        Chronology       +------------------+
+	+---+------------+---+                    | +---------------------+ |                  |
+	    |            |		                  | |                     | |<-----------------+
+	hasChronolgy     |                        | |   RunningChronolgy  +---------+
+		|            |                        | |                     | |       |
+		v            |                        | +---------------------+ |       |
+	+-----------+    |                        | +---------------------+ |       |
+	|  Running  |    |     hasChronolgyGap    | |                     | |       |
+	|  Closed   |    +------------------------->|  ClosedChronology   +---------+
+	+-----------+                             | |                     | |       |
+	                                          | +----------+----------+ |       |
+											  +------------|------------+       |
+											               |                    |
+														hasEnd              hasBegin
+														   |                    |
+												  hasEndVolumeNumbering   hasBeginVolumeNumbering
+												  hasEndVolumeExtension   hasBeginVolumeExtension
+												  hasEndIssueNumbering    hasBeginIssueNumbering
+												  hasEndIssueExtension    hasBeginIssueExtension
+												  hasEndTemporal          hasBeginTemporal
+												  hasEndDayCount          hasBeginDayCount
+												  hasEndMonthCount        hasBeginMonthCount
+												  hasEndComment           hasBeginComment
+												           |                    |
+														   +----------+---------+
+														              |
+																	  v
+																   Literal
+```
+
+A document might have a [Chronology] which is related to closed chronolgies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronolgy] or a [RunningChronology].
+  
+While the property [hasChronology] states that the described units of the document are held by someone, the property [hasChronlogyGap] states that the described units of the document are not held by someone.
+
+In order to simply state that a Chronology is running or closed, one could easily relate a document with the individuals [Running] or [Closed] via the property [hasChronlogy], because they are instances of [RunningChronlogy] or [ClosedChronology].
+
+While instances of the class [RunningChronlogy] must not make use [hasEnd] or the subproperties of [hasEnd], instances of [ClosedChronlogy] must make use of [hasEnd] or one or more subproperties of [hasEnd]. All Instances of [RunningChronlogy] or [ClosedChronlogy] must make use of [hasBegin] or one or more subproperties of [hasBegin].
 
 # Classes
 
-## Bestandsverlauf
+## Chronology
 
-[Bestandsverlauf]: #bestandsverlauf
+[Chronology]: #chronology
 
-A Bestandsverlauf is the description of enumeration and chronology of a periodical.
+A [Chronology] is the description of enumeration and chronology of a periodical. Use [RunningChronology] or [ClosedChronology] to describe either running or closed Chronlogies.
 
-	ecpo:Bestandsverlauf a owl:Class ;
-		rdfs:label "Bestandsverlauf" ;
-		rdfs:comment "A Bestandsverlauf is the description of enumeration and chronology of a periodical."@en ;
+	ecpo:Chronology a owl:Class ;
+		rdfs:label "Chronological designation"@en ;
+		rdfs:label "Bestandsverlauf"@de ;
+		rdfs:comment "A Chronology is the description of enumeration and chronology of a periodical."@en ;
+		rdfs:isDefinedBy <> .
+		
+[RunningChronology]: #runningchronology
+
+A [RunningChronology] is a [Chronology] which must not have a property describing an ending group.
+
+	ecpo:RunningChronology a owl:Class ;
+		rdfs:label "running chronology"@en ;
+		rdfs:label "Bestandsverlauf laufend"@de ;
+		rdfs:comment "A Chronology without an ending group."@en ;
+		owl:disjointWith ecpo:ClosedChronology ;
+		rdfs:subClassOf ecpo:Chronology ;
+		rdfs:subClassOf [ 
+			a owl:Restriction ;
+			owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
+			owl:onProperty ecpo:hasEnd
+		] ;		
+		rdfs:subClassOf [ 
+			a owl:Restriction ;
+			owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onProperty ecpo:hasBegin
+		] ;
+		rdfs:isDefinedBy <> .
+		
+		
+[ClosedChronology]: #closedchronology
+
+A [ClosedChronology] is a [Chronology] which must make usage of minimum one property describing an ending group.
+
+	ecpo:ClosedChronology a owl:Class ;
+		rdfs:label "closed chronology"@en ;
+		rdfs:label "Bestandsverlauf abgeschlossen"@de ;
+		rdfs:comment "A Chronology having an ending group."@en ;
+		owl:disjointWith ecpo:RunningChronology ;
+		rdfs:subClassOf ecpo:Chronology ;
+		rdfs:subClassOf [
+			a owl:Restriction ;
+			owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onProperty ecpo:hasEnd
+		] ;		
+		rdfs:subClassOf [
+			a owl:Restriction ;
+			owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+			owl:onProperty ecpo:hasBegin
+		] ;
 		rdfs:isDefinedBy <> .
 
 # Properties
 
-## hasBestandsverlauf
+## hasChronology
 
-[hasBestandsverlauf]: #hasBestandsverlauf
+[hasChronology]: #hasChronology
 
-Relation between a document and a [Bestandsverlauf]. Having this property means that the described periodical units by the [Bestandsverlauf] are held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
+Relation between a document and a [Chronology]. Having this property means that the described periodical units by the [Chronology] are held by someone. To relate a [Chronology] and a [Chronology] use [hasSubChronology] instead.
 
-	ecpo:hasBestandsverlauf a owl:ObjectProperty ;
-		rdfs:label "hasBestandsverlauf" ;
-		rdfs:range ecpo:Bestandsverlauf ;
-		rdfs:comment "Relation between a document and a Bestandsverlauf"@en ;
+	ecpo:hasChronology a owl:ObjectProperty ;
+		rdfs:label "has chronology"@en ;
+		rdfs:label "hat Bestandsverlauf"@de ;
+		rdfs:range ecpo:Chronology ;
+		rdfs:comment "Relation between a document and a Chronology"@en ;
 		rdfs:isDefinedBy <> .
 
-## hasBestandsverlaufOpen
+## hasChronologyGap
 
-[hasBestandsverlaufOpen]: #hasBestandsverlaufOpen
+[hasChronologyGap]: #haschronologygap
 
-Relation between a document and a [Bestandsverlauf], indication the [Bestandsverlauf] is running. Having this property means that the described periodical units by the [Bestandsverlauf] are held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
+Relation between a document and a [ClosedChronology], indicating the [ClosedChronology] is a gap. Having this property means that the described periodical units by the [ClosedChronology] are not held by someone. To relate a [Chronology] and a [Chronology] use [hasSubChronology] instead.
 
-	ecpo:hasBestandsverlaufOpen a owl:ObjectProperty ;
-		rdfs:label "hasBestandsverlaufOpen" ;
-		rdfs:range ecpo:Bestandsverlauf ;
-		rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is running"@en ;
-		rdfs:isDefinedBy <> .
-
-## hasBestandsverlaufGap
-
-[hasBestandsverlaufGap]: #hasBestandsverlaufGap
-
-Relation between a document and a [Bestandsverlauf], indicating the [Bestandsverlauf] is a gap. Having this property means that the described periodical units by the [Bestandsverlauf] are not held by someone. To relate a [Bestandsverlauf] and a [Bestandsverlauf] use [hasSubBestandsverlauf] instead.
-
-	ecpo:hasBestandsverlaufGap a owl:ObjectProperty ;
-		rdfs:label "hasBestandsverlaufGap" ;
-		rdfs:range ecpo:Bestandsverlauf ;
-		rdfs:comment "Relation between a document and a Bestandsverlauf, indicating the Bestandsverlauf is a gap"@en ;
+	ecpo:hasChronologyGap a owl:ObjectProperty ;
+		rdfs:label "has chronology gap"@en ;
+		rdfs:label "hat Bestandsverlauflücke"@de ;
+		rdfs:range ecpo:ClosedChronology ;
+		rdfs:comment "Relation between a document and a Chronology, indicating the Chronology is a gap"@en ;
 		rdfs:isDefinedBy <> .
 		
-## hasSubBestandsverlauf
+## hasSubChronology
 
-[hasSubBestandsverlauf]: #hasSubBestandsverlauf
+[hasSubChronology]: #hassubchronology
 
-Relation between a [Bestandsverlauf] and a [Bestandsverlauf]. Meaning the object is a subpart to the subject.
+Relation between a [Chronology] and a [Chronology]. Meaning the object is part of the subject.
 
-	ecpo:hasSubBestandsverlauf a owl:ObjectProperty ;
-		rdfs:label "hasSubBestandsverlauf" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
-		rdfs:range ecpo:Bestandsverlauf ;
-		rdfs:comment "Relation between a Bestandsverlauf and a Bestandsverlauf"@en ;
+	ecpo:hasSubChronology a owl:TransitiveProperty ;
+		rdfs:label "has subchronology"@en ;
+		rdfs:label "hat untergeordneten Bestandsverlauf"@de ;
+		rdfs:domain ecpo:Chronology ;
+		rdfs:range ecpo:Chronology ;
+		rdfs:comment "Relation between a Chronology and a Chronology"@en ;
 		rdfs:subPropertyOf dcterms:hasPart ;
+		rdfs:isDefinedBy <> .
+
+## hasBegin
+
+[hasBegin]: #hasbegin
+
+Super-property to all properties of the beginning group
+
+	ecpo:hasBegin a owl:DatatypeProperty ;
+		rdfs:label "has begin"@en ;
+		rdfs:domain [
+			a owl:Class ;
+			owl:unionOf (ecpo:RunningChronlogy ecpo:ClosedChronology)
+		] ;
+		rdfs:comment "Super-property to all properties of the beginning group"@en ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginVolumeNumbering
 
-[hasBeginVolumeNumbering]: #hasBeginVolumeNumbering
+[hasBeginVolumeNumbering]: #hasbeginvolumenumbering
 
 The numbering of the beginning volume
 
 	ecpo:hasBeginVolumeNumbering a owl:DatatypeProperty ;
-		rdfs:label "hasBeginVolumeNumbering" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin volume numbering"@en ;
+		rdfs:label "hat beginnende Bandzählung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "The numbering of the beginning volume"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginVolumeExtension
 
-[hasBeginVolumeExtension]: #hasBeginVolumeExtension
+[hasBeginVolumeExtension]: #hasbeginvolumeextension
 
 A textual descrimination of the beginning volume
 
 	ecpo:hasBeginVolumeExtension a owl:DatatypeProperty ;
-		rdfs:label "hasBeginVolumeExtension" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin volume extension"@en ;
+		rdfs:label "has beginnende Bandbezeichnung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A textual descrimination of the beginning volume"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginIssueNumbering
 
-[hasBeginIssueNumbering]: #hasBeginIssueNumbering
+[hasBeginIssueNumbering]: #hasbeginissuevumbering
 
 The numbering of the beginning issue
 
 	ecpo:hasBeginIssueNumbering a owl:DatatypeProperty ;
-		rdfs:label "hasBeginIssueNumbering" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin issue numbering"@en ;
+		rdfs:label "hat beginnende Ausgabenzählung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "The numbering of the beginning issue"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 		
 ## hasBeginIssueExtension
 
-[hasBeginIssueExtension]: #hasBeginIssueExtension
+[hasBeginIssueExtension]: #hasbeginissueextension
 
 A textual descrimination of the beginning issue
 
 	ecpo:hasBeginIssueExtension a owl:DatatypeProperty ;
-		rdfs:label "hasBeginIssueExtension" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin issue extension"@en ;
+		rdfs:label "hat beginnende Ausgabenbezeichnung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A textual descrimination of the beginning issue"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 		
 ## hasBeginTemporal
 
-[hasBeginTemporal]: #hasBeginTemporal
+[hasBeginTemporal]: #hasbegintemporal
 
 A temporal information, like a year
 
 	ecpo:hasBeginTemporal a owl:DatatypeProperty ;
-		rdfs:label "hasBeginTemporal" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin temporal"@en ;
+		rdfs:label "hat beginnende Zeit"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A temporal information, like a year"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginDayCount
 
-[hasBeginDayCount]: #hasBeginDayCount
+[hasBeginDayCount]: #hasbegindaycount
 
 The day count of the beginning group
 
 	ecpo:hasBeginDayCount a owl:DatatypeProperty ;
-		rdfs:label "hasBeginDayCount" ;
+		rdfs:label "has begin day count"@en ;
+		rdfs:label "hat beginnende Tageszählung"@de ;
 		rdfs:range rdfs:Literal;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The day count of the beginning group"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginMonthCount
 
-[hasBeginMonthCount]: #hasBeginMonthCount
+[hasBeginMonthCount]: #hasbeginmonthcount
 
 The month count of the beginning group
 
 	ecpo:hasBeginMonthCount a owl:DatatypeProperty ;
-		rdfs:label "hasBeginMonthCount" ;
+		rdfs:label "has begin month count"@en ;
+		rdfs:label "hat beginnende Montaszählung"@de ;
 		rdfs:range rdfs:Literal;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The month count of the beginning group"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
 ## hasBeginComment
 
-[hasBeginComment]: #hasBeginComment
+[hasBeginComment]: #hasbegincomment
 
 A comment to the beginning group
 
 	ecpo:hasBeginComment a owl:DatatypeProperty ;
-		rdfs:label "hasBeginComment" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has begin comment"@en ;
+		rdfs:label "hat Kommentar zum Beginn"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A comment to the beginning group"@en ;
+		rdfs:subPropertyOf ecpo:hasBegin ;
+		rdfs:isDefinedBy <> .
+
+## hasEnd
+
+[hasEnd]: #hasend
+
+Super-property to all properties of the ending group
+
+	ecpo:hasEnd a owl:DatatypeProperty ;
+		rdfs:label "has end"@en ;
+		rdfs:domain ecpo:ClosedChronology ;
+		rdfs:comment "Super-property to all properties of the ending group"@en ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndVolumeNumbering
 
-[hasEndVolumeNumbering]: #hasEndVolumeNumbering
+[hasEndVolumeNumbering]: #hasendvolumenumbering
 
 The numbering of the ending volume
 
 	ecpo:hasEndVolumeNumbering a owl:DatatypeProperty ;
-		rdfs:label "hasEndVolumeNumbering" ;
+		rdfs:label "has end volume numbering"@en ;
+		rdfs:label "hat endende Bandzählung"@de ;
 		rdfs:range rdfs:Literal ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The numbering of the ending volume"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndVolumeExtension
 
-[hasEndVolumeExtension]: #hasEndVolumeExtension
+[hasEndVolumeExtension]: #hasendvolumeextension
 
 A textual descrimination of the endning volume
 
 	ecpo:hasEndVolumeExtension a owl:DatatypeProperty ;
-		rdfs:label "hasEndVolumeExtension" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has end volume extension"@en ;
+		rdfs:label "hat endende Bandbenennung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A textual descrimination of the endning volume"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndIssueNumbering
 
-[hasEndIssueNumbering]: #hasEndIssueNumbering
+[hasEndIssueNumbering]: #hasendissuenumbering
 
 The numbering of the ending issue
 
 	ecpo:hasEndIssueNumbering a owl:DatatypeProperty ;
-		rdfs:label "hasEndIssueNumbering" ;
+		rdfs:label "has end issue numbering"@en ;
+		rdfs:label "hat endende Ausgabenzählung"@de ;
 		rdfs:range rdfs:Literal ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The numbering of the ending issue"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndIssueExtension
 
-[hasEndIssueExtension]: #hasEndIssueExtension
+[hasEndIssueExtension]: #hasendissueextension
 
 A textual descrimination of the endig issue
 
 	ecpo:hasEndIssueExtension a owl:DatatypeProperty ;
-		rdfs:label "hasEndIssueExtension" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has end issue extension"@en ;
+		rdfs:label "hat endende Ausgabenbenennung"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A textual descrimination of the ending issue"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndTemporal
 
-[hasEndTemporal]: #hasEndTemporal
+[hasEndTemporal]: #hasendtemporal
 
 A temporal information, like a year
 	
 	ecpo:hasEndTemporal a owl:DatatypeProperty ;
-		rdfs:label "hasEndTemporal" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has end temporal"@en ;
+		rdfs:label "has endende Zeit"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A temporal information, like a year"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndDayCount
 	
-[hasEndDayCount]: #hasEndDayCount
+[hasEndDayCount]: #hasenddaycount
 
 The day count of the ending group
 
 	ecpo:hasEndDayCount a owl:DatatypeProperty ;
-		rdfs:label "hasEndDayCount" ;
+		rdfs:label "has end day count"@en ;
+		rdfs:label "hat endende Tageszählung"@de ;
 		rdfs:range rdfs:Literal ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The day count of the ending group"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndMonthCount
 
-[hasEndMonthCount]: #hasEndMonthCount
+[hasEndMonthCount]: #hasendmonthcount
 
 The month count of the ending group
 
 	ecpo:hasEndMonthCount a owl:DatatypeProperty ;
-		rdfs:label "hasEndMonthCount" ;
+		rdfs:label "has end month count"@en ;
+		rdfs:label "hat endende Montaszählung"@de ;
 		rdfs:range rdfs:Literal ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The month count of the ending group"@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
 ## hasEndComment
 
-[hasEndComment]: #hasEndComment
+[hasEndComment]: #hasendcomment
 
 A comment to the ending group
 
 	ecpo:hasEndComment a owl:DatatypeProperty ;
-		rdfs:label "hasEndComment" ;
-		rdfs:domain ecpo:Bestandsverlauf ;
+		rdfs:label "has end comment"@en ;
+		rdfs:label "hat Kommentar zum Ende"@de ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:range rdfs:Literal ;
 		rdfs:comment "A comment to the ending group."@en ;
+		rdfs:subPropertyOf ecpo:hasEnd ;
+		rdfs:isDefinedBy <> .
+		
+# Individuals
+
+[Running]: #running
+
+Instance of [RunningChronology]. Use this individual to simply state that a document has a running [Chronology].
+
+	ecpo:Running a owl:NamedIndividual ;
+		rdf:type ecpo:RunningChronology ;
+		rdfs:label "running"@en ;
+		rdfs:label "laufend"@de ;
+		owl:differentFrom ecpo:Closed ;
+		rdfs:comment "A running Chronology."@en ;
+		ecpo:hasBegin "true"^^xsd:boolean ;
+		rdfs:isDefinedBy <> .
+		
+[Closed]: #closed
+
+Instance of [ClosedChronology]. Use this individual to simply state that a document has a closed [Chronology].
+
+	ecpo:Closed a owl:NamedIndividual ;
+		rdf:type ecpo:ClosedChronology ;
+		rdfs:label "closed"@en ;
+		rdfs:label "abgeschlossen"@de ;
+		owl:differentFrom ecpo:Running ;
+		rdfs:comment "A closed Chronology."@en ;
+		ecpo:hasBegin "true"^^xsd:boolean ;
+		ecpo:hasEnd "true"^^xsd:boolean ;
 		rdfs:isDefinedBy <> .
 
 # References
