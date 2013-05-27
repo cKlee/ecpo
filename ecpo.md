@@ -70,7 +70,7 @@ The following diagram illustrates the classes and properties defined in this ont
 	| any document class +------------------->|        Chronology       +------------------+
 	+---+------------+---+                    | +---------------------+ |                  |
 	    |            |		                  | |                     | |<-----------------+
-	hasChronology    |                        | |   RunningChronology  +---------+
+	hasChronology    |                        | |  RunningChronology  +---------+
 		|            |                        | |                     | |       |
 		v            |                        | +---------------------+ |       |
 	+-----------+    |                        | +---------------------+ |       |
