@@ -99,11 +99,11 @@ The following diagram illustrates the classes and properties defined in this ont
 
 A document might have a [Chronology] which is related to closed chronolgies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronolgy] or a [RunningChronology].
   
-While the property [hasChronology] states that the described units of the document are held by someone, the property [hasChronlogyGap] states that the described units of the document are not held by someone.
+While the property [hasChronology] states that the described units of the document are held by someone, the property [hasChronologyGap] states that the described units of the document are not held by someone.
 
-In order to simply state that a Chronology is running or closed, one could easily relate a document with the individuals [Running] or [Closed] via the property [hasChronlogy], because they are instances of [RunningChronlogy] or [ClosedChronology].
+In order to simply state that a Chronology is running or closed, one could easily relate a document with the individuals [Running] or [Closed] via the property [hasChronology], because they are instances of [RunningChronology] or [ClosedChronology].
 
-While instances of the class [RunningChronlogy] must not make use [hasEnd] or the subproperties of [hasEnd], instances of [ClosedChronlogy] must make use of [hasEnd] or one or more subproperties of [hasEnd]. All Instances of [RunningChronlogy] or [ClosedChronlogy] must make use of [hasBegin] or one or more subproperties of [hasBegin].
+While instances of the class [RunningChronology] must not make use [hasEnd] or the subproperties of [hasEnd], instances of [ClosedChronology] must make use of [hasEnd] or one or more subproperties of [hasEnd]. All Instances of [RunningChronology] or [ClosedChronology] must make use of [hasBegin] or one or more subproperties of [hasBegin].
 
 # Classes
 
@@ -220,7 +220,7 @@ Super-property to all properties of the beginning group
 		rdfs:label "has begin"@en ;
 		rdfs:domain [
 			a owl:Class ;
-			owl:unionOf (ecpo:RunningChronlogy ecpo:ClosedChronology)
+			owl:unionOf (ecpo:RunningChronology ecpo:ClosedChronology)
 		] ;
 		rdfs:comment "Super-property to all properties of the beginning group"@en ;
 		rdfs:isDefinedBy <> .
