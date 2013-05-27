@@ -479,6 +479,8 @@ A comment to the ending group
 		
 # Individuals
 
+## Running
+
 [Running]: #running
 
 Instance of [RunningChronology]. Use this individual to simply state that a document has a running [Chronology].
@@ -491,7 +493,9 @@ Instance of [RunningChronology]. Use this individual to simply state that a docu
 		rdfs:comment "A running Chronology."@en ;
 		ecpo:hasBegin "true"^^xsd:boolean ;
 		rdfs:isDefinedBy <> .
-		
+
+## Closed
+
 [Closed]: #closed
 
 Instance of [ClosedChronology]. Use this individual to simply state that a document has a closed [Chronology].
