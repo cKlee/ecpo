@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Carsten Klee (carsten.klee@sbb.spk-berlin.de)" />
-  <meta name="date" content="2013-05-27 14:41:12 +0200" />
+  <meta name="date" content="2013-05-27 15:07:43 +0200" />
   <title>Enumeration and Chronology of Periodicals Ontology (ECPO)</title>
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 <header>
 <h1 class="title">Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
 <h3 class="author">Carsten Klee (carsten.klee@sbb.spk-berlin.de)</h3>
-<h4 class="date">2013-05-27 14:41:12 +0200</h4>
+<h4 class="date">2013-05-27 15:07:43 +0200</h4>
 </header>
 
 <h1>Table of Contents</h1>
@@ -73,7 +73,10 @@
 <li><a href="#hasendmonthcount"><span class="toc-section-number">4.20</span> hasEndMonthCount</a></li>
 <li><a href="#hasendcomment"><span class="toc-section-number">4.21</span> hasEndComment</a></li>
 </ul></li>
-<li><a href="#individuals"><span class="toc-section-number">5</span> Individuals</a></li>
+<li><a href="#individuals"><span class="toc-section-number">5</span> Individuals</a><ul>
+<li><a href="#running"><span class="toc-section-number">5.1</span> Running</a></li>
+<li><a href="#closed"><span class="toc-section-number">5.2</span> Closed</a></li>
+</ul></li>
 <li><a href="#references"><span class="toc-section-number">6</span> References</a><ul>
 <li><a href="#normative-references"><span class="toc-section-number">6.1</span> Normative References</a></li>
 </ul></li>
@@ -95,15 +98,15 @@
 <li>Does an agent hold a specific unit of a periodical?</li>
 </ul>
 <a id="Status of this document"></a><h2 id="status-of-this-document"><a href="#status-of-this-document"><span class="header-section-number">1.1</span> Status of this document</a></h2>
-<p>This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology (<a href="ecpo.ttl"><strong><code>ecpo.ttl</code></strong></a> in RDF/Turtle and <a href="ecpo.owl"><strong><code>ecpo.owl</code></strong></a> in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <a href="http://github.com/cklee/ecpo">http://github.com/cklee/ecpo</a>. The current version of this document was last modified at 2013-05-27 14:41:12 +0200 with revision <a href="http://github.com/cklee/ecpo/commit/003a10d5d54f0c00c134900882fea7c818bc374a">003a10d</a>.</p>
+<p>This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology (<a href="ecpo.ttl"><strong><code>ecpo.ttl</code></strong></a> in RDF/Turtle and <a href="ecpo.owl"><strong><code>ecpo.owl</code></strong></a> in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <a href="http://github.com/cklee/ecpo">http://github.com/cklee/ecpo</a>. The current version of this document was last modified at 2013-05-27 15:07:43 +0200 with revision <a href="http://github.com/cklee/ecpo/commit/2f50bd1ce9e1a13c995f95ab76014c799b73578e">2f50bd1</a>.</p>
 <p>The current version of this ontology is a preliminary draft for open discussion. <a href="https://github.com/cklee/ecpo/issues">Feedback</a> is welcome!</p>
 <p><strong>Revision history</strong></p>
 <ul>
+<li><a href="ecpo-2f50bd1.html"><code>2013-05-27 15:07:43 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/2f50bd1ce9e1a13c995f95ab76014c799b73578e">minor: headlines of individuals</a></li>
 <li><a href="ecpo-003a10d.html"><code>2013-05-27 14:41:12 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/003a10d5d54f0c00c134900882fea7c818bc374a">minor changes in overview</a></li>
 <li><a href="ecpo-0273769.html"><code>2013-05-27 14:27:53 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/027376974437fa5eb3cc5533ad31f5934b2598d8">some typos</a></li>
 <li><a href="ecpo-6f217e5.html"><code>2013-05-27 12:48:31 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/6f217e5ba583e4cdfb456e9a9d8453bc78c16dee">some typos</a></li>
 <li><a href="ecpo-f39efd7.html"><code>2013-05-27 12:41:59 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/f39efd73bf067010a1cf3113d34aaa7b69ad5932">re-engeneered</a></li>
-<li><a href="ecpo-5b37f7b.html"><code>2013-05-27 12:25:37 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/5b37f7b2d4c9995792ba04d8671779ed1d039e31">re-engeneered</a></li>
 </ul>
 <a id="Terminology"></a><h2 id="terminology"><a href="#terminology"><span class="header-section-number">1.2</span> Terminology</a></h2>
 <p>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.</p>
@@ -415,6 +418,7 @@
     rdfs:isDefinedBy &lt;&gt; .
     </code></pre>
 <h1 id="individuals"><a href="#individuals"><span class="header-section-number">5</span> Individuals</a></h1>
+<a id="Running"></a><h2 id="running"><a href="#running"><span class="header-section-number">5.1</span> Running</a></h2>
 <p>Instance of <a href="#runningchronology">RunningChronology</a>. Use this individual to simply state that a document has a running <a href="#chronology">Chronology</a>.</p>
 <pre><code>ecpo:Running a owl:NamedIndividual ;
     rdf:type ecpo:RunningChronology ;
@@ -423,8 +427,8 @@
     owl:differentFrom ecpo:Closed ;
     rdfs:comment &quot;A running Chronology.&quot;@en ;
     ecpo:hasBegin &quot;true&quot;^^xsd:boolean ;
-    rdfs:isDefinedBy &lt;&gt; .
-    </code></pre>
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="Closed"></a><h2 id="closed"><a href="#closed"><span class="header-section-number">5.2</span> Closed</a></h2>
 <p>Instance of <a href="#closedchronology">ClosedChronology</a>. Use this individual to simply state that a document has a closed <a href="#chronology">Chronology</a>.</p>
 <pre><code>ecpo:Closed a owl:NamedIndividual ;
     rdf:type ecpo:ClosedChronology ;
