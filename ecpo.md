@@ -38,13 +38,13 @@ interpreted as described in RFC 2119.
 ## Namespaces and ontology
 
 The URI namespace of this ontology is <http://purl.org/ontology/ecpo#>. The
-namespace prefix `ecpo` is recommeded. The URI of this ontology as a whole
+namespace prefix `ecpo` is recommended. The URI of this ontology as a whole
 is <http://purl.org/ontology/ecpo>.
 
 	@prefix ecpo: <http://purl.org/ontology/ecpo#> .
 	@base        <http://purl.org/ontology/ecpo> .
 
-The following namspace prefixes are used to refer to [related ontologies]:
+The following namespace prefixes are used to refer to [related ontologies]:
 
 	@prefix owl:   <http://www.w3.org/2002/07/owl#> .
 	@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -97,7 +97,7 @@ The following diagram illustrates the classes and properties defined in this ont
 																   Literal
 ```
 
-A document might have a [Chronology] which is related to closed chronolgies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronology] or a [RunningChronology].
+A document might have a [Chronology] which is related to closed chronologies and/or running chronologies via the property [hasSubChronology] or is either a [ClosedChronology] or a [RunningChronology].
   
 While the property [hasChronology] states that the described units of the document are held by someone, the property [hasChronologyGap] states that the described units of the document are not held by someone.
 
