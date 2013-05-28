@@ -69,12 +69,7 @@ ecpo:RunningChronology
 ecpo:hasBegin
     a owl:DatatypeProperty ;
     rdfs:comment "Super-property to all properties of the beginning group"@en ;
-    rdfs:domain [
-        a owl:Class ;
-        owl:unionOf (ecpo:RunningChronology
-            ecpo:ClosedChronology
-        )
-    ] ;
+    rdfs:domain ecpo:Chronology ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "has begin"@en .
 

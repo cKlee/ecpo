@@ -70,12 +70,12 @@ The following diagram illustrates the classes and properties defined in this ont
 	| any document class +------------------->|        Chronology       +------------------+
 	+---+------------+---+                    | +---------------------+ |                  |
 	    |            |		                  | |                     | |<-----------------+
-	hasChronology    |                        | |  RunningChronology  +---------+
-		|            |                        | |                     | |       |
-		v            |                        | +---------------------+ |       |
+	hasChronology    |                        | |  RunningChronology  | |
+		|            |                        | |                     | |
+		v            |                        | +---------------------+ |-------+
 	+-----------+    |                        | +---------------------+ |       |
 	|  Running  |    |    hasChronologyGap    | |                     | |       |
-	|  Closed   |    +------------------------->|  ClosedChronology   +---------+
+	|  Closed   |    +------------------------->|  ClosedChronology   | |       |
 	+-----------+                             | |                     | |       |
 	                                          | +----------+----------+ |       |
 											  +------------|------------+       |
@@ -218,10 +218,7 @@ Super-property to all properties of the beginning group
 
 	ecpo:hasBegin a owl:DatatypeProperty ;
 		rdfs:label "has begin"@en ;
-		rdfs:domain [
-			a owl:Class ;
-			owl:unionOf (ecpo:RunningChronology ecpo:ClosedChronology)
-		] ;
+		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "Super-property to all properties of the beginning group"@en ;
 		rdfs:isDefinedBy <> .
 

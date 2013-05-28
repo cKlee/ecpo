@@ -177,24 +177,6 @@
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasSubChronology">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid5">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#ClosedChronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid5">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid6">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#RunningChronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid6">
-    <rdf:rest rdf:nodeID="genid5"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid7">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid7">
-    <owl:unionOf rdf:nodeID="genid6"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBegin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
@@ -202,7 +184,7 @@
     <rdfs:label xml:lang="en">has begin</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBegin">
-    <rdfs:domain rdf:nodeID="genid7"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBegin">
     <rdfs:comment xml:lang="en">Super-property to all properties of the beginning group</rdfs:comment>
