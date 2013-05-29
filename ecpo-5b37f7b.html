@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Carsten Klee (carsten.klee@sbb.spk-berlin.de)" />
+  <meta name="date" content="2013-05-27 12:25:37 +0200" />
+  <title>Enumeration and Chronology of Periodicals Ontology (ECPO)</title>
+   <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  body { font-family: sans-serif; }
+  a { text-decoration: none }
+  a:hover { text-decoration: underline }
+  h1 { font: 170% sans-serif }
+  h1.title { font-size: 200%; font-weight: bold; }
+  h2 { font: 140% sans-serif }
+  h3 { font: 120% sans-serif }
+  dt { font-weight: bold; }
+  h1, h2, h3, h1 a, h2 a, h3 a { color: #005A9C; }
+  table { border-collapse: collapse; }
+  td { border: 1px solid #999; padding: 3px }
+  dl p { margin-top: 0; }
+  dt { margin-top: 0.8em; }
+  dd { margin-left: 1.5em; }
+  ol { margin-bottom: 1em; }
+  table + p { margin-top: 1em; }
+  </style>
+</head>
+<body>
+<a href="http://github.com/cklee/ecpo/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+<header>
+<h1 class="title">Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
+<h3 class="author">Carsten Klee (carsten.klee@sbb.spk-berlin.de)</h3>
+<h4 class="date">2013-05-27 12:25:37 +0200</h4>
+</header>
+
+<h1>Table of Contents</h1>
+<nav id="TOC">
+<ul>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="#status-of-this-document"><span class="toc-section-number">1.1</span> Status of this document</a></li>
+<li><a href="#terminology"><span class="toc-section-number">1.2</span> Terminology</a></li>
+<li><a href="#namespaces-and-ontology"><span class="toc-section-number">1.3</span> Namespaces and ontology</a></li>
+</ul></li>
+<li><a href="#overview"><span class="toc-section-number">2</span> Overview</a></li>
+<li><a href="#classes"><span class="toc-section-number">3</span> Classes</a><ul>
+<li><a href="#chronology"><span class="toc-section-number">3.1</span> Chronology</a></li>
+</ul></li>
+<li><a href="#properties"><span class="toc-section-number">4</span> Properties</a><ul>
+<li><a href="#haschronology"><span class="toc-section-number">4.1</span> hasChronology</a></li>
+<li><a href="#haschronologygap"><span class="toc-section-number">4.2</span> hasChronologyGap</a></li>
+<li><a href="#hassubchronology"><span class="toc-section-number">4.3</span> hasSubChronology</a></li>
+<li><a href="#hasbegin"><span class="toc-section-number">4.4</span> hasBegin</a></li>
+<li><a href="#hasbeginvolumenumbering"><span class="toc-section-number">4.5</span> hasBeginVolumeNumbering</a></li>
+<li><a href="#hasbeginvolumeextension"><span class="toc-section-number">4.6</span> hasBeginVolumeExtension</a></li>
+<li><a href="#hasbeginissuenumbering"><span class="toc-section-number">4.7</span> hasBeginIssueNumbering</a></li>
+<li><a href="#hasbeginissueextension"><span class="toc-section-number">4.8</span> hasBeginIssueExtension</a></li>
+<li><a href="#hasbegintemporal"><span class="toc-section-number">4.9</span> hasBeginTemporal</a></li>
+<li><a href="#hasbegindaycount"><span class="toc-section-number">4.10</span> hasBeginDayCount</a></li>
+<li><a href="#hasbeginmonthcount"><span class="toc-section-number">4.11</span> hasBeginMonthCount</a></li>
+<li><a href="#hasbegincomment"><span class="toc-section-number">4.12</span> hasBeginComment</a></li>
+<li><a href="#hasend"><span class="toc-section-number">4.13</span> hasEnd</a></li>
+<li><a href="#hasendvolumenumbering"><span class="toc-section-number">4.14</span> hasEndVolumeNumbering</a></li>
+<li><a href="#hasendvolumeextension"><span class="toc-section-number">4.15</span> hasEndVolumeExtension</a></li>
+<li><a href="#hasendissuenumbering"><span class="toc-section-number">4.16</span> hasEndIssueNumbering</a></li>
+<li><a href="#hasendissueextension"><span class="toc-section-number">4.17</span> hasEndIssueExtension</a></li>
+<li><a href="#hasendtemporal"><span class="toc-section-number">4.18</span> hasEndTemporal</a></li>
+<li><a href="#hasenddaycount"><span class="toc-section-number">4.19</span> hasEndDayCount</a></li>
+<li><a href="#hasendmonthcount"><span class="toc-section-number">4.20</span> hasEndMonthCount</a></li>
+<li><a href="#hasendcomment"><span class="toc-section-number">4.21</span> hasEndComment</a></li>
+</ul></li>
+<li><a href="#individuals"><span class="toc-section-number">5</span> Individuals</a></li>
+<li><a href="#references"><span class="toc-section-number">6</span> References</a><ul>
+<li><a href="#normative-references"><span class="toc-section-number">6.1</span> Normative References</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="introduction"><a href="#introduction"><span class="header-section-number">1</span> Introduction</a></h1>
+<p>The <strong>Enumeration and Chronology of Periodicals Ontology (ECPO)</strong> defines the common bibliographic terms for the description of enumeration and chronology of periodicals.</p>
+<p>Institutions like libraries normally describing their holdings of periodicals like journals, annuals, newspapers etc. on a more abstract level than on a single unit level like they do it with books.</p>
+<p>Holding descriptions of periodicals are more on the level of ranges of units. Periodical units are commonly called &quot;issues&quot; mostly grouped into &quot;volumes&quot;. Ranges of periodical units are described by beginning and ending groups.</p>
+<p>Newspapers descriptions might be a little bit more complex than other periodicals because they might have multiple subissues (e.g. one in the morning, another in the evening).</p>
+<p>A document using this ontology shall give answers to the questions:</p>
+<ul>
+<li>What units of a periodical are held by an agent?</li>
+<li>What units of a periodical are not held by an agent?</li>
+<li>Is the chronology of a holding of a periodical closed or open?</li>
+</ul>
+<p>A Question a document using this ontology might not answer:</p>
+<ul>
+<li>Does an agent hold a specific unit of a periodical?</li>
+</ul>
+<a id="Status of this document"></a><h2 id="status-of-this-document"><a href="#status-of-this-document"><span class="header-section-number">1.1</span> Status of this document</a></h2>
+<p>This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology (<a href="ecpo.ttl"><strong><code>ecpo.ttl</code></strong></a> in RDF/Turtle and <a href="ecpo.owl"><strong><code>ecpo.owl</code></strong></a> in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <a href="http://github.com/cklee/ecpo">http://github.com/cklee/ecpo</a>. The current version of this document was last modified at 2013-05-27 12:25:37 +0200 with revision <a href="http://github.com/cklee/ecpo/commit/5b37f7b2d4c9995792ba04d8671779ed1d039e31">5b37f7b</a>.</p>
+<p>The current version of this ontology is a preliminary draft for open discussion. <a href="https://github.com/cklee/ecpo/issues">Feedback</a> is welcome!</p>
+<p><strong>Revision history</strong></p>
+<ul>
+<li><a href="ecpo-5b37f7b.html"><code>2013-05-27 12:25:37 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/5b37f7b2d4c9995792ba04d8671779ed1d039e31">re-engeneered</a></li>
+<li><a href="ecpo-292cd39.html"><code>2013-05-27 12:21:01 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/292cd393ada8569fa74ed7dfc008b6edd65d8720">re-engeneered</a></li>
+<li><a href="ecpo-85f46c0.html"><code>2013-05-23 09:49:48 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/85f46c0f1cec398b32371ff8078108fc4800f12e">added hasBestandsverlaufOpen</a></li>
+<li><a href="ecpo-443075c.html"><code>2013-05-17 14:56:21 +0200</code></a>: <a href="http://github.com/cklee/ecpo/commit/443075cc4b9f073b517bed66a630b795931dc77d">first commit</a></li>
+</ul>
+<a id="Terminology"></a><h2 id="terminology"><a href="#terminology"><span class="header-section-number">1.2</span> Terminology</a></h2>
+<p>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.</p>
+<a id="Namespaces and ontology"></a><h2 id="namespaces-and-ontology"><a href="#namespaces-and-ontology"><span class="header-section-number">1.3</span> Namespaces and ontology</a></h2>
+<p>The URI namespace of this ontology is <a href="http://purl.org/ontology/ecpo#">http://purl.org/ontology/ecpo#</a>. The namespace prefix <code>ecpo</code> is recommeded. The URI of this ontology as a whole is <a href="http://purl.org/ontology/ecpo">http://purl.org/ontology/ecpo</a>.</p>
+<pre><code>@prefix ecpo: &lt;http://purl.org/ontology/ecpo#&gt; .
+@base        &lt;http://purl.org/ontology/ecpo&gt; .</code></pre>
+<p>The following namspace prefixes are used to refer to [related ontologies]:</p>
+<pre><code>@prefix owl:   &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:  &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix vann:  &lt;http://purl.org/vocab/vann/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code></pre>
+<p>The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/Turtle as following:</p>
+<pre><code>&lt;&gt; a owl:Ontology ;
+    rdfs:label &quot;Enumeration and Chronology of Periodicals Ontology&quot;@en ;
+    rdfs:label &quot;ECPO&quot; ;
+    vann:preferredNamespacePrefix &quot;ecpo&quot; .</code></pre>
+<h1 id="overview"><a href="#overview"><span class="header-section-number">2</span> Overview</a></h1>
+<p>The following diagram illustrates the classes and properties defined in this ontology.</p>
+<pre class="ditaa"><code>    
+    +--------------------+   hasChronology    +-------------------------+   hasSubChronology
+    | any document class +-------------------&gt;|        Chronology       +------------------+
+    +---+------------+---+                    | +---------------------+ |                  |
+        |            |                        | |                     | |&lt;-----------------+
+    hasChronolgy     |                        | |   RunningChronolgy  +---------+
+        |            |                        | |                     | |       |
+        v            |                        | +---------------------+ |       |
+    +-----------+    |                        | +---------------------+ |       |
+    |  Running  |    |     hasChronolgyGap    | |                     | |       |
+    |  Closed   |    +-------------------------&gt;|  ClosedChronology   +---------+
+    +-----------+                             | |                     | |       |
+                                              | +----------+----------+ |       |
+                                              +------------|------------+       |
+                                                           |                    |
+                                                        hasEnd              hasBegin
+                                                           |                    |
+                                                  hasEndVolumeNumbering   hasBeginVolumeNumbering
+                                                  hasEndVolumeExtension   hasBeginVolumeExtension
+                                                  hasEndIssueNumbering    hasBeginIssueNumbering
+                                                  hasEndIssueExtension    hasBeginIssueExtension
+                                                  hasEndTemporal          hasBeginTemporal
+                                                  hasEndDayCount          hasBeginDayCount
+                                                  hasEndMonthCount        hasBeginMonthCount
+                                                  hasEndComment           hasBeginComment
+                                                           |                    |
+                                                           +----------+---------+
+                                                                      |
+                                                                      v
+                                                                   Literal</code></pre>
+<p>A document might have a <a href="#chronology">Chronology</a> which is related to closed chronolgies and/or running chronologies via the property <a href="#hassubchronology">hasSubChronology</a> or is either a [ClosedChronolgy] or a <a href="#runningchronology">RunningChronology</a>.</p>
+<p>While the property <a href="#hasChronology">hasChronology</a> states that the described units of the document are held by someone, the property [hasChronlogyGap] states that the described units of the document are not held by someone.</p>
+<p>In order to simply state that a Chronology is running or closed, one could easily relate a document with the individuals <a href="#running">Running</a> or <a href="#closed">Closed</a> via the property [hasChronlogy], because they are instances of [RunningChronlogy] or <a href="#closedchronology">ClosedChronology</a>.</p>
+<p>While instances of the class [RunningChronlogy] must not make use <a href="#hasend">hasEnd</a> or the subproperties of <a href="#hasend">hasEnd</a>, instances of [ClosedChronlogy] must make use of <a href="#hasend">hasEnd</a> or one or more subproperties of <a href="#hasend">hasEnd</a>. All Instances of [RunningChronlogy] or [ClosedChronlogy] must make use of <a href="#hasbegin">hasBegin</a> or one or more subproperties of <a href="#hasbegin">hasBegin</a>.</p>
+<h1 id="classes"><a href="#classes"><span class="header-section-number">3</span> Classes</a></h1>
+<a id="Chronology"></a><h2 id="chronology"><a href="#chronology"><span class="header-section-number">3.1</span> Chronology</a></h2>
+<p>A <a href="#chronology">Chronology</a> is the description of enumeration and chronology of a periodical. Use <a href="#runningchronology">RunningChronology</a> or <a href="#closedchronology">ClosedChronology</a> to describe either running or closed Chronlogies.</p>
+<pre><code>ecpo:Chronology a owl:Class ;
+    rdfs:label &quot;Chronological designation&quot;@en ;
+    rdfs:label &quot;Bestandsverlauf&quot;@de ;
+    rdfs:comment &quot;A Chronology is the description of enumeration and chronology of a periodical.&quot;@en ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<p>A <a href="#runningchronology">RunningChronology</a> is a <a href="#chronology">Chronology</a> which must not have a property describing an ending group.</p>
+<pre><code>ecpo:RunningChronology a owl:Class ;
+    rdfs:label &quot;running chronology&quot;@en ;
+    rdfs:label &quot;Bestandsverlauf laufend&quot;@de ;
+    rdfs:comment &quot;A Chronology without an ending group.&quot;@en ;
+    owl:disjointWith ecpo:ClosedChronology ;
+    rdfs:subClassOf ecpo:Chronology ;
+    rdfs:subClassOf [ 
+        a owl:Restriction ;
+        owl:maxCardinality &quot;0&quot;^^xsd:nonNegativeInteger ;
+        owl:onProperty ecpo:hasEnd
+    ] ;     
+    rdfs:subClassOf [ 
+        a owl:Restriction ;
+        owl:minCardinality &quot;1&quot;^^xsd:nonNegativeInteger ;
+        owl:onProperty ecpo:hasBegin
+    ] ;
+    rdfs:isDefinedBy &lt;&gt; .
+    
+    </code></pre>
+<p>A <a href="#closedchronology">ClosedChronology</a> is a <a href="#chronology">Chronology</a> which must make usage of minimum one property describing an ending group.</p>
+<pre><code>ecpo:ClosedChronology a owl:Class ;
+    rdfs:label &quot;closed chronology&quot;@en ;
+    rdfs:label &quot;Bestandsverlauf abgeschlossen&quot;@de ;
+    rdfs:comment &quot;A Chronology having an ending group.&quot;@en ;
+    owl:disjointWith ecpo:RunningChronology ;
+    rdfs:subClassOf ecpo:Chronology ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality &quot;1&quot;^^xsd:nonNegativeInteger ;
+        owl:onProperty ecpo:hasEnd
+    ] ;     
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality &quot;1&quot;^^xsd:nonNegativeInteger ;
+        owl:onProperty ecpo:hasBegin
+    ] ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<h1 id="properties"><a href="#properties"><span class="header-section-number">4</span> Properties</a></h1>
+<a id="hasChronology"></a><h2 id="haschronology"><a href="#haschronology"><span class="header-section-number">4.1</span> hasChronology</a></h2>
+<p>Relation between a document and a <a href="#chronology">Chronology</a>. Having this property means that the described periodical units by the <a href="#chronology">Chronology</a> are held by someone. To relate a <a href="#chronology">Chronology</a> and a <a href="#chronology">Chronology</a> use <a href="#hassubchronology">hasSubChronology</a> instead.</p>
+<pre><code>ecpo:hasChronology a owl:ObjectProperty ;
+    rdfs:label &quot;has chronology&quot;@en ;
+    rdfs:label &quot;hat Bestandsverlauf&quot;@de ;
+    rdfs:range ecpo:Chronology ;
+    rdfs:comment &quot;Relation between a document and a Chronology&quot;@en ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasChronologyGap"></a><h2 id="haschronologygap"><a href="#haschronologygap"><span class="header-section-number">4.2</span> hasChronologyGap</a></h2>
+<p>Relation between a document and a <a href="#closedchronology">ClosedChronology</a>, indicating the <a href="#closedchronology">ClosedChronology</a> is a gap. Having this property means that the described periodical units by the <a href="#closedchronology">ClosedChronology</a> are not held by someone. To relate a <a href="#chronology">Chronology</a> and a <a href="#chronology">Chronology</a> use <a href="#hassubchronology">hasSubChronology</a> instead.</p>
+<pre><code>ecpo:hasChronologyGap a owl:ObjectProperty ;
+    rdfs:label &quot;has chronology gap&quot;@en ;
+    rdfs:label &quot;hat Bestandsverlauflücke&quot;@de ;
+    rdfs:range ecpo:ClosedChronology ;
+    rdfs:comment &quot;Relation between a document and a Chronology, indicating the Chronology is a gap&quot;@en ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<a id="hasSubChronology"></a><h2 id="hassubchronology"><a href="#hassubchronology"><span class="header-section-number">4.3</span> hasSubChronology</a></h2>
+<p>Relation between a <a href="#chronology">Chronology</a> and a <a href="#chronology">Chronology</a>. Meaning the object is part of the subject.</p>
+<pre><code>ecpo:hasSubChronology a owl:TransitiveProperty ;
+    rdfs:label &quot;has subchronology&quot;@en ;
+    rdfs:label &quot;hat untergeordneten Bestandsverlauf&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range ecpo:Chronology ;
+    rdfs:comment &quot;Relation between a Chronology and a Chronology&quot;@en ;
+    rdfs:subPropertyOf dcterms:hasPart ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBegin"></a><h2 id="hasbegin"><a href="#hasbegin"><span class="header-section-number">4.4</span> hasBegin</a></h2>
+<p>Super-property to all properties of the beginning group</p>
+<pre><code>ecpo:hasBegin a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin&quot;@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (ecpo:RunningChronlogy ecpo:ClosedChronology)
+    ] ;
+    rdfs:comment &quot;Super-property to all properties of the beginning group&quot;@en ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginVolumeNumbering"></a><h2 id="hasbeginvolumenumbering"><a href="#hasbeginvolumenumbering"><span class="header-section-number">4.5</span> hasBeginVolumeNumbering</a></h2>
+<p>The numbering of the beginning volume</p>
+<pre><code>ecpo:hasBeginVolumeNumbering a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin volume numbering&quot;@en ;
+    rdfs:label &quot;hat beginnende Bandzählung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;The numbering of the beginning volume&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginVolumeExtension"></a><h2 id="hasbeginvolumeextension"><a href="#hasbeginvolumeextension"><span class="header-section-number">4.6</span> hasBeginVolumeExtension</a></h2>
+<p>A textual descrimination of the beginning volume</p>
+<pre><code>ecpo:hasBeginVolumeExtension a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin volume extension&quot;@en ;
+    rdfs:label &quot;has beginnende Bandbezeichnung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A textual descrimination of the beginning volume&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginIssueNumbering"></a><h2 id="hasbeginissuenumbering"><a href="#hasbeginissuenumbering"><span class="header-section-number">4.7</span> hasBeginIssueNumbering</a></h2>
+<p>The numbering of the beginning issue</p>
+<pre><code>ecpo:hasBeginIssueNumbering a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin issue numbering&quot;@en ;
+    rdfs:label &quot;hat beginnende Ausgabenzählung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;The numbering of the beginning issue&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<a id="hasBeginIssueExtension"></a><h2 id="hasbeginissueextension"><a href="#hasbeginissueextension"><span class="header-section-number">4.8</span> hasBeginIssueExtension</a></h2>
+<p>A textual descrimination of the beginning issue</p>
+<pre><code>ecpo:hasBeginIssueExtension a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin issue extension&quot;@en ;
+    rdfs:label &quot;hat beginnende Ausgabenbezeichnung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A textual descrimination of the beginning issue&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<a id="hasBeginTemporal"></a><h2 id="hasbegintemporal"><a href="#hasbegintemporal"><span class="header-section-number">4.9</span> hasBeginTemporal</a></h2>
+<p>A temporal information, like a year</p>
+<pre><code>ecpo:hasBeginTemporal a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin temporal&quot;@en ;
+    rdfs:label &quot;hat beginnende Zeit&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A temporal information, like a year&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginDayCount"></a><h2 id="hasbegindaycount"><a href="#hasbegindaycount"><span class="header-section-number">4.10</span> hasBeginDayCount</a></h2>
+<p>The day count of the beginning group</p>
+<pre><code>ecpo:hasBeginDayCount a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin day count&quot;@en ;
+    rdfs:label &quot;hat beginnende Tageszählung&quot;@de ;
+    rdfs:range rdfs:Literal;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The day count of the beginning group&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginMonthCount"></a><h2 id="hasbeginmonthcount"><a href="#hasbeginmonthcount"><span class="header-section-number">4.11</span> hasBeginMonthCount</a></h2>
+<p>The month count of the beginning group</p>
+<pre><code>ecpo:hasBeginMonthCount a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin month count&quot;@en ;
+    rdfs:label &quot;hat beginnende Montaszählung&quot;@de ;
+    rdfs:range rdfs:Literal;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The month count of the beginning group&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasBeginComment"></a><h2 id="hasbegincomment"><a href="#hasbegincomment"><span class="header-section-number">4.12</span> hasBeginComment</a></h2>
+<p>A comment to the beginning group</p>
+<pre><code>ecpo:hasBeginComment a owl:DatatypeProperty ;
+    rdfs:label &quot;has begin comment&quot;@en ;
+    rdfs:label &quot;hat Kommentar zum Beginn&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A comment to the beginning group&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEnd"></a><h2 id="hasend"><a href="#hasend"><span class="header-section-number">4.13</span> hasEnd</a></h2>
+<p>Super-property to all properties of the ending group</p>
+<pre><code>ecpo:hasEnd a owl:DatatypeProperty ;
+    rdfs:label &quot;has end&quot;@en ;
+    rdfs:domain ecpo:ClosedChronology ;
+    rdfs:comment &quot;Super-property to all properties of the ending group&quot;@en ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndVolumeNumbering"></a><h2 id="hasendvolumenumbering"><a href="#hasendvolumenumbering"><span class="header-section-number">4.14</span> hasEndVolumeNumbering</a></h2>
+<p>The numbering of the ending volume</p>
+<pre><code>ecpo:hasEndVolumeNumbering a owl:DatatypeProperty ;
+    rdfs:label &quot;has end volume numbering&quot;@en ;
+    rdfs:label &quot;hat endende Bandzählung&quot;@de ;
+    rdfs:range rdfs:Literal ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The numbering of the ending volume&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndVolumeExtension"></a><h2 id="hasendvolumeextension"><a href="#hasendvolumeextension"><span class="header-section-number">4.15</span> hasEndVolumeExtension</a></h2>
+<p>A textual descrimination of the endning volume</p>
+<pre><code>ecpo:hasEndVolumeExtension a owl:DatatypeProperty ;
+    rdfs:label &quot;has end volume extension&quot;@en ;
+    rdfs:label &quot;hat endende Bandbenennung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A textual descrimination of the endning volume&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndIssueNumbering"></a><h2 id="hasendissuenumbering"><a href="#hasendissuenumbering"><span class="header-section-number">4.16</span> hasEndIssueNumbering</a></h2>
+<p>The numbering of the ending issue</p>
+<pre><code>ecpo:hasEndIssueNumbering a owl:DatatypeProperty ;
+    rdfs:label &quot;has end issue numbering&quot;@en ;
+    rdfs:label &quot;hat endende Ausgabenzählung&quot;@de ;
+    rdfs:range rdfs:Literal ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The numbering of the ending issue&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndIssueExtension"></a><h2 id="hasendissueextension"><a href="#hasendissueextension"><span class="header-section-number">4.17</span> hasEndIssueExtension</a></h2>
+<p>A textual descrimination of the endig issue</p>
+<pre><code>ecpo:hasEndIssueExtension a owl:DatatypeProperty ;
+    rdfs:label &quot;has end issue extension&quot;@en ;
+    rdfs:label &quot;hat endende Ausgabenbenennung&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A textual descrimination of the ending issue&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndTemporal"></a><h2 id="hasendtemporal"><a href="#hasendtemporal"><span class="header-section-number">4.18</span> hasEndTemporal</a></h2>
+<p>A temporal information, like a year</p>
+<pre><code>ecpo:hasEndTemporal a owl:DatatypeProperty ;
+    rdfs:label &quot;has end temporal&quot;@en ;
+    rdfs:label &quot;has endende Zeit&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A temporal information, like a year&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndDayCount"></a><h2 id="hasenddaycount"><a href="#hasenddaycount"><span class="header-section-number">4.19</span> hasEndDayCount</a></h2>
+<p>The day count of the ending group</p>
+<pre><code>ecpo:hasEndDayCount a owl:DatatypeProperty ;
+    rdfs:label &quot;has end day count&quot;@en ;
+    rdfs:label &quot;hat endende Tageszählung&quot;@de ;
+    rdfs:range rdfs:Literal ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The day count of the ending group&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndMonthCount"></a><h2 id="hasendmonthcount"><a href="#hasendmonthcount"><span class="header-section-number">4.20</span> hasEndMonthCount</a></h2>
+<p>The month count of the ending group</p>
+<pre><code>ecpo:hasEndMonthCount a owl:DatatypeProperty ;
+    rdfs:label &quot;has end month count&quot;@en ;
+    rdfs:label &quot;hat endende Montaszählung&quot;@de ;
+    rdfs:range rdfs:Literal ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:comment &quot;The month count of the ending group&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<a id="hasEndComment"></a><h2 id="hasendcomment"><a href="#hasendcomment"><span class="header-section-number">4.21</span> hasEndComment</a></h2>
+<p>A comment to the ending group</p>
+<pre><code>ecpo:hasEndComment a owl:DatatypeProperty ;
+    rdfs:label &quot;has end comment&quot;@en ;
+    rdfs:label &quot;hat Kommentar zum Ende&quot;@de ;
+    rdfs:domain ecpo:Chronology ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment &quot;A comment to the ending group.&quot;@en ;
+    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<h1 id="individuals"><a href="#individuals"><span class="header-section-number">5</span> Individuals</a></h1>
+<p>Instance of <a href="#runningchronology">RunningChronology</a>. Use this individual to simply state that a document has a running <a href="#chronology">Chronology</a>.</p>
+<pre><code>ecpo:Running a owl:NamedIndividual ;
+    rdf:type ecpo:RunningChronology ;
+    rdfs:label &quot;running&quot;@en ;
+    rdfs:label &quot;laufend&quot;@de ;
+    owl:differentFrom ecpo:Closed ;
+    rdfs:comment &quot;A running Chronology.&quot;@en ;
+    ecpo:hasBegin &quot;true&quot;^^xsd:boolean ;
+    rdfs:isDefinedBy &lt;&gt; .
+    </code></pre>
+<p>Instance of <a href="#closedchronology">ClosedChronology</a>. Use this individual to simply state that a document has a closed <a href="#chronology">Chronology</a>.</p>
+<pre><code>ecpo:Closed a owl:NamedIndividual ;
+    rdf:type ecpo:ClosedChronology ;
+    rdfs:label &quot;closed&quot;@en ;
+    rdfs:label &quot;abgeschlossen&quot;@de ;
+    owl:differentFrom ecpo:Running ;
+    rdfs:comment &quot;A closed Chronology.&quot;@en ;
+    ecpo:hasBegin &quot;true&quot;^^xsd:boolean ;
+    ecpo:hasEnd &quot;true&quot;^^xsd:boolean ;
+    rdfs:isDefinedBy &lt;&gt; .</code></pre>
+<h1 id="references"><a href="#references"><span class="header-section-number">6</span> References</a></h1>
+<a id="Normative References"></a><h2 id="normative-references"><a href="#normative-references"><span class="header-section-number">6.1</span> Normative References</a></h2>
+<ul>
+<li><p><strong>[RFC 2119]</strong> S. Bradner: <em>Key words for use in RFCs to Indicate Requirement Levels</em>. March 1997 <a href="http://tools.ietf.org/html/rfc2119">http://tools.ietf.org/html/rfc2119</a>.</p></li>
+<li><p><strong>[RFC 2396]</strong> T. Berners-Lee et al.: <em>Uniform Resource Identifiers (URI): Generic Syntax</em>. August 1998 <a href="http://tools.ietf.org/html/rfc2396">http://tools.ietf.org/html/rfc2396</a>.</p></li>
+</ul>
+</body>
+</html>
