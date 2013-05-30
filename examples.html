@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="examples-for-enumeration-and-chronology-of-periodicals-ontology-ecpo">Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
+<p>In the following examples a hypothetical document <code>:Holding</code> describes a holding of a periodical held by someone.</p>
+<h2 id="statement-for-a-running-chronology">Statement for a running chronology</h2>
+<pre><code>:Holding ecpo:hasChronology ecpo:Running .</code></pre>
+<p>This statement just says that a document has a running chronology without giving futher information which units are held.</p>
+<h2 id="statement-for-a-closed-chronology">Statement for a closed chronology</h2>
+<pre><code>:Holding ecpo:hasChronology ecpo:Closed .</code></pre>
+<p>This statement just says that a document has a closed chronology without giving futher information which units are held.</p>
+<h2 id="description-of-a-running-chronology">Description of a running Chronology</h2>
+<p>Given description: v.26,issue 1-</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:RunningChronology ;
+    ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
+    ecpo:hasBeginVolumeNumbering &quot;26&quot; ;
+    ecpo:hasBeginIssueCapation &quot;issue&quot; ;
+    ecpo:hasBeginIssueNumbering &quot;1&quot; 
+] .
+    </code></pre>
+<h2 id="description-of-a-closed-chronology">Description of a closed Chronology</h2>
+<p>Given description: v.26,issue 1-v.31, issue 6</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:ClosedChronology ;
+    ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
+    ecpo:hasBeginVolumeNumbering &quot;26&quot; ;
+    ecpo:hasBeginIssueCapation &quot;issue&quot; ;
+    ecpo:hasBeginIssueNumbering &quot;1&quot; ;
+    ecpo:hasEndVolumeCapation &quot;v.&quot; ;
+    ecpo:hasEndVolumeNumbering &quot;31&quot; ;
+    ecpo:hasEndIssueCapation &quot;issue&quot; ;
+    ecpo:hasEndIssueNumbering &quot;6&quot; 
+] .</code></pre>
+<h2 id="description-of-a-closed-chronology-with-temporal-information">Description of a closed Chronology with temporal information</h2>
+<p>Given description: (2001:Jan.-2006:June)=no.320-no.385</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:ClosedChronology ;
+    ecpo:hasBeginTemporal &quot;2001&quot; ;
+    ecpo:hasBeginMonth &quot;Jan.&quot; ;
+    ecpo:hasBeginIssueCapation &quot;no.&quot; ;
+    ecpo:hasBeginIssueNumbering &quot;320&quot; ;
+    ecpo:hasEndTemporal &quot;2006&quot; ;
+    ecpo:hasEndMonth &quot;June&quot; ;
+    ecpo:hasEndIssueCapation &quot;no.&quot; ;
+    ecpo:hasEndIssueNumbering &quot;385&quot; 
+] .</code></pre>
+<h2 id="description-of-a-running-chronology-with-subchronologies">Description of a running chronology with subchronologies</h2>
+<p>Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:RunningChronology ;
+    dcterms:hasPart [
+        a ecpo:ClosedChronology ;
+        ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
+        ecpo:hasBeginVolumeNumbering &quot;5&quot; ;
+        ecpo:hasBeginIssueCapation &quot;no.&quot; ;
+        ecpo:hasBeginIssueNumbering &quot;1&quot; ;
+        ecpo:hasBeginTemporal &quot;1975&quot; ;
+        ecpo:hasBeginTemporalExtension &quot;spring&quot; ;
+        ecpo:hasEndVolumeCapation &quot;v.&quot; ;
+        ecpo:hasEndVolumeNumbering &quot;7&quot; ;
+        ecpo:hasEndIssueCapation &quot;no.&quot; ;
+        ecpo:hasEndIssueNumbering &quot;4&quot; ;
+        ecpo:hasEndTemporal &quot;1977&quot; ;
+        ecpo:hasEndTemporalExtension &quot;autumn&quot;          
+    ] ;
+    dcterms:hasPart [
+        a ecpo:ClosedChronology ;
+        ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
+        ecpo:hasBeginVolumeNumbering &quot;8&quot; ;
+        ecpo:hasBeginIssueCapation &quot;no.&quot; ;
+        ecpo:hasBeginIssueNumbering &quot;2&quot; ;
+        ecpo:hasBeginTemporal &quot;1978&quot; ;
+        ecpo:hasBeginTemporalExtension &quot;winter&quot;    
+    ] .
+    </code></pre>
+<p>In this example the main chronology is made as an instance of <code>RunningChronology</code> for the sake of expressivity. It also had been made as an instance of <code>Chronology</code>. But this way it is easier to tell if the whole chronology is running or not.</p>
+<h2 id="description-of-a-chronology-in-an-itemized-way-and-comments">Description of a chronology in an itemized way and comments</h2>
+<p>Given description: v.1 v.2 v.2[i.e. 3] v.6 In this example Volume 3 was incorrectly numbered by the publisher.</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:Chronology ;
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;1&quot;
+    ] ;     
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;2&quot;
+    ] ;     
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;2&quot; ;
+        ecpo:hasItemizedVolumeExtension &quot;[i.e. 3]&quot; ;
+        ecpo:hasItemizedComment &quot;Volume 3 was incorrectly numbered by the publisher&quot;@en
+    ] ;
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;6&quot;
+    ]
+] .</code></pre>
+<p>The property <code>hasItemizedVolumeExtension</code> is described as &quot;A textual descrimination of the volume&quot;. In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property <code>hasItemizedComment</code> is optional.</p>
+<h2 id="description-of-a-gap-in-the-chronology">Description of a gap in the chronology</h2>
+<p>As in the example above the volumes v.4 and v.5 are missing. There are two possibilities to express this.</p>
+<h3 id="itemized-way">Itemized way</h3>
+<pre><code>:Holding ecpo:hasChronologyGap [
+    a ecpo:Chronology ;
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;4&quot;
+    ] ;     
+    dcterms:hasPart [
+        a ecpo:Chronology ;
+        ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
+        ecpo:hasItemizedVolumeNumbering &quot;5&quot;
+    ]
+] .</code></pre>
+<h3 id="range">Range</h3>
+<pre><code>:Holding ecpo:hasChronologyGap [
+    a ecpo:Chronology ;
+    ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
+    ecpo:hasBeginVolumeNumbering &quot;4&quot; ;
+    ecpo:hasEndVolumeCapation &quot;v.&quot; ;
+    ecpo:hasEndVolumeNumbering &quot;5&quot;  
+] .</code></pre>
+<h2 id="usage-of-dctermsdescription-and-dccoverage">Usage of dcterms:description and dc:coverage</h2>
+<p>The term <code>dcterms:description</code> is recommended to give a description of the hole chronology. The term <code>dc:coverage</code> is recommended to transport the given description if there is one.</p>
+<p>Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6</p>
+<pre><code>:Holding ecpo:hasChronology [
+    a ecpo:RunningChronology ;
+    dcterms:hasPart [
+        a ecpo:ClosedChronology ;
+        ecpo:hasBeginVolumeCapation &quot;ser.&quot; ;
+        ecpo:hasBeginVolumeNumbering &quot;1&quot; ;
+        ecpo:hasBeginIssueCapation &quot;no.&quot; ;
+        ecpo:hasBeginIssueNumbering &quot;1&quot; ;
+        ecpo:hasEndVolumeCapation &quot;ser.&quot; ;
+        ecpo:hasEndVolumeNumbering &quot;1&quot; ;
+        ecpo:hasEndIssueCapation &quot;no.&quot; ;
+        ecpo:hasEndIssueNumbering &quot;4&quot; ; 
+        dcterms:description &quot;4 numbers&quot;@en      
+    ] ;
+    dcterms:hasPart [
+        a ecpo:ClosedChronology ;
+        ecpo:hasBeginVolumeCapation &quot;ser.&quot; ;
+        ecpo:hasBeginVolumeNumbering &quot;2&quot; ;
+        ecpo:hasBeginIssueCapation &quot;no.&quot; ;
+        ecpo:hasBeginIssueNumbering &quot;1&quot; ;
+        ecpo:hasEndVolumeCapation &quot;ser.&quot; ;
+        ecpo:hasEndVolumeNumbering &quot;2&quot; ;
+        ecpo:hasEndIssueCapation &quot;no.&quot; ;
+        ecpo:hasEndIssueNumbering &quot;6&quot; ; 
+        dcterms:description &quot;6 numbers&quot;@en
+    ] ;
+    dcterms:description &quot;the numbers per series varies&quot;@en ;
+    dc:coverage &quot;ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6&quot; 
+] .</code></pre>
+<p>In this example the number of issues per series varies, which is expressed through the term <code>dcterms:description</code> in the main chronology. Each subchronology has another <code>dcterms:description</code> which specifies the exact number of the series.</p>
+<p>The term <code>dc:coverage</code> holds the whole source description in once, for what ever reason.</p>
+</body>
+</html>
