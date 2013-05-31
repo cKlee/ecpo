@@ -117,8 +117,11 @@ In cases of a itemized [ Chronologies ](#chronology) which are neither running n
 [ Chronology ]: #chronology
 
 A [ Chronology ] is the description of enumeration and chronology of a periodical. Use [ RunningChronology ] or [ ClosedChronology ] to describe either running or closed [ Chronlogies ](#chronology).
+
 Instances of [ Chronology ] must at least participate in a relation with one of the properties [ hasBegin ] or [ hasItemized ].
-Instances of [ Chronology ] which participates in a relation with [ hasEnd ] must also participate in a relation with [ hasBegin ].
+
+See [ General class axioms ] for further rules.
+
 
 	ecpo:Chronology a owl:Class ;
 		rdfs:label "enumeration and chronology"@en ;
@@ -137,20 +140,6 @@ Instances of [ Chronology ] which participates in a relation with [ hasEnd ] mus
 			)
         ] ;
 		rdfs:isDefinedBy <> .
-		
-    [ ] a    owl:Class ;
-        rdfs:subClassOf [ 
-		    a owl:Restriction ;
-            owl:onProperty ecpo:hasBegin ;
-            owl:someValuesFrom owl:Thing
-        ] ;
-        owl:intersectionOf (
-		    ecpo:Chronlogy [
-			    a owl:Restriction ;
-                owl:onProperty ecpo:hasEnd ;
-                owl:someValuesFrom owl:Thing
-            ]
-		) .
 
 ## RunningChronology
 		
@@ -576,107 +565,108 @@ A comment to the ending group
 Super-property to all properties of a itemized [ Chronology ]
 
 	ecpo:hasItemized a owl:DatatypeProperty ;
-		rdfs:label "itemized"@en ;
+		rdfs:label "has itemized"@en ;
+		rdfs:label "hat einzelne"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "Super-property to all properties of a itemized Chronology"@en ;
 		rdfs:isDefinedBy <> .
 		
-## hasIntemizedVolumeCaption
+## hasItemizedVolumeCaption
 
-[ hasIntemizedVolumeCaption ]: #hasintemizedvolumecaption
+[ hasItemizedVolumeCaption ]: #hasItemizedvolumecaption
 
 The caption of the volume
 
-	ecpo:hasIntemizedVolumeCaption a owl:DatatypeProperty ;
+	ecpo:hasItemizedVolumeCaption a owl:DatatypeProperty ;
 		rdfs:label "has itemized volume caption"@en ;
 		rdfs:label "hat einzelne Bandbeschriftung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The caption of the volume"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 		
-## hasIntemizedVolumeNumbering
+## hasItemizedVolumeNumbering
 
-[ hasIntemizedVolumeNumbering ]: #hasintemizedvolumenumbering
+[ hasItemizedVolumeNumbering ]: #hasItemizedvolumenumbering
 
 The numbering of the volume
 
-	ecpo:hasIntemizedVolumeNumbering a owl:DatatypeProperty ;
+	ecpo:hasItemizedVolumeNumbering a owl:DatatypeProperty ;
 		rdfs:label "has itemized volume numbering"@en ;
 		rdfs:label "hat einzelne Bandzählung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The numbering of the volume"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedVolumeExtension
+## hasItemizedVolumeExtension
 
-[ hasIntemizedVolumeExtension ]: #hasintemizedvolumeextension
+[ hasItemizedVolumeExtension ]: #hasItemizedvolumeextension
 
 A textual descrimination of the volume
 
-	ecpo:hasIntemizedVolumeExtension a owl:DatatypeProperty ;
+	ecpo:hasItemizedVolumeExtension a owl:DatatypeProperty ;
 		rdfs:label "has itemized volume extension"@en ;
 		rdfs:label "hat einzelne Bandergänzung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "A textual descrimination of the volume"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedIssueCaption
+## hasItemizedIssueCaption
 
-[ hasIntemizedIssueCaption ]: #hasintemizedissuecaption
+[ hasItemizedIssueCaption ]: #hasItemizedissuecaption
 
 The caption of the issue
 
-	ecpo:hasIntemizedIssueCaption a owl:DatatypeProperty ;
+	ecpo:hasItemizedIssueCaption a owl:DatatypeProperty ;
 		rdfs:label "has itemized issue caption"@en ;
 		rdfs:label "hat einzelne Ausgabenbeschriftung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The caption of the issue"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 		
-## hasIntemizedIssueNumbering
+## hasItemizedIssueNumbering
 
-[ hasIntemizedIssueNumbering ]: #hasintemizedissuenumbering
+[ hasItemizedIssueNumbering ]: #hasItemizedissuenumbering
 
 The numbering of the issue
 
-	ecpo:hasIntemizedIssueNumbering a owl:DatatypeProperty ;
+	ecpo:hasItemizedIssueNumbering a owl:DatatypeProperty ;
 		rdfs:label "has itemized issue numbering"@en ;
 		rdfs:label "hat einzelne Ausgabenzählung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The numbering of the issue"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedIssueExtension
+## hasItemizedIssueExtension
 
-[ hasIntemizedIssueExtension ]: #hasintemizedissueextension
+[ hasItemizedIssueExtension ]: #hasItemizedissueextension
 
 A textual descrimination of the issue
 
-	ecpo:hasIntemizedIssueExtension a owl:DatatypeProperty ;
+	ecpo:hasItemizedIssueExtension a owl:DatatypeProperty ;
 		rdfs:label "has itemized issue extension"@en ;
 		rdfs:label "hat einzelne Ausgabenergänzung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "A textual descrimination of the issue"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedTemporal
+## hasItemizedTemporal
 
-[ hasIntemizedTemporal ]: #hasintemizedtemporal
+[ hasItemizedTemporal ]: #hasItemizedtemporal
 
 A temporal information, like a year or date
 	
-	ecpo:hasIntemizedTemporal a owl:DatatypeProperty ;
+	ecpo:hasItemizedTemporal a owl:DatatypeProperty ;
 		rdfs:label "has itemized temporal"@en ;
 		rdfs:label "has einzelne Zeit"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "A temporal information, like a year or a date"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
 		
@@ -694,41 +684,41 @@ A textual discrimination for the temporal information, like a season
 		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedDay
+## hasItemizedDay
 	
-[ hasIntemizedDay ]: #hasintemizedday
+[ hasItemizedDay ]: #hasItemizedday
 
 The day of the ending group, like a day count or a day name
 
-	ecpo:hasIntemizedDay a owl:DatatypeProperty ;
+	ecpo:hasItemizedDay a owl:DatatypeProperty ;
 		rdfs:label "has itemized day"@en ;
 		rdfs:label "hat einzelne Tageszählung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The day of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedMonth
+## hasItemizedMonth
 
-[ hasIntemizedMonth ]: #hasintemizedmonth
+[ hasItemizedMonth ]: #hasItemizedmonth
 
 The month of the ending group, like a month count or a month name
 
-	ecpo:hasIntemizedMonth a owl:DatatypeProperty ;
+	ecpo:hasItemizedMonth a owl:DatatypeProperty ;
 		rdfs:label "has itemized month"@en ;
 		rdfs:label "hat einzelne Montaszählung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The month of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasIntemized ;
+		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
 
-## hasIntemizedComment
+## hasItemizedComment
 
-[ hasIntemizedComment ]: #hasintemizedcomment
+[ hasItemizedComment ]: #hasItemizedcomment
 
 A comment to the ending group
 
-	ecpo:hasIntemizedComment a owl:DatatypeProperty ;
+	ecpo:hasItemizedComment a owl:DatatypeProperty ;
 		rdfs:label "has end comment"@en ;
 		rdfs:label "hat Kommentar zum Ende"@de ;
 		rdfs:domain ecpo:Chronology ;
@@ -768,6 +758,70 @@ Instance of [ ClosedChronology ]. Use this individual to simply state that a doc
 		ecpo:hasBegin "true"^^xsd:boolean ;
 		ecpo:hasEnd "true"^^xsd:boolean ;
 		rdfs:isDefinedBy <> .
+
+# General class axioms
+
+[ General class axioms ]: #generalclassaxioms
+
+The individuals [ Closed ] and [ Running ] are different from each other.
+	
+    [ 
+	    rdf:type owl:AllDifferent ;
+        owl:distinctMembers (
+		    <http://purl.org/ontology/ecpo#Closed>
+            <http://purl.org/ontology/ecpo#Running>
+        )
+    ] .
+
+Instances of [ Chronology ] which participate in relations with [ hasBegin ] and [ hasEnd ] may not participate in relations with [ hasItemized ] and vice versa.
+	
+    [
+	    rdf:type owl:Class ;
+        owl:disjointWith [
+		    rdf:type owl:Class ;
+            owl:intersectionOf ( 
+			    ecpo:Chronology [ 
+				    rdf:type owl:Restriction ;
+                    owl:onProperty ecpo:hasItemized ;
+                    owl:someValuesFrom owl:Thing
+                ]
+            )
+        ] ;
+        owl:intersectionOf ( 
+		    ecpo:Chronology [
+			    rdf:type owl:Class ;
+                owl:unionOf ( 
+				    [ 
+					    rdf:type owl:Restriction ;
+                        owl:onProperty ecpo:hasBegin ;
+                        owl:someValuesFrom owl:Thing
+                    ] [ 
+				        rdf:type owl:Restriction ;
+                        owl:onProperty ecpo:hasEnd ;
+                        owl:someValuesFrom owl:Thing
+                    ]
+                )
+            ]
+        )
+    ] .
+
+Instances of [ Chronology ] which participates in a relation with [ hasEnd ] must also participate in a relation with [ hasBegin ].
+
+    [
+	    rdf:type owl:Class ;
+        rdfs:subClassOf [
+		    rdf:type owl:Restriction ;
+            owl:onProperty ecpo:hasBegin ;
+            owl:someValuesFrom owl:Thing
+            ] ;
+        owl:intersectionOf ( 
+		    ecpo:Chronology [
+		        rdf:type owl:Restriction ;
+                owl:onProperty ecpo:hasEnd ;
+                owl:someValuesFrom owl:Thing
+            ]
+        )
+    ] .
 
 # Related ontologies
 
