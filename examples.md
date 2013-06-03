@@ -1,5 +1,7 @@
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 
+This examples belong to the [ Enumeration and Chronology of Periodicals Ontology (ECPO) ](ecpo.html).
+
 In the following examples a hypothetical document ```:Holding``` describes a holding of a periodical held by someone.
 
 ## Statement for a running chronology
