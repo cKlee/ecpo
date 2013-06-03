@@ -1,4 +1,5 @@
 NAME = ecpo
+SOURCE = ecpo.md
 GITHUB = http://github.com/cklee/ecpo/
 FORMATS = ttl owl
 TITLE = Enumeration and Chronology of Periodicals Ontology (ECPO)
