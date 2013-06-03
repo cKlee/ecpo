@@ -20,14 +20,14 @@ A Question a document using this ontology might not answer:
 
 ## Status of this document
 
-This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at GIT_REVISION_DATE with revision GIT_REVISION_HASH.
+This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at {GIT_REVISION_DATE} with revision {GIT_REVISION_HASH}.
 
 The current version of this ontology is a preliminary draft for open
 discussion. [ Feedback ](https://github.com/cklee/ecpo/issues) is welcome!
 
 **Revision history**
 
-GIT_CHANGES
+{GIT_CHANGES}
 
 ## Terminology
 
