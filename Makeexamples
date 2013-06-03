@@ -1,5 +1,5 @@
 NAME = examples
-SOURCE = ecpo.md
+SOURCE = examples.md
 GITHUB = http://github.com/cklee/ecpo/
 FORMATS = html
 TITLE = Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
