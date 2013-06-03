@@ -1,8 +1,10 @@
 % Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 % Carsten Klee (carsten.klee@sbb.spk-berlin.de)
-% 
+% 2013-06-03 10:27:50 +0200
 
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
+
+This examples belong to the [ Enumeration and Chronology of Periodicals Ontology (ECPO) ](ecpo.html).
 
 In the following examples a hypothetical document ```:Holding``` describes a holding of a periodical held by someone.
 
