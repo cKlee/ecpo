@@ -825,14 +825,14 @@ Instances of [ Chronology ] which participates in a relation with [ hasEnd ] mus
 
 # Related ontologies
 
-ECPO recommends the use of dcterms:description and dc:coverage for some extended chronology description. See ([ **`examples.html`** ](examples.html) for usage examples of this terms.
+ECPO recommends the use of dcterms:description and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
 
 # Extending ECPO
 
 It is not the intension of ECPO to restrict the ontology extension through other ontologies on purpose. If you have suggestions to make this ontology more useable, please give me [ Feedback ](https://github.com/cklee/ecpo/issues).
 
 # Examples
-See ([ **`examples.html`** ])(examples.html) for usage examples to this ontology.
+See [ **`examples.html`** ](examples.html) for usage examples to this ontology.
 
 # References
 
