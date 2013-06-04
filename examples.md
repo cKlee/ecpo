@@ -113,7 +113,7 @@ In this example Volume 3 was incorrectly numbered by the publisher.
 			ecpo:hasItemizedVolumeCaption "v." ;
 			ecpo:hasItemizedVolumeNumbering "2" ;
 			ecpo:hasItemizedVolumeExtension "[i.e. 3]" ;
-			ecpo:hasItemizedComment "Volume 3 was incorrectly numbered by the publisher"@en
+			dcterms:description "Volume 3 was incorrectly numbered by the publisher"@en
 		] ;
 		dcterms:hasPart [
 			a ecpo:Chronology ;
@@ -122,7 +122,7 @@ In this example Volume 3 was incorrectly numbered by the publisher.
 		]
 	] .
 	
-The property ```hasItemizedVolumeExtension``` is described as "A textual descrimination of the volume". In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property ```hasItemizedComment``` is optional.
+The property ```hasItemizedVolumeExtension``` is described as "A textual descrimination of the volume". In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property ```dcterms:description``` is optional.
 
 ## Description of a gap in the chronology
 
