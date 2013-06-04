@@ -544,7 +544,7 @@ Super-property to all properties of a itemized [ Chronology ]
 		
 ## hasItemizedVolumeCaption
 
-[ hasItemizedVolumeCaption ]: #hasItemizedvolumecaption
+[ hasItemizedVolumeCaption ]: #hasitemizedvolumecaption
 
 The caption of the volume
 
@@ -558,7 +558,7 @@ The caption of the volume
 		
 ## hasItemizedVolumeNumbering
 
-[ hasItemizedVolumeNumbering ]: #hasItemizedvolumenumbering
+[ hasItemizedVolumeNumbering ]: #hasitemizedvolumenumbering
 
 The numbering of the volume
 
@@ -572,7 +572,7 @@ The numbering of the volume
 
 ## hasItemizedVolumeExtension
 
-[ hasItemizedVolumeExtension ]: #hasItemizedvolumeextension
+[ hasItemizedVolumeExtension ]: #hasitemizedvolumeextension
 
 A textual descrimination of the volume
 
@@ -586,7 +586,7 @@ A textual descrimination of the volume
 
 ## hasItemizedIssueCaption
 
-[ hasItemizedIssueCaption ]: #hasItemizedissuecaption
+[ hasItemizedIssueCaption ]: #hasitemizedissuecaption
 
 The caption of the issue
 
@@ -600,7 +600,7 @@ The caption of the issue
 		
 ## hasItemizedIssueNumbering
 
-[ hasItemizedIssueNumbering ]: #hasItemizedissuenumbering
+[ hasItemizedIssueNumbering ]: #hasitemizedissuenumbering
 
 The numbering of the issue
 
@@ -614,7 +614,7 @@ The numbering of the issue
 
 ## hasItemizedIssueExtension
 
-[ hasItemizedIssueExtension ]: #hasItemizedissueextension
+[ hasItemizedIssueExtension ]: #hasitemizedissueextension
 
 A textual descrimination of the issue
 
@@ -628,7 +628,7 @@ A textual descrimination of the issue
 
 ## hasItemizedTemporal
 
-[ hasItemizedTemporal ]: #hasItemizedtemporal
+[ hasItemizedTemporal ]: #hasitemizedtemporal
 
 A temporal information, like a year or date
 	
@@ -657,7 +657,7 @@ A textual discrimination for the temporal information, like a season
 
 ## hasItemizedDay
 	
-[ hasItemizedDay ]: #hasItemizedday
+[ hasItemizedDay ]: #hasitemizedday
 
 The day of the ending group, like a day count or a day name
 
@@ -671,7 +671,7 @@ The day of the ending group, like a day count or a day name
 
 ## hasItemizedMonth
 
-[ hasItemizedMonth ]: #hasItemizedmonth
+[ hasItemizedMonth ]: #hasitemizedmonth
 
 The month of the ending group, like a month count or a month name
 
