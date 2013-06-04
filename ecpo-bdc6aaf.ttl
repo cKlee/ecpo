@@ -88,14 +88,6 @@ ecpo:hasBegin
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "has begin"@en .
 
-ecpo:hasBeginComment
-    a owl:DatatypeProperty ;
-    rdfs:comment "A comment to the beginning group"@en ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
-    rdfs:label "has begin comment"@en, "hat Kommentar zum Beginn"@de ;
-    rdfs:subPropertyOf ecpo:hasBegin .
-
 ecpo:hasBeginDay
     a owl:DatatypeProperty ;
     rdfs:comment "The day of the beginning group"@en ;
@@ -197,14 +189,6 @@ ecpo:hasEnd
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "has end"@en .
 
-ecpo:hasEndComment
-    a owl:DatatypeProperty ;
-    rdfs:comment "A comment to the ending group."@en ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
-    rdfs:label "has end comment"@en, "hat Kommentar zum Ende"@de ;
-    rdfs:subPropertyOf ecpo:hasEnd .
-
 ecpo:hasEndDay
     a owl:DatatypeProperty ;
     rdfs:comment "The day of the ending group"@en ;
@@ -291,14 +275,6 @@ ecpo:hasItemized
     rdfs:domain ecpo:Chronology ;
     rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
     rdfs:label "has itemized"@en, "hat einzelne"@de .
-
-ecpo:hasItemizedComment
-    a owl:DatatypeProperty ;
-    rdfs:comment "A comment to the ending group."@en ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:isDefinedBy <http://purl.org/ontology/ecpo> ;
-    rdfs:label "has end comment"@en, "hat Kommentar zum Ende"@de ;
-    rdfs:subPropertyOf ecpo:hasEnd .
 
 ecpo:hasItemizedDay
     a owl:DatatypeProperty ;

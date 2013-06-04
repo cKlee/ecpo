@@ -1,6 +1,6 @@
 % Enumeration and Chronology of Periodicals Ontology (ECPO)
 % Carsten Klee (carsten.klee@sbb.spk-berlin.de)
-% 2013-06-04 15:54:39 +0200
+% 2013-06-04 16:03:21 +0200
 
 # Introduction
 
@@ -24,7 +24,7 @@ A Question a document using this ontology might not answer:
 
 ## Status of this document
 
-This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at 2013-06-04 15:54:39 +0200 with revision [5ed7a53](https://github.com/cKlee/ecpo/commits/gh-pagescommit/5ed7a536b01e95f952184c7c523ef633ab40be21).
+This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at 2013-06-04 16:03:21 +0200 with revision [bdc6aaf](https://github.com/cKlee/ecpo/commits/gh-pagescommit/bdc6aaf5c65f5e3ef3305dc832387d2fac203377).
 
 The current version of this ontology is a preliminary draft for open
 discussion. [ Feedback ](https://github.com/cklee/ecpo/issues) is welcome!
@@ -32,11 +32,11 @@ discussion. [ Feedback ](https://github.com/cklee/ecpo/issues) is welcome!
 **Revision history**
 
 
+* [`2013-06-04 16:03:21 +0200`](ecpo-bdc6aaf.html): [deleted comment properties in favour of dcterms](https://github.com/cKlee/ecpo/commits/gh-pagescommit/bdc6aaf5c65f5e3ef3305dc832387d2fac203377)
 * [`2013-06-04 15:54:39 +0200`](ecpo-5ed7a53.html): [Merge branch 'master' into gh-pages](https://github.com/cKlee/ecpo/commits/gh-pagescommit/5ed7a536b01e95f952184c7c523ef633ab40be21)
 * [`2013-06-04 15:52:33 +0200`](ecpo-cf70119.html): [minor: markdown link ankers](https://github.com/cKlee/ecpo/commits/gh-pagescommit/cf701192239865ecbe793d49c411accb3a48567e)
 * [`2013-06-04 15:41:24 +0200`](ecpo-e1da5a6.html): [added mardown to gh-pages](https://github.com/cKlee/ecpo/commits/gh-pagescommit/e1da5a693a837338c6478d38d36c834136f8aaf3)
 * [`2013-06-04 15:36:05 +0200`](ecpo-815198d.html): [deleted comment properties and added examples for usage of dublin core](https://github.com/cKlee/ecpo/commits/gh-pagescommit/815198d222e651c850d5fcc3578fac828380b854)
-* [`2013-06-03 11:33:10 +0200`](ecpo-8091943.html): [updated ecpo.md](https://github.com/cKlee/ecpo/commits/gh-pagescommit/809194339a1cc51df0320f8c8c114c8c64687232)
 
 
 ## Terminology

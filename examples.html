@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Carsten Klee (carsten.klee@sbb.spk-berlin.de)" />
-  <meta name="date" content="2013-06-03 10:27:50 +0200" />
+  <meta name="date" content="2013-06-04 16:03:21 +0200" />
   <title>Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</title>
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 <header>
 <h1 class="title">Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
 <h3 class="author">Carsten Klee (carsten.klee@sbb.spk-berlin.de)</h3>
-<h4 class="date">2013-06-03 10:27:50 +0200</h4>
+<h4 class="date">2013-06-04 16:03:21 +0200</h4>
 </header>
 
 <h1>Table of Contents</h1>
@@ -51,12 +51,11 @@
 <li><a href="#itemized-way"><span class="toc-section-number">1.8.1</span> Itemized way</a></li>
 <li><a href="#range"><span class="toc-section-number">1.8.2</span> Range</a></li>
 </ul></li>
-<li><a href="#usage-of-dctermsdescription-and-dccoverage"><span class="toc-section-number">1.9</span> Usage of dcterms:description and dc:coverage</a></li>
+<li><a href="#usage-of-dctermsdescription-dctermsaccrualperiodicity-dctermsextend-and-dccoverage"><span class="toc-section-number">1.9</span> Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage</a></li>
 </ul></li>
 </ul>
 </nav>
 <h1 id="examples-for-enumeration-and-chronology-of-periodicals-ontology-ecpo"><a href="#examples-for-enumeration-and-chronology-of-periodicals-ontology-ecpo"><span class="header-section-number">1</span> Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</a></h1>
-<p>This examples belong to the <a href="ecpo.html">Enumeration and Chronology of Periodicals Ontology (ECPO)</a>.</p>
 <p>In the following examples a hypothetical document <code>:Holding</code> describes a holding of a periodical held by someone.</p>
 <a id="Statement for a running chronology"></a><h2 id="statement-for-a-running-chronology"><a href="#statement-for-a-running-chronology"><span class="header-section-number">1.1</span> Statement for a running chronology</a></h2>
 <pre><code>:Holding ecpo:hasChronology ecpo:Running .</code></pre>
@@ -182,8 +181,8 @@
     ecpo:hasEndVolumeCapation &quot;v.&quot; ;
     ecpo:hasEndVolumeNumbering &quot;5&quot;  
 ] .</code></pre>
-<a id="Usage of dcterms:description and dc:coverage"></a><h2 id="usage-of-dctermsdescription-and-dccoverage"><a href="#usage-of-dctermsdescription-and-dccoverage"><span class="header-section-number">1.9</span> Usage of dcterms:description and dc:coverage</a></h2>
-<p>The term <code>dcterms:description</code> is recommended to give a description of the hole chronology. The term <code>dc:coverage</code> is recommended to transport the given description if there is one.</p>
+<a id="Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage"></a><h2 id="usage-of-dctermsdescription-dctermsaccrualperiodicity-dctermsextend-and-dccoverage"><a href="#usage-of-dctermsdescription-dctermsaccrualperiodicity-dctermsextend-and-dccoverage"><span class="header-section-number">1.9</span> Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage</a></h2>
+<p>The term <code>dcterms:description</code> is recommended to give a description of the chronology. The term <code>dc:coverage</code> is recommended to transport the given description if there is one. The term <code>dcterms:accrualPeriodicity</code> is recommended to give information about the frequency with which items are added to the collection. The term <code>dcterms:extend</code> is recommended to give information about the number of units in the chronology.</p>
 <p>Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6</p>
 <pre><code>:Holding ecpo:hasChronology [
     a ecpo:RunningChronology ;
@@ -197,7 +196,9 @@
         ecpo:hasEndVolumeNumbering &quot;1&quot; ;
         ecpo:hasEndIssueCapation &quot;no.&quot; ;
         ecpo:hasEndIssueNumbering &quot;4&quot; ; 
-        dcterms:description &quot;4 numbers&quot;@en      
+        dcterms:description &quot;double number issue 2/3&quot;@en ;
+        dcterms:accrualPeriodicity [ rdfs:label &quot;4 numbers per series&quot;@en ] ;
+        dcterms:extent [ rdf:value &quot;3&quot; ] .
     ] ;
     dcterms:hasPart [
         a ecpo:ClosedChronology ;
@@ -209,12 +210,16 @@
         ecpo:hasEndVolumeNumbering &quot;2&quot; ;
         ecpo:hasEndIssueCapation &quot;no.&quot; ;
         ecpo:hasEndIssueNumbering &quot;6&quot; ; 
-        dcterms:description &quot;6 numbers&quot;@en
+        dcterms:description &quot;triple number issue 2-4&quot;@en ;
+        dcterms:accrualPeriodicity [ rdfs:label &quot;6 numbers per series&quot;@en ] ;
+        dcterms:extent [ rdf:value &quot;4&quot; ] .
     ] ;
     dcterms:description &quot;the numbers per series varies&quot;@en ;
     dc:coverage &quot;ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6&quot; 
 ] .</code></pre>
-<p>In this example the number of issues per series varies, which is expressed through the term <code>dcterms:description</code> in the main chronology. Each subchronology has another <code>dcterms:description</code> which specifies the exact number of the series.</p>
+<p>In this example the number of issues per series varies, which is expressed through the term <code>dcterms:description</code> in the main chronology.</p>
+<p>Each subchronology has another <code>dcterms:description</code> which give more detailed information on the parts in textual form.</p>
+<p>The subchronologies also contain the term <code>dcterms:accrualPeriodicity</code> which gives a hint about how many numbers a subchronologies consits of and also the term <code>dcterms:extent</code> which gives the exact number of units in the subchronologies. Both terms must have a resource as range.</p>
 <p>The term <code>dc:coverage</code> holds the whole source description in once, for what ever reason.</p>
 </body>
 </html>

@@ -155,13 +155,6 @@ ecpo:hasBeginMonth a owl:DatatypeProperty ;
     rdfs:comment "The month of the beginning group"@en ;
     rdfs:subPropertyOf ecpo:hasBegin ;
     rdfs:isDefinedBy <> .
-ecpo:hasBeginComment a owl:DatatypeProperty ;
-    rdfs:label "has begin comment"@en ;
-    rdfs:label "hat Kommentar zum Beginn"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A comment to the beginning group"@en ;
-    rdfs:subPropertyOf ecpo:hasBegin ;
-    rdfs:isDefinedBy <> .
 ecpo:hasEnd a owl:DatatypeProperty ;
     rdfs:label "has end"@en ;
     rdfs:domain ecpo:ClosedChronology ;
@@ -238,13 +231,6 @@ ecpo:hasEndMonth a owl:DatatypeProperty ;
     rdfs:label "hat endende Montaszählung"@de ;
     rdfs:domain ecpo:Chronology ;
     rdfs:comment "The month of the ending group"@en ;
-    rdfs:subPropertyOf ecpo:hasEnd ;
-    rdfs:isDefinedBy <> .
-ecpo:hasEndComment a owl:DatatypeProperty ;
-    rdfs:label "has end comment"@en ;
-    rdfs:label "hat Kommentar zum Ende"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A comment to the ending group."@en ;
     rdfs:subPropertyOf ecpo:hasEnd ;
     rdfs:isDefinedBy <> .
     
@@ -328,13 +314,6 @@ ecpo:hasItemizedMonth a owl:DatatypeProperty ;
     rdfs:domain ecpo:Chronology ;
     rdfs:comment "The month of the ending group"@en ;
     rdfs:subPropertyOf ecpo:hasItemized ;
-    rdfs:isDefinedBy <> .
-ecpo:hasItemizedComment a owl:DatatypeProperty ;
-    rdfs:label "has end comment"@en ;
-    rdfs:label "hat Kommentar zum Ende"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A comment to the ending group."@en ;
-    rdfs:subPropertyOf ecpo:hasEnd ;
     rdfs:isDefinedBy <> .
     
 ecpo:Running a owl:NamedIndividual ;

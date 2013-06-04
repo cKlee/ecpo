@@ -1,10 +1,8 @@
 % Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 % Carsten Klee (carsten.klee@sbb.spk-berlin.de)
-% 2013-06-03 10:27:50 +0200
+% 2013-06-04 16:03:21 +0200
 
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
-
-This examples belong to the [ Enumeration and Chronology of Periodicals Ontology (ECPO) ](ecpo.html).
 
 In the following examples a hypothetical document ```:Holding``` describes a holding of a periodical held by someone.
 
@@ -160,9 +158,9 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 	    ecpo:hasEndVolumeNumbering "5"	
 	] .
 	
-## Usage of dcterms:description and dc:coverage
+## Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage
 
-The term ```dcterms:description``` is recommended to give a description of the hole chronology. The term ```dc:coverage``` is recommended to transport the given description if there is one.
+The term ```dcterms:description``` is recommended to give a description of the chronology. The term ```dc:coverage``` is recommended to transport the given description if there is one. The term ```dcterms:accrualPeriodicity``` is recommended to give information about the frequency with which items are added to the collection. The term ```dcterms:extend``` is recommended to give information about the number of units in the chronology.
 
 Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 
@@ -178,7 +176,9 @@ Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 	        ecpo:hasEndVolumeNumbering "1" ;
 		    ecpo:hasEndIssueCapation "no." ;
 		    ecpo:hasEndIssueNumbering "4" ;	
-            dcterms:description "4 numbers"@en		
+            dcterms:description "double number issue 2/3"@en ;
+			dcterms:accrualPeriodicity [ rdfs:label "4 numbers per series"@en ] ;
+			dcterms:extent [ rdf:value "3" ] .
 		] ;
 		dcterms:hasPart [
 		    a ecpo:ClosedChronology ;
@@ -190,12 +190,18 @@ Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 	        ecpo:hasEndVolumeNumbering "2" ;
 		    ecpo:hasEndIssueCapation "no." ;
 		    ecpo:hasEndIssueNumbering "6" ;	
-			dcterms:description "6 numbers"@en
+			dcterms:description "triple number issue 2-4"@en ;
+			dcterms:accrualPeriodicity [ rdfs:label "6 numbers per series"@en ] ;
+			dcterms:extent [ rdf:value "4" ] .
 		] ;
 		dcterms:description "the numbers per series varies"@en ;
 		dc:coverage "ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6" 
 	] .
 	
-In this example the number of issues per series varies, which is expressed through the term ```dcterms:description``` in the main chronology. Each subchronology has another ```dcterms:description``` which specifies the exact number of the series.
+In this example the number of issues per series varies, which is expressed through the term ```dcterms:description``` in the main chronology.
+
+Each subchronology has another ```dcterms:description``` which give more detailed information on the parts in textual form.
+
+The subchronologies also contain the term ```dcterms:accrualPeriodicity``` which gives a hint about how many numbers a subchronologies consits of and also the term ```dcterms:extent``` which gives the exact number of units in the subchronologies. Both terms must have a resource as range. 
 
 The term ```dc:coverage``` holds the whole source description in once, for what ever reason.
