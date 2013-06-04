@@ -83,8 +83,8 @@ The following diagram illustrates the classes and properties defined in this ont
 							  |			                   |                            |                          |
 							hasBegin					hasEnd                      hasItemized              dcterms:description
 							  |						       |                            |                    dc:coverage
-						hasBeginVolumeCaption		  hasEndVolumeCaption        hasItemizedVolumeCaption         ...
-						hasBeginVolumeNumbering		  hasEndVolumeNumbering      hasItemizedVolumeNumbering        |
+						hasBeginVolumeCaption		  hasEndVolumeCaption        hasItemizedVolumeCaption    dcterms:accrualPeriodicity
+						hasBeginVolumeNumbering		  hasEndVolumeNumbering      hasItemizedVolumeNumbering  dcterms:extend
 						hasBeginVolumeExtension		  hasEndVolumeExtension      hasItemizedVolumeExtension        |
 						hasBeginIssueCaption		  hasEndIssueCaption         hasItemizedIssueCaption           |
 						hasBeginIssueNumbering		  hasEndIssueNumbering       hasItemizedIssueNumbering         |
@@ -93,7 +93,6 @@ The following diagram illustrates the classes and properties defined in this ont
 						hasBeginTemporalExtension	  hasEndTemporalExtension    hasItemizedTemporalExtension      |
 						hasBeginDay			          hasEndDay                  hasItemizedDay                    |
 						hasBeginMonth			      hasEndMonth                hasItemizedMonth                  |
-						hasBeginComment				  hasEndComment              hasItemizedComment                |
 							  |	    			           |                            |                          |
 							  v                            v                            v                          v
 ```
@@ -377,20 +376,6 @@ The month of the beginning group, like a month count or a month name
 		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
-## hasBeginComment
-
-[ hasBeginComment ]: #hasbegincomment
-
-A comment to the beginning group
-
-	ecpo:hasBeginComment a owl:DatatypeProperty ;
-		rdfs:label "has begin comment"@en ;
-		rdfs:label "hat Kommentar zum Beginn"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the beginning group"@en ;
-		rdfs:subPropertyOf ecpo:hasBegin ;
-		rdfs:isDefinedBy <> .
-
 ## hasEnd
 
 [ hasEnd ]: #hasend
@@ -541,20 +526,6 @@ The month of the ending group, like a month count or a month name
 		rdfs:label "hat endende Montaszählung"@de ;
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The month of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
-
-## hasEndComment
-
-[ hasEndComment ]: #hasendcomment
-
-A comment to the ending group
-
-	ecpo:hasEndComment a owl:DatatypeProperty ;
-		rdfs:label "has end comment"@en ;
-		rdfs:label "hat Kommentar zum Ende"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the ending group."@en ;
 		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 		
@@ -711,20 +682,6 @@ The month of the ending group, like a month count or a month name
 		rdfs:comment "The month of the ending group"@en ;
 		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:isDefinedBy <> .
-
-## hasItemizedComment
-
-[ hasItemizedComment ]: #hasItemizedcomment
-
-A comment to the ending group
-
-	ecpo:hasItemizedComment a owl:DatatypeProperty ;
-		rdfs:label "has end comment"@en ;
-		rdfs:label "hat Kommentar zum Ende"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the ending group."@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
 		
 # Individuals
 
@@ -825,7 +782,7 @@ Instances of [ Chronology ] which participates in a relation with [ hasEnd ] mus
 
 # Related ontologies
 
-ECPO recommends the use of dcterms:description and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
+ECPO recommends the use of dcterms:description, dcterms:accrualPeriodicity, dcterms:extent and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
 
 # Extending ECPO
 
