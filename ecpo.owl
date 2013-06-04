@@ -420,27 +420,6 @@
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginMonth">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:label xml:lang="en">has begin comment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:label xml:lang="de">hat Kommentar zum Beginn</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:comment xml:lang="en">A comment to the beginning group</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ecpo#hasBegin"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBeginComment">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEnd">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
@@ -667,27 +646,6 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ecpo#hasEnd"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndMonth">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdfs:label xml:lang="en">has end comment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdfs:label xml:lang="de">hat Kommentar zum Ende</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdfs:comment xml:lang="en">A comment to the ending group.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ecpo#hasEnd"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasEndComment">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemized">
@@ -919,27 +877,6 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ecpo#hasItemized"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedMonth">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdfs:label xml:lang="en">has end comment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdfs:label xml:lang="de">hat Kommentar zum Ende</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdfs:domain rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdfs:comment xml:lang="en">A comment to the ending group.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ecpo#hasEnd"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasItemizedComment">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/ecpo"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Running">
