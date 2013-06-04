@@ -1,6 +1,6 @@
 % Enumeration and Chronology of Periodicals Ontology (ECPO)
 % Carsten Klee (carsten.klee@sbb.spk-berlin.de)
-% 2013-06-03 10:27:50 +0200
+% 2013-06-04 15:54:39 +0200
 
 # Introduction
 
@@ -24,7 +24,7 @@ A Question a document using this ontology might not answer:
 
 ## Status of this document
 
-This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at 2013-06-03 10:27:50 +0200 with revision [fb94453](http://github.com/cklee/ecpo/commit/fb94453099148884e4d7d0de40cfe410849c079b).
+This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology ([ **`ecpo.ttl`** ](ecpo.ttl) in RDF/Turtle and [ **`ecpo.owl`** ](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at 2013-06-04 15:54:39 +0200 with revision [5ed7a53](https://github.com/cKlee/ecpo/commits/gh-pagescommit/5ed7a536b01e95f952184c7c523ef633ab40be21).
 
 The current version of this ontology is a preliminary draft for open
 discussion. [ Feedback ](https://github.com/cklee/ecpo/issues) is welcome!
@@ -32,11 +32,11 @@ discussion. [ Feedback ](https://github.com/cklee/ecpo/issues) is welcome!
 **Revision history**
 
 
-* [`2013-06-03 10:27:50 +0200`](ecpo-fb94453.html): [new examples.html](http://github.com/cklee/ecpo/commit/fb94453099148884e4d7d0de40cfe410849c079b)
-* [`2013-06-03 09:58:14 +0200`](ecpo-3179e99.html): [updated gh-pages](http://github.com/cklee/ecpo/commit/3179e999f217a4f1c988d8a40a03abf50845ed82)
-* [`2013-06-03 09:36:03 +0200`](ecpo-239bbaf.html): [untracked ecpo.md](http://github.com/cklee/ecpo/commit/239bbaf29953836d11f1f45cc4934b24563649c9)
-* [`2013-05-31 15:07:55 +0200`](ecpo-5c292f3.html): [new class axioms](http://github.com/cklee/ecpo/commit/5c292f3a10ac0a177535be3a3af5380e38b32a75)
-* [`2013-05-30 16:05:46 +0200`](ecpo-8fc8c0d.html): [with examples](http://github.com/cklee/ecpo/commit/8fc8c0dd78325c21e6d0a7f2ae73ba2d8ba060c2)
+* [`2013-06-04 15:54:39 +0200`](ecpo-5ed7a53.html): [Merge branch 'master' into gh-pages](https://github.com/cKlee/ecpo/commits/gh-pagescommit/5ed7a536b01e95f952184c7c523ef633ab40be21)
+* [`2013-06-04 15:52:33 +0200`](ecpo-cf70119.html): [minor: markdown link ankers](https://github.com/cKlee/ecpo/commits/gh-pagescommit/cf701192239865ecbe793d49c411accb3a48567e)
+* [`2013-06-04 15:41:24 +0200`](ecpo-e1da5a6.html): [added mardown to gh-pages](https://github.com/cKlee/ecpo/commits/gh-pagescommit/e1da5a693a837338c6478d38d36c834136f8aaf3)
+* [`2013-06-04 15:36:05 +0200`](ecpo-815198d.html): [deleted comment properties and added examples for usage of dublin core](https://github.com/cKlee/ecpo/commits/gh-pagescommit/815198d222e651c850d5fcc3578fac828380b854)
+* [`2013-06-03 11:33:10 +0200`](ecpo-8091943.html): [updated ecpo.md](https://github.com/cKlee/ecpo/commits/gh-pagescommit/809194339a1cc51df0320f8c8c114c8c64687232)
 
 
 ## Terminology
@@ -93,8 +93,8 @@ The following diagram illustrates the classes and properties defined in this ont
 							  |			                   |                            |                          |
 							hasBegin					hasEnd                      hasItemized              dcterms:description
 							  |						       |                            |                    dc:coverage
-						hasBeginVolumeCaption		  hasEndVolumeCaption        hasItemizedVolumeCaption         ...
-						hasBeginVolumeNumbering		  hasEndVolumeNumbering      hasItemizedVolumeNumbering        |
+						hasBeginVolumeCaption		  hasEndVolumeCaption        hasItemizedVolumeCaption    dcterms:accrualPeriodicity
+						hasBeginVolumeNumbering		  hasEndVolumeNumbering      hasItemizedVolumeNumbering  dcterms:extend
 						hasBeginVolumeExtension		  hasEndVolumeExtension      hasItemizedVolumeExtension        |
 						hasBeginIssueCaption		  hasEndIssueCaption         hasItemizedIssueCaption           |
 						hasBeginIssueNumbering		  hasEndIssueNumbering       hasItemizedIssueNumbering         |
@@ -103,7 +103,6 @@ The following diagram illustrates the classes and properties defined in this ont
 						hasBeginTemporalExtension	  hasEndTemporalExtension    hasItemizedTemporalExtension      |
 						hasBeginDay			          hasEndDay                  hasItemizedDay                    |
 						hasBeginMonth			      hasEndMonth                hasItemizedMonth                  |
-						hasBeginComment				  hasEndComment              hasItemizedComment                |
 							  |	    			           |                            |                          |
 							  v                            v                            v                          v
 ```
@@ -387,20 +386,6 @@ The month of the beginning group, like a month count or a month name
 		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:isDefinedBy <> .
 
-## hasBeginComment
-
-[ hasBeginComment ]: #hasbegincomment
-
-A comment to the beginning group
-
-	ecpo:hasBeginComment a owl:DatatypeProperty ;
-		rdfs:label "has begin comment"@en ;
-		rdfs:label "hat Kommentar zum Beginn"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the beginning group"@en ;
-		rdfs:subPropertyOf ecpo:hasBegin ;
-		rdfs:isDefinedBy <> .
-
 ## hasEnd
 
 [ hasEnd ]: #hasend
@@ -553,20 +538,6 @@ The month of the ending group, like a month count or a month name
 		rdfs:comment "The month of the ending group"@en ;
 		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
-
-## hasEndComment
-
-[ hasEndComment ]: #hasendcomment
-
-A comment to the ending group
-
-	ecpo:hasEndComment a owl:DatatypeProperty ;
-		rdfs:label "has end comment"@en ;
-		rdfs:label "hat Kommentar zum Ende"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the ending group."@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
 		
 ## hasItemized
 
@@ -583,7 +554,7 @@ Super-property to all properties of a itemized [ Chronology ]
 		
 ## hasItemizedVolumeCaption
 
-[ hasItemizedVolumeCaption ]: #hasItemizedvolumecaption
+[ hasItemizedVolumeCaption ]: #hasitemizedvolumecaption
 
 The caption of the volume
 
@@ -597,7 +568,7 @@ The caption of the volume
 		
 ## hasItemizedVolumeNumbering
 
-[ hasItemizedVolumeNumbering ]: #hasItemizedvolumenumbering
+[ hasItemizedVolumeNumbering ]: #hasitemizedvolumenumbering
 
 The numbering of the volume
 
@@ -611,7 +582,7 @@ The numbering of the volume
 
 ## hasItemizedVolumeExtension
 
-[ hasItemizedVolumeExtension ]: #hasItemizedvolumeextension
+[ hasItemizedVolumeExtension ]: #hasitemizedvolumeextension
 
 A textual descrimination of the volume
 
@@ -625,7 +596,7 @@ A textual descrimination of the volume
 
 ## hasItemizedIssueCaption
 
-[ hasItemizedIssueCaption ]: #hasItemizedissuecaption
+[ hasItemizedIssueCaption ]: #hasitemizedissuecaption
 
 The caption of the issue
 
@@ -639,7 +610,7 @@ The caption of the issue
 		
 ## hasItemizedIssueNumbering
 
-[ hasItemizedIssueNumbering ]: #hasItemizedissuenumbering
+[ hasItemizedIssueNumbering ]: #hasitemizedissuenumbering
 
 The numbering of the issue
 
@@ -653,7 +624,7 @@ The numbering of the issue
 
 ## hasItemizedIssueExtension
 
-[ hasItemizedIssueExtension ]: #hasItemizedissueextension
+[ hasItemizedIssueExtension ]: #hasitemizedissueextension
 
 A textual descrimination of the issue
 
@@ -667,7 +638,7 @@ A textual descrimination of the issue
 
 ## hasItemizedTemporal
 
-[ hasItemizedTemporal ]: #hasItemizedtemporal
+[ hasItemizedTemporal ]: #hasitemizedtemporal
 
 A temporal information, like a year or date
 	
@@ -696,7 +667,7 @@ A textual discrimination for the temporal information, like a season
 
 ## hasItemizedDay
 	
-[ hasItemizedDay ]: #hasItemizedday
+[ hasItemizedDay ]: #hasitemizedday
 
 The day of the ending group, like a day count or a day name
 
@@ -710,7 +681,7 @@ The day of the ending group, like a day count or a day name
 
 ## hasItemizedMonth
 
-[ hasItemizedMonth ]: #hasItemizedmonth
+[ hasItemizedMonth ]: #hasitemizedmonth
 
 The month of the ending group, like a month count or a month name
 
@@ -720,20 +691,6 @@ The month of the ending group, like a month count or a month name
 		rdfs:domain ecpo:Chronology ;
 		rdfs:comment "The month of the ending group"@en ;
 		rdfs:subPropertyOf ecpo:hasItemized ;
-		rdfs:isDefinedBy <> .
-
-## hasItemizedComment
-
-[ hasItemizedComment ]: #hasItemizedcomment
-
-A comment to the ending group
-
-	ecpo:hasItemizedComment a owl:DatatypeProperty ;
-		rdfs:label "has end comment"@en ;
-		rdfs:label "hat Kommentar zum Ende"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A comment to the ending group."@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:isDefinedBy <> .
 		
 # Individuals
@@ -835,7 +792,7 @@ Instances of [ Chronology ] which participates in a relation with [ hasEnd ] mus
 
 # Related ontologies
 
-ECPO recommends the use of dcterms:description and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
+ECPO recommends the use of dcterms:description, dcterms:accrualPeriodicity, dcterms:extent and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
 
 # Extending ECPO
 
