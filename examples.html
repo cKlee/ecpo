@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Carsten Klee (carsten.klee@sbb.spk-berlin.de)" />
-  <meta name="date" content="2013-06-04 16:03:21 +0200" />
+  <meta name="date" content="2013-06-04 16:09:41 +0200" />
   <title>Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</title>
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 <header>
 <h1 class="title">Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
 <h3 class="author">Carsten Klee (carsten.klee@sbb.spk-berlin.de)</h3>
-<h4 class="date">2013-06-04 16:03:21 +0200</h4>
+<h4 class="date">2013-06-04 16:09:41 +0200</h4>
 </header>
 
 <h1>Table of Contents</h1>
@@ -148,7 +148,7 @@
         ecpo:hasItemizedVolumeCaption &quot;v.&quot; ;
         ecpo:hasItemizedVolumeNumbering &quot;2&quot; ;
         ecpo:hasItemizedVolumeExtension &quot;[i.e. 3]&quot; ;
-        ecpo:hasItemizedComment &quot;Volume 3 was incorrectly numbered by the publisher&quot;@en
+        dcterms:description &quot;Volume 3 was incorrectly numbered by the publisher&quot;@en
     ] ;
     dcterms:hasPart [
         a ecpo:Chronology ;
@@ -156,7 +156,7 @@
         ecpo:hasItemizedVolumeNumbering &quot;6&quot;
     ]
 ] .</code></pre>
-<p>The property <code>hasItemizedVolumeExtension</code> is described as &quot;A textual descrimination of the volume&quot;. In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property <code>hasItemizedComment</code> is optional.</p>
+<p>The property <code>hasItemizedVolumeExtension</code> is described as &quot;A textual descrimination of the volume&quot;. In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property <code>dcterms:description</code> is optional.</p>
 <a id="Description of a gap in the chronology"></a><h2 id="description-of-a-gap-in-the-chronology"><a href="#description-of-a-gap-in-the-chronology"><span class="header-section-number">1.8</span> Description of a gap in the chronology</a></h2>
 <p>As in the example above the volumes v.4 and v.5 are missing. There are two possibilities to express this.</p>
 <h3 id="itemized-way"><a href="#itemized-way"><span class="header-section-number">1.8.1</span> Itemized way</a></h3>
