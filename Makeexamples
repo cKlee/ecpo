@@ -3,7 +3,7 @@ SOURCE = examples.md
 GITHUB = http://github.com/cklee/ecpo/
 FORMATS = html
 TITLE = Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
-AUTHOR = Carsten Klee (carsten.klee@sbb.spk-berlin.de)
+AUTHOR = Carsten Klee (ZDB)
 REVISIONS = 5
 
 include makespec/Makefile

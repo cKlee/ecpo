@@ -59,7 +59,10 @@ The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/
 	<> a owl:Ontology ;
 		rdfs:label "Enumeration and Chronology of Periodicals Ontology"@en ;
 		rdfs:label "ECPO" ;
-		vann:preferredNamespacePrefix "ecpo" .
+		vann:preferredNamespacePrefix "ecpo" ;
+		vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
+		dc:title "Enumeration and Chronology of Periodicals Ontology"@en ;
+		dc:description "Defines the common bibliographic terms for the description of enumeration and chronology of periodicals"@en .
 
 # Overview
 
