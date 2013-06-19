@@ -74,11 +74,11 @@ The following diagram illustrates the classes and properties defined in this ont
 	| any document class +------------------->|        Chronology       +------------------+
 	+---+----------------+  hasChronologyGap  | +---------------------+ |                  |
 		|									  | |                     | |<-----------------+
-	hasChronology							  | |  RunningChronology  | |
+	hasChronology							  | |  CurrentChronology  | |
 		|									  | |                     | |
 		v				      +---------------+ +---------------------+ +---------------+--------------------------+
 	+-----------+			  |			      | +---------------------+ |               |                          |
-	|  Running  |             |               | |                     | |               |                          |
+	|  Current  |             |               | |                     | |               |                          |
 	|  Closed   |             |               | |  ClosedChronology   | |               |                          |
 	+-----------+             |               | |                     | |               |                          |
 	                          |               | +----------+----------+ |               |                          |
@@ -94,23 +94,22 @@ The following diagram illustrates the classes and properties defined in this ont
 						hasBeginIssueExtension		  hasEndIssueExtension       hasItemizedIssueExtension         |
 						hasBeginTemporal			  hasEndTemporal             hasItemizedTemporal               |
 						hasBeginTemporalExtension	  hasEndTemporalExtension    hasItemizedTemporalExtension      |
-						hasBeginDay			          hasEndDay                  hasItemizedDay                    |
-						hasBeginMonth			      hasEndMonth                hasItemizedMonth                  |
+                              |                            |                            |                          |
 							  |	    			           |                            |                          |
 							  v                            v                            v                          v
 ```
 
-A document might have a [ Chronology ] which is related to other [ Chronologies ](#chronology) via the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart). While [ Chronologies ](#chronology) which are running should be instances of [ RunningChronology ], closed [ Chronologies ](#chronology) should be instances of [ ClosedChronology ].
+A document might have a [ Chronology ] which is related to other [ Chronologies ](#chronology) via the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart). While current [ Chronologies ](#chronology) should be instances of [ CurrentChronology ], closed [ Chronologies ](#chronology) should be instances of [ ClosedChronology ].
 
 While the property [ hasChronology ] states that the described units of the document are held by someone, the property [ hasChronologyGap ] states that the described units of the document are not held by someone.
 
-In order to simply state that a Chronology is running or closed, one could easily relate a document with the individuals [ Running ] or [ Closed ] via the property [ hasChronology ], because they are instances of [ RunningChronology ] or [ ClosedChronology ].
+In order to simply state that a Chronology is current or closed, one could easily relate a document with the individuals [ Current ] or [ Closed ] via the property [ hasChronology ], because they are instances of [ CurrentChronology ] or [ ClosedChronology ].
 
 [ Chronologies ](#chronology) as long as they describe ranges consist of either a beginning and an ending group or just of one beginning group. Beginning and ending groups are defined through the existence of the property [ hasBegin ] or one or more of its subproperties (for a beginning group) or the property [ hasEnd ] or one or more of its subproperties (for an ending group). 
 
-While instances of the class [ RunningChronology ] must not make use [ hasEnd ] or the subproperties of [ hasEnd ], instances of [ ClosedChronology ] must make use of [ hasEnd ] or one or more subproperties of [ hasEnd ]. All Instances of [ RunningChronology ] or [ ClosedChronology ] must make use of [ hasBegin ] or one or more subproperties of [ hasBegin ].
+While instances of the class [ CurrentChronology ] must not make use [ hasEnd ] or the subproperties of [ hasEnd ], instances of [ ClosedChronology ] must make use of [ hasEnd ] or one or more subproperties of [ hasEnd ]. All Instances of [ CurrentChronology ] or [ ClosedChronology ] must make use of [ hasBegin ] or one or more subproperties of [ hasBegin ].
 
-In cases of a itemized [ Chronologies ](#chronology) which are neither running nor closed nor having a beginning or ending group, one should make use of the property [ hasItemized ] or one of its subproperties. To list multiple single items within a [ Chronology ] one must make use of the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart), because one [ Chronology ] must only describe one item in a itemized way.
+In cases of a itemized [ Chronologies ](#chronology) which are neither current nor closed nor having a beginning or ending group, one should make use of the property [ hasItemized ] or one of its subproperties. To list multiple single items within a [ Chronology ] one must make use of the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart), because one [ Chronology ] must only describe one item in a itemized way.
 
 # Classes
 
@@ -118,7 +117,7 @@ In cases of a itemized [ Chronologies ](#chronology) which are neither running n
 
 [ Chronology ]: #chronology
 
-A [ Chronology ] is the description of enumeration and chronology of a periodical. Use [ RunningChronology ] or [ ClosedChronology ] to describe either running or closed [ Chronlogies ](#chronology).
+A [ Chronology ] is the description of enumeration and chronology of a periodical. Use [ CurrentChronology ] or [ ClosedChronology ] to describe either current or closed [ Chronlogies ](#chronology).
 
 Instances of [ Chronology ] must at least participate in a relation with one of the properties [ hasBegin ] or [ hasItemized ].
 
@@ -143,16 +142,16 @@ See [ General class axioms ] for further rules.
         ] ;
 		rdfs:isDefinedBy <> .
 
-## RunningChronology
+## CurrentChronology
 		
-[ RunningChronology ]: #runningchronology
+[ CurrentChronology ]: #currentchronology
 
-A [ RunningChronology ] is a [ Chronology ] which must not have a property describing an ending group.
-Instances of [ RunningChronology ] must not make use [ hasEnd ] or one of its subproperties.
-Instances of [ RunningChronology ] must at least participate in a relation with the property [ hasBegin ] or one of its subproperties. 
+A [ CurrentChronology ] is a [ Chronology ] which must not have a property describing an ending group.
+Instances of [ CurrentChronology ] must not make use [ hasEnd ] or one of its subproperties.
+Instances of [ CurrentChronology ] must at least participate in a relation with the property [ hasBegin ] or one of its subproperties. 
 
-	ecpo:RunningChronology a owl:Class ;
-		rdfs:label "running chronology"@en ;
+	ecpo:CurrentChronology a owl:Class ;
+		rdfs:label "current chronology"@en ;
 		rdfs:label "Bestandsverlauf laufend"@de ;
 		rdfs:comment "A Chronology without an ending group."@en ;
 		owl:disjointWith ecpo:ClosedChronology ;
@@ -182,7 +181,7 @@ Instances of [ ClosedChronology ] must at least participate in a relation with b
 		rdfs:label "closed chronology"@en ;
 		rdfs:label "Bestandsverlauf abgeschlossen"@de ;
 		rdfs:comment "A Chronology having an ending group."@en ;
-		owl:disjointWith ecpo:RunningChronology ;
+		owl:disjointWith ecpo:CurrentChronology ;
 		rdfs:subClassOf ecpo:Chronology ;
 		rdfs:subClassOf [
 			a owl:Restriction ;
@@ -326,13 +325,13 @@ A textual descrimination of the beginning issue
 
 [ hasBeginTemporal ]: #hasbegintemporal
 
-A temporal information, like a year or a date
+A temporal information for the beginning group, like a year, a season, a month or a day
 
 	ecpo:hasBeginTemporal a owl:DatatypeProperty ;
 		rdfs:label "has begin temporal"@en ;
 		rdfs:label "hat beginnende Zeit"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A temporal information, like a year or a date for the beginning group"@en ;
+		rdfs:comment "A temporal information for the beginning group, like a year, a season, a month or a day"@en ;
 		rdfs:subPropertyOf ecpo:hasBegin ;
 		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
@@ -341,42 +340,15 @@ A temporal information, like a year or a date
 
 [ hasBeginTemporalExtension ]: #hasbegintemporalextension
 
-A textual discrimination for the temporal information of the beginning group, like a season
+Refines the value of the property [ hasBeginTemporal ]
 
 	ecpo:hasBeginTemporalExtension a owl:DatatypeProperty ;
 		rdfs:label "has begin temporal extension"@en ;
 		rdfs:label "hat beginnende Zeit Ergänzung"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A textual discrimination for the temporal information of the beginning group, like a season"@en ;
+		rdfs:comment "Refines the value of the property hasBeginTemporal"@en ;
 		rdfs:subPropertyOf ecpo:hasBegin ;
-		rdfs:isDefinedBy <> .
-
-## hasBeginDay
-
-[ hasBeginDay ]: #hasbeginday
-
-The day of the beginning group, like a day count or a day name
-
-	ecpo:hasBeginDay a owl:DatatypeProperty ;
-		rdfs:label "has begin day"@en ;
-		rdfs:label "hat beginnende Tageszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The day of the beginning group"@en ;
-		rdfs:subPropertyOf ecpo:hasBegin ;
-		rdfs:isDefinedBy <> .
-
-## hasBeginMonth
-
-[ hasBeginMonth ]: #hasbeginmonth
-
-The month of the beginning group, like a month count or a month name
-
-	ecpo:hasBeginMonth a owl:DatatypeProperty ;
-		rdfs:label "has begin month"@en ;
-		rdfs:label "hat beginnende Montaszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The month of the beginning group"@en ;
-		rdfs:subPropertyOf ecpo:hasBegin ;
+		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
 
 ## hasEnd
@@ -479,13 +451,13 @@ A textual descrimination of the endig issue
 
 [ hasEndTemporal ]: #hasendtemporal
 
-A temporal information, like a year or a date for the ending group
+A temporal information for the ending group, like a year, a season, a month or a day
 	
 	ecpo:hasEndTemporal a owl:DatatypeProperty ;
 		rdfs:label "has end temporal"@en ;
 		rdfs:label "has endende Zeit"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A temporal information, like a year or a date for the ending group"@en ;
+		rdfs:comment "A temporal information for the ending group, like a year, a season, a month or a day"@en ;
 		rdfs:subPropertyOf ecpo:hasEnd ;
 		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
@@ -494,42 +466,15 @@ A temporal information, like a year or a date for the ending group
 
 [ hasEndTemporalExtension ]: #hasendtemporalextension
 
-A textual discrimination for the temporal information of the ending group, like a season
+Refines the value of the property [ hasEndTemporal ]
 
 	ecpo:hasEndTemporalExtension a owl:DatatypeProperty ;
 		rdfs:label "has end temporal extension"@en ;
 		rdfs:label "hat endende Zeit Ergänzung"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A textual discrimination for the temporal information of the ending group, like a season"@en ;
+		rdfs:comment "Refines the value of the property hasEndTemporal"@en ;
 		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
-
-## hasEndDay
-	
-[ hasEndDay ]: #hasendday
-
-The day of the ending group, like a day count or a day name
-
-	ecpo:hasEndDay a owl:DatatypeProperty ;
-		rdfs:label "has end day"@en ;
-		rdfs:label "hat endende Tageszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The day of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
-
-## hasEndMonth
-
-[ hasEndMonth ]: #hasendmonth
-
-The month of the ending group, like a month count or a month name
-
-	ecpo:hasEndMonth a owl:DatatypeProperty ;
-		rdfs:label "has end month"@en ;
-		rdfs:label "hat endende Montaszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The month of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
+		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
 		
 ## hasItemized
@@ -633,13 +578,13 @@ A textual descrimination of the issue
 
 [ hasItemizedTemporal ]: #hasitemizedtemporal
 
-A temporal information, like a year or date
+A temporal information, like a year, a season, a month or a day
 	
 	ecpo:hasItemizedTemporal a owl:DatatypeProperty ;
 		rdfs:label "has itemized temporal"@en ;
 		rdfs:label "has einzelne Zeit"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A temporal information, like a year or a date"@en ;
+		rdfs:comment "A temporal information, like a year, a season, a month or a day"@en ;
 		rdfs:subPropertyOf ecpo:hasItemized ;
 		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
@@ -648,58 +593,31 @@ A temporal information, like a year or date
 
 [ hasItemizedTemporalExtension ]: #hasitemizedtemporalextension
 
-A textual discrimination for the temporal information, like a season
+Refines the value of the property [ hasItemizedTemporal ]
 
 	ecpo:hasItemizedTemporalExtension a owl:DatatypeProperty ;
 		rdfs:label "has temporal extension"@en ;
 		rdfs:label "hat Zeit Ergänzung"@de ;
 		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "A textual discrimination for the temporal information"@en ;
-		rdfs:subPropertyOf ecpo:hasEnd ;
-		rdfs:isDefinedBy <> .
-
-## hasItemizedDay
-	
-[ hasItemizedDay ]: #hasitemizedday
-
-The day of the ending group, like a day count or a day name
-
-	ecpo:hasItemizedDay a owl:DatatypeProperty ;
-		rdfs:label "has itemized day"@en ;
-		rdfs:label "hat einzelne Tageszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The day of the ending group"@en ;
+		rdfs:comment "Refines the value of the property hasItemizedTemporal"@en ;
 		rdfs:subPropertyOf ecpo:hasItemized ;
-		rdfs:isDefinedBy <> .
-
-## hasItemizedMonth
-
-[ hasItemizedMonth ]: #hasitemizedmonth
-
-The month of the ending group, like a month count or a month name
-
-	ecpo:hasItemizedMonth a owl:DatatypeProperty ;
-		rdfs:label "has itemized month"@en ;
-		rdfs:label "hat einzelne Montaszählung"@de ;
-		rdfs:domain ecpo:Chronology ;
-		rdfs:comment "The month of the ending group"@en ;
-		rdfs:subPropertyOf ecpo:hasItemized ;
+		rdfs:subPropertyOf dcterms:temporal ;
 		rdfs:isDefinedBy <> .
 		
 # Individuals
 
-## Running
+## Current
 
-[ Running ]: #running
+[ Current ]: #current
 
-Instance of [ RunningChronology ]. Use this individual to simply state that a document has a running [ Chronology ].
+Instance of [ CurrentChronology ]. Use this individual to simply state that a document has a current [ Chronology ].
 
-	ecpo:Running a owl:NamedIndividual ;
-		rdf:type ecpo:RunningChronology ;
-		rdfs:label "running"@en ;
+	ecpo:Current a owl:NamedIndividual ;
+		rdf:type ecpo:CurrentChronology ;
+		rdfs:label "current"@en ;
 		rdfs:label "laufend"@de ;
 		owl:differentFrom ecpo:Closed ;
-		rdfs:comment "A running Chronology."@en ;
+		rdfs:comment "A current Chronology."@en ;
 		ecpo:hasBegin "true"^^xsd:boolean ;
 		rdfs:isDefinedBy <> .
 
@@ -713,7 +631,7 @@ Instance of [ ClosedChronology ]. Use this individual to simply state that a doc
 		rdf:type ecpo:ClosedChronology ;
 		rdfs:label "closed"@en ;
 		rdfs:label "abgeschlossen"@de ;
-		owl:differentFrom ecpo:Running ;
+		owl:differentFrom ecpo:Current ;
 		rdfs:comment "A closed Chronology."@en ;
 		ecpo:hasBegin "true"^^xsd:boolean ;
 		ecpo:hasEnd "true"^^xsd:boolean ;
@@ -723,13 +641,13 @@ Instance of [ ClosedChronology ]. Use this individual to simply state that a doc
 
 [ General class axioms ]: #generalclassaxioms
 
-The individuals [ Closed ] and [ Running ] are different from each other.
+The individuals [ Closed ] and [ Current ] are different from each other.
 	
     [ 
 	    rdf:type owl:AllDifferent ;
         owl:distinctMembers (
 		    <http://purl.org/ontology/ecpo#Closed>
-            <http://purl.org/ontology/ecpo#Running>
+            <http://purl.org/ontology/ecpo#Current>
         )
     ] .
 

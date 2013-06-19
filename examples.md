@@ -1,25 +1,25 @@
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 
-In the following examples a hypothetical document ```:Holding``` describes a holding of a periodical held by someone.
+In the following examples a hypothetical document ```:Item``` describes a holding of a periodical held by someone.
 
-## Statement for a running chronology
+## Statement for a current chronology
 
-	:Holding ecpo:hasChronology ecpo:Running .
+	:Item ecpo:hasChronology ecpo:Current .
 	
-This statement just says that a document has a running chronology without giving futher information which units are held.
+This statement just says that a document has a current chronology without giving futher information which units are held.
 
 ## Statement for a closed chronology
 
-    :Holding ecpo:hasChronology ecpo:Closed .
+    :Item ecpo:hasChronology ecpo:Closed .
 	
 This statement just says that a document has a closed chronology without giving futher information which units are held.
 
-## Description of a running Chronology
+## Description of a current Chronology
 
 Given description: v.26,issue 1-
 
-    :Holding ecpo:hasChronology [
-		a ecpo:RunningChronology ;
+    :Item ecpo:hasChronology [
+		a ecpo:CurrentChronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "26" ;
 		ecpo:hasBeginIssueCapation "issue" ;
@@ -30,7 +30,7 @@ Given description: v.26,issue 1-
 
 Given description: v.26,issue 1-v.31, issue 6
 
-    :Holding ecpo:hasChronology [
+    :Item ecpo:hasChronology [
 	    a ecpo:ClosedChronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "26" ;
@@ -44,26 +44,26 @@ Given description: v.26,issue 1-v.31, issue 6
 
 ## Description of a closed Chronology with temporal information
 
-Given description: (2001:Jan.-2006:June)=no.320-no.385
+Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
 
-    :Holding ecpo:hasChronology [
+    :Item ecpo:hasChronology [
 	    a ecpo:ClosedChronology ;
 		ecpo:hasBeginTemporal "2001" ;
-		ecpo:hasBeginMonth "Jan." ;
+		ecpo:hasBeginTemporalExtension "Jan.1" ;
 		ecpo:hasBeginIssueCapation "no." ;
 		ecpo:hasBeginIssueNumbering "320" ;
 		ecpo:hasEndTemporal "2006" ;
-		ecpo:hasEndMonth "June" ;
+		ecpo:hasEndTemporalExtension "June 30" ;
 		ecpo:hasEndIssueCapation "no." ;
 		ecpo:hasEndIssueNumbering "385" 
 	] .
 
-## Description of a running chronology with subchronologies
+## Description of a current chronology with subchronologies
 
 Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-
 
-    :Holding ecpo:hasChronology [
-		a ecpo:RunningChronology ;
+    :Item ecpo:hasChronology [
+		a ecpo:CurrentChronology ;
 		dcterms:hasPart [
 		    a ecpo:ClosedChronology ;
 		    ecpo:hasBeginVolumeCapation "v." ;
@@ -89,14 +89,14 @@ Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:win
 		    ecpo:hasBeginTemporalExtension "winter"	   
 		] .
 		
-In this example the main chronology is made as an instance of ```RunningChronology``` for the sake of expressivity. It also had been made as an instance of ```Chronology```. But this way it is easier to tell if the whole chronology is running or not.
+In this example the main chronology is made as an instance of ```CurrentChronology``` for the sake of expressivity. It also had been made as an instance of ```Chronology```. But this way it is easier to tell if the whole chronology is current or not.
 		
 ## Description of a chronology in an itemized way and comments
 
 Given description: v.1 v.2 v.2[i.e. 3] v.6
 In this example Volume 3 was incorrectly numbered by the publisher.
 
-    :Holding ecpo:hasChronology [
+    :Item ecpo:hasChronology [
 	    a ecpo:Chronology ;
 		dcterms:hasPart [
 			a ecpo:Chronology ;
@@ -130,7 +130,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 
 ### Itemized way
 
-    :Holding ecpo:hasChronologyGap [
+    :Item ecpo:hasChronologyGap [
 		a ecpo:Chronology ;
 		dcterms:hasPart [
 			a ecpo:Chronology ;
@@ -146,7 +146,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 	
 ### Range
 
-    :Holding ecpo:hasChronologyGap [
+    :Item ecpo:hasChronologyGap [
 		a ecpo:Chronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "4" ;
@@ -160,8 +160,8 @@ The term ```dcterms:description``` is recommended to give a description of the c
 
 Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 
-    :Holding ecpo:hasChronology [
-		a ecpo:RunningChronology ;
+    :Item ecpo:hasChronology [
+		a ecpo:CurrentChronology ;
 		dcterms:hasPart [
 		    a ecpo:ClosedChronology ;
 		    ecpo:hasBeginVolumeCapation "ser." ;
