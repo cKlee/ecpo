@@ -10,7 +10,10 @@
 <> a owl:Ontology ;
     rdfs:label "Enumeration and Chronology of Periodicals Ontology"@en ;
     rdfs:label "ECPO" ;
-    vann:preferredNamespacePrefix "ecpo" .
+    vann:preferredNamespacePrefix "ecpo" ;
+    vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
+    dc:title "Enumeration and Chronology of Periodicals Ontology"@en ;
+    dc:description "Defines the common bibliographic terms for the description of enumeration and chronology of periodicals"@en .
 ecpo:Chronology a owl:Class ;
     rdfs:label "enumeration and chronology"@en ;
     rdfs:label "Bestandsverlauf"@de ;
@@ -28,8 +31,8 @@ ecpo:Chronology a owl:Class ;
         )
     ] ;
     rdfs:isDefinedBy <> .
-ecpo:RunningChronology a owl:Class ;
-    rdfs:label "running chronology"@en ;
+ecpo:CurrentChronology a owl:Class ;
+    rdfs:label "current chronology"@en ;
     rdfs:label "Bestandsverlauf laufend"@de ;
     rdfs:comment "A Chronology without an ending group."@en ;
     owl:disjointWith ecpo:ClosedChronology ;
@@ -49,7 +52,7 @@ ecpo:ClosedChronology a owl:Class ;
     rdfs:label "closed chronology"@en ;
     rdfs:label "Bestandsverlauf abgeschlossen"@de ;
     rdfs:comment "A Chronology having an ending group."@en ;
-    owl:disjointWith ecpo:RunningChronology ;
+    owl:disjointWith ecpo:CurrentChronology ;
     rdfs:subClassOf ecpo:Chronology ;
     rdfs:subClassOf [
         a owl:Restriction ;
@@ -129,7 +132,7 @@ ecpo:hasBeginTemporal a owl:DatatypeProperty ;
     rdfs:label "has begin temporal"@en ;
     rdfs:label "hat beginnende Zeit"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A temporal information, like a year or a date for the beginning group"@en ;
+    rdfs:comment "A temporal information for the beginning group, like a year, a season, a month or a day"@en ;
     rdfs:subPropertyOf ecpo:hasBegin ;
     rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
@@ -138,22 +141,9 @@ ecpo:hasBeginTemporalExtension a owl:DatatypeProperty ;
     rdfs:label "has begin temporal extension"@en ;
     rdfs:label "hat beginnende Zeit Ergänzung"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A textual discrimination for the temporal information of the beginning group, like a season"@en ;
+    rdfs:comment "Refines the value of the property hasBeginTemporal"@en ;
     rdfs:subPropertyOf ecpo:hasBegin ;
-    rdfs:isDefinedBy <> .
-ecpo:hasBeginDay a owl:DatatypeProperty ;
-    rdfs:label "has begin day"@en ;
-    rdfs:label "hat beginnende Tageszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The day of the beginning group"@en ;
-    rdfs:subPropertyOf ecpo:hasBegin ;
-    rdfs:isDefinedBy <> .
-ecpo:hasBeginMonth a owl:DatatypeProperty ;
-    rdfs:label "has begin month"@en ;
-    rdfs:label "hat beginnende Montaszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The month of the beginning group"@en ;
-    rdfs:subPropertyOf ecpo:hasBegin ;
+    rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
 ecpo:hasEnd a owl:DatatypeProperty ;
     rdfs:label "has end"@en ;
@@ -207,7 +197,7 @@ ecpo:hasEndTemporal a owl:DatatypeProperty ;
     rdfs:label "has end temporal"@en ;
     rdfs:label "has endende Zeit"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A temporal information, like a year or a date for the ending group"@en ;
+    rdfs:comment "A temporal information for the ending group, like a year, a season, a month or a day"@en ;
     rdfs:subPropertyOf ecpo:hasEnd ;
     rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
@@ -216,22 +206,9 @@ ecpo:hasEndTemporalExtension a owl:DatatypeProperty ;
     rdfs:label "has end temporal extension"@en ;
     rdfs:label "hat endende Zeit Ergänzung"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A textual discrimination for the temporal information of the ending group, like a season"@en ;
+    rdfs:comment "Refines the value of the property hasEndTemporal"@en ;
     rdfs:subPropertyOf ecpo:hasEnd ;
-    rdfs:isDefinedBy <> .
-ecpo:hasEndDay a owl:DatatypeProperty ;
-    rdfs:label "has end day"@en ;
-    rdfs:label "hat endende Tageszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The day of the ending group"@en ;
-    rdfs:subPropertyOf ecpo:hasEnd ;
-    rdfs:isDefinedBy <> .
-ecpo:hasEndMonth a owl:DatatypeProperty ;
-    rdfs:label "has end month"@en ;
-    rdfs:label "hat endende Montaszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The month of the ending group"@en ;
-    rdfs:subPropertyOf ecpo:hasEnd ;
+    rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
     
 ecpo:hasItemized a owl:DatatypeProperty ;
@@ -289,7 +266,7 @@ ecpo:hasItemizedTemporal a owl:DatatypeProperty ;
     rdfs:label "has itemized temporal"@en ;
     rdfs:label "has einzelne Zeit"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A temporal information, like a year or a date"@en ;
+    rdfs:comment "A temporal information, like a year, a season, a month or a day"@en ;
     rdfs:subPropertyOf ecpo:hasItemized ;
     rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
@@ -298,37 +275,24 @@ ecpo:hasItemizedTemporalExtension a owl:DatatypeProperty ;
     rdfs:label "has temporal extension"@en ;
     rdfs:label "hat Zeit Ergänzung"@de ;
     rdfs:domain ecpo:Chronology ;
-    rdfs:comment "A textual discrimination for the temporal information"@en ;
-    rdfs:subPropertyOf ecpo:hasEnd ;
-    rdfs:isDefinedBy <> .
-ecpo:hasItemizedDay a owl:DatatypeProperty ;
-    rdfs:label "has itemized day"@en ;
-    rdfs:label "hat einzelne Tageszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The day of the ending group"@en ;
+    rdfs:comment "Refines the value of the property hasItemizedTemporal"@en ;
     rdfs:subPropertyOf ecpo:hasItemized ;
-    rdfs:isDefinedBy <> .
-ecpo:hasItemizedMonth a owl:DatatypeProperty ;
-    rdfs:label "has itemized month"@en ;
-    rdfs:label "hat einzelne Montaszählung"@de ;
-    rdfs:domain ecpo:Chronology ;
-    rdfs:comment "The month of the ending group"@en ;
-    rdfs:subPropertyOf ecpo:hasItemized ;
+    rdfs:subPropertyOf dcterms:temporal ;
     rdfs:isDefinedBy <> .
     
-ecpo:Running a owl:NamedIndividual ;
-    rdf:type ecpo:RunningChronology ;
-    rdfs:label "running"@en ;
+ecpo:Current a owl:NamedIndividual ;
+    rdf:type ecpo:CurrentChronology ;
+    rdfs:label "current"@en ;
     rdfs:label "laufend"@de ;
     owl:differentFrom ecpo:Closed ;
-    rdfs:comment "A running Chronology."@en ;
+    rdfs:comment "A current Chronology."@en ;
     ecpo:hasBegin "true"^^xsd:boolean ;
     rdfs:isDefinedBy <> .
 ecpo:Closed a owl:NamedIndividual ;
     rdf:type ecpo:ClosedChronology ;
     rdfs:label "closed"@en ;
     rdfs:label "abgeschlossen"@de ;
-    owl:differentFrom ecpo:Running ;
+    owl:differentFrom ecpo:Current ;
     rdfs:comment "A closed Chronology."@en ;
     ecpo:hasBegin "true"^^xsd:boolean ;
     ecpo:hasEnd "true"^^xsd:boolean ;
@@ -337,7 +301,7 @@ ecpo:Closed a owl:NamedIndividual ;
     rdf:type owl:AllDifferent ;
     owl:distinctMembers (
         <http://purl.org/ontology/ecpo#Closed>
-        <http://purl.org/ontology/ecpo#Running>
+        <http://purl.org/ontology/ecpo#Current>
     )
 ] .
 [
