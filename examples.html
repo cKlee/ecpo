@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Carsten Klee (ZDB)" />
-  <meta name="date" content="2013-06-19 11:27:18 +0200" />
+  <meta name="date" content="2013-07-08 13:40:42 +0200" />
   <title>Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</title>
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -53,7 +53,7 @@
 <header>
 <h1 class="title">Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</h1>
 <h3 class="author">Carsten Klee (ZDB)</h3>
-<h4 class="date">2013-06-19 11:27:18 +0200</h4>
+<h4 class="date">2013-07-08 13:40:42 +0200</h4>
 </header>
 
 <h1>Table of Contents</h1>
@@ -78,14 +78,14 @@
 <h1 id="examples-for-enumeration-and-chronology-of-periodicals-ontology-ecpo"><a href="#examples-for-enumeration-and-chronology-of-periodicals-ontology-ecpo"><span class="header-section-number">1</span> Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)</a></h1>
 <p>In the following examples a hypothetical document <code>:Item</code> describes a holding of a periodical held by someone.</p>
 <a id="Statement for a current chronology"></a><h2 id="statement-for-a-current-chronology"><a href="#statement-for-a-current-chronology"><span class="header-section-number">1.1</span> Statement for a current chronology</a></h2>
-<pre><code>:Item ecpo:hasChronology ecpo:Current .</code></pre>
+<pre><code>$item ecpo:hasChronology ecpo:Current .</code></pre>
 <p>This statement just says that a document has a current chronology without giving futher information which units are held.</p>
 <a id="Statement for a closed chronology"></a><h2 id="statement-for-a-closed-chronology"><a href="#statement-for-a-closed-chronology"><span class="header-section-number">1.2</span> Statement for a closed chronology</a></h2>
-<pre><code>:Item ecpo:hasChronology ecpo:Closed .</code></pre>
+<pre><code>$item ecpo:hasChronology ecpo:Closed .</code></pre>
 <p>This statement just says that a document has a closed chronology without giving futher information which units are held.</p>
 <a id="Description of a current Chronology"></a><h2 id="description-of-a-current-chronology"><a href="#description-of-a-current-chronology"><span class="header-section-number">1.3</span> Description of a current Chronology</a></h2>
 <p>Given description: v.26,issue 1-</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:CurrentChronology ;
     ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
     ecpo:hasBeginVolumeNumbering &quot;26&quot; ;
@@ -95,7 +95,7 @@
     </code></pre>
 <a id="Description of a closed Chronology"></a><h2 id="description-of-a-closed-chronology"><a href="#description-of-a-closed-chronology"><span class="header-section-number">1.4</span> Description of a closed Chronology</a></h2>
 <p>Given description: v.26,issue 1-v.31, issue 6</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:ClosedChronology ;
     ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
     ecpo:hasBeginVolumeNumbering &quot;26&quot; ;
@@ -108,7 +108,7 @@
 ] .</code></pre>
 <a id="Description of a closed Chronology with temporal information"></a><h2 id="description-of-a-closed-chronology-with-temporal-information"><a href="#description-of-a-closed-chronology-with-temporal-information"><span class="header-section-number">1.5</span> Description of a closed Chronology with temporal information</a></h2>
 <p>Given description: (2001:Jan.1-2006:June 30)=no.320-no.385</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:ClosedChronology ;
     ecpo:hasBeginTemporal &quot;2001&quot; ;
     ecpo:hasBeginTemporalExtension &quot;Jan.1&quot; ;
@@ -121,7 +121,7 @@
 ] .</code></pre>
 <a id="Description of a current chronology with subchronologies"></a><h2 id="description-of-a-current-chronology-with-subchronologies"><a href="#description-of-a-current-chronology-with-subchronologies"><span class="header-section-number">1.6</span> Description of a current chronology with subchronologies</a></h2>
 <p>Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:CurrentChronology ;
     dcterms:hasPart [
         a ecpo:ClosedChronology ;
@@ -151,7 +151,7 @@
 <p>In this example the main chronology is made as an instance of <code>CurrentChronology</code> for the sake of expressivity. It also had been made as an instance of <code>Chronology</code>. But this way it is easier to tell if the whole chronology is current or not.</p>
 <a id="Description of a chronology in an itemized way and comments"></a><h2 id="description-of-a-chronology-in-an-itemized-way-and-comments"><a href="#description-of-a-chronology-in-an-itemized-way-and-comments"><span class="header-section-number">1.7</span> Description of a chronology in an itemized way and comments</a></h2>
 <p>Given description: v.1 v.2 v.2[i.e. 3] v.6 In this example Volume 3 was incorrectly numbered by the publisher.</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:Chronology ;
     dcterms:hasPart [
         a ecpo:Chronology ;
@@ -180,7 +180,7 @@
 <a id="Description of a gap in the chronology"></a><h2 id="description-of-a-gap-in-the-chronology"><a href="#description-of-a-gap-in-the-chronology"><span class="header-section-number">1.8</span> Description of a gap in the chronology</a></h2>
 <p>As in the example above the volumes v.4 and v.5 are missing. There are two possibilities to express this.</p>
 <h3 id="itemized-way"><a href="#itemized-way"><span class="header-section-number">1.8.1</span> Itemized way</a></h3>
-<pre><code>:Item ecpo:hasChronologyGap [
+<pre><code>$item ecpo:hasChronologyGap [
     a ecpo:Chronology ;
     dcterms:hasPart [
         a ecpo:Chronology ;
@@ -194,7 +194,7 @@
     ]
 ] .</code></pre>
 <h3 id="range"><a href="#range"><span class="header-section-number">1.8.2</span> Range</a></h3>
-<pre><code>:Item ecpo:hasChronologyGap [
+<pre><code>$item ecpo:hasChronologyGap [
     a ecpo:Chronology ;
     ecpo:hasBeginVolumeCapation &quot;v.&quot; ;
     ecpo:hasBeginVolumeNumbering &quot;4&quot; ;
@@ -204,7 +204,7 @@
 <a id="Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage"></a><h2 id="usage-of-dctermsdescription-dctermsaccrualperiodicity-dctermsextend-and-dccoverage"><a href="#usage-of-dctermsdescription-dctermsaccrualperiodicity-dctermsextend-and-dccoverage"><span class="header-section-number">1.9</span> Usage of dcterms:description, dcterms:accrualPeriodicity, dcterms:extend and dc:coverage</a></h2>
 <p>The term <code>dcterms:description</code> is recommended to give a description of the chronology. The term <code>dc:coverage</code> is recommended to transport the given description if there is one. The term <code>dcterms:accrualPeriodicity</code> is recommended to give information about the frequency with which items are added to the collection. The term <code>dcterms:extend</code> is recommended to give information about the number of units in the chronology.</p>
 <p>Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6</p>
-<pre><code>:Item ecpo:hasChronology [
+<pre><code>$item ecpo:hasChronology [
     a ecpo:CurrentChronology ;
     dcterms:hasPart [
         a ecpo:ClosedChronology ;
