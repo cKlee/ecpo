@@ -4,13 +4,13 @@ In the following examples a hypothetical document ```:Item``` describes a holdin
 
 ## Statement for a current chronology
 
-	:Item ecpo:hasChronology ecpo:Current .
+	$item ecpo:hasChronology ecpo:Current .
 	
 This statement just says that a document has a current chronology without giving futher information which units are held.
 
 ## Statement for a closed chronology
 
-    :Item ecpo:hasChronology ecpo:Closed .
+    $item ecpo:hasChronology ecpo:Closed .
 	
 This statement just says that a document has a closed chronology without giving futher information which units are held.
 
@@ -18,7 +18,7 @@ This statement just says that a document has a closed chronology without giving 
 
 Given description: v.26,issue 1-
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 		a ecpo:CurrentChronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "26" ;
@@ -30,7 +30,7 @@ Given description: v.26,issue 1-
 
 Given description: v.26,issue 1-v.31, issue 6
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 	    a ecpo:ClosedChronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "26" ;
@@ -46,7 +46,7 @@ Given description: v.26,issue 1-v.31, issue 6
 
 Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 	    a ecpo:ClosedChronology ;
 		ecpo:hasBeginTemporal "2001" ;
 		ecpo:hasBeginTemporalExtension "Jan.1" ;
@@ -62,7 +62,7 @@ Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
 
 Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 		a ecpo:CurrentChronology ;
 		dcterms:hasPart [
 		    a ecpo:ClosedChronology ;
@@ -96,7 +96,7 @@ In this example the main chronology is made as an instance of ```CurrentChronolo
 Given description: v.1 v.2 v.2[i.e. 3] v.6
 In this example Volume 3 was incorrectly numbered by the publisher.
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 	    a ecpo:Chronology ;
 		dcterms:hasPart [
 			a ecpo:Chronology ;
@@ -130,7 +130,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 
 ### Itemized way
 
-    :Item ecpo:hasChronologyGap [
+    $item ecpo:hasChronologyGap [
 		a ecpo:Chronology ;
 		dcterms:hasPart [
 			a ecpo:Chronology ;
@@ -146,7 +146,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 	
 ### Range
 
-    :Item ecpo:hasChronologyGap [
+    $item ecpo:hasChronologyGap [
 		a ecpo:Chronology ;
 		ecpo:hasBeginVolumeCapation "v." ;
 	    ecpo:hasBeginVolumeNumbering "4" ;
@@ -160,7 +160,7 @@ The term ```dcterms:description``` is recommended to give a description of the c
 
 Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 
-    :Item ecpo:hasChronology [
+    $item ecpo:hasChronology [
 		a ecpo:CurrentChronology ;
 		dcterms:hasPart [
 		    a ecpo:ClosedChronology ;
