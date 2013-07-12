@@ -71,7 +71,7 @@ The following diagram illustrates the classes and properties defined in this ont
 ``` {.ditaa}
 	
 	+--------------------+   hasChronology    +-------------------------+  dcterms:hasPart
-	| any document class +------------------->|        Chronology       +------------------+
+	| every item class   +------------------->|        Chronology       +------------------+
 	+---+----------------+  hasChronologyGap  | +---------------------+ |                  |
 		|									  | |                     | |<-----------------+
 	hasChronology							  | |  CurrentChronology  | |
@@ -99,11 +99,11 @@ The following diagram illustrates the classes and properties defined in this ont
 							  v                            v                            v                          v
 ```
 
-A document might have a [ Chronology ] which is related to other [ Chronologies ](#chronology) via the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart). While current [ Chronologies ](#chronology) should be instances of [ CurrentChronology ], closed [ Chronologies ](#chronology) should be instances of [ ClosedChronology ].
+An Agent always holds a copy of a document called item. An item might have a [ Chronology ] which is related to other [ Chronologies ](#chronology) via the property [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart). While current [ Chronologies ](#chronology) should be instances of [ CurrentChronology ], closed [ Chronologies ](#chronology) should be instances of [ ClosedChronology ].
 
-While the property [ hasChronology ] states that the described units of the document are held by someone, the property [ hasChronologyGap ] states that the described units of the document are not held by someone.
+While the property [ hasChronology ] states that the described units of the item are held by someone, the property [ hasChronologyGap ] states that the described units of the item are not held by someone.
 
-In order to simply state that a Chronology is current or closed, one could easily relate a document with the individuals [ Current ] or [ Closed ] via the property [ hasChronology ], because they are instances of [ CurrentChronology ] or [ ClosedChronology ].
+In order to simply state that a Chronology is current or closed, one could easily relate an item with the individuals [ Current ] or [ Closed ] via the property [ hasChronology ], because they are instances of [ CurrentChronology ] or [ ClosedChronology ].
 
 [ Chronologies ](#chronology) as long as they describe ranges consist of either a beginning and an ending group or just of one beginning group. Beginning and ending groups are defined through the existence of the property [ hasBegin ] or one or more of its subproperties (for a beginning group) or the property [ hasEnd ] or one or more of its subproperties (for an ending group). 
 
@@ -201,26 +201,26 @@ Instances of [ ClosedChronology ] must at least participate in a relation with b
 
 [ hasChronology ]: #hasChronology
 
-Relation between a document and a [ Chronology ]. Having this property means that the described periodical units by the [ Chronology ] are held by someone. To relate a [ Chronology ] and a [ Chronology ] use [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart) instead.
+Relation between an item and a [ Chronology ]. Having this property means that the described periodical units by the [ Chronology ] are held by someone. To relate a [ Chronology ] and a [ Chronology ] use [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart) instead.
 
 	ecpo:hasChronology a owl:ObjectProperty ;
 		rdfs:label "has chronology"@en ;
 		rdfs:label "hat Bestandsverlauf"@de ;
 		rdfs:range ecpo:Chronology ;
-		rdfs:comment "Relation between a document and a Chronology"@en ;
+		rdfs:comment "Relation between an item and a Chronology"@en ;
 		rdfs:isDefinedBy <> .
 
 ## hasChronologyGap
 
 [ hasChronologyGap ]: #haschronologygap
 
-Relation between a document and a [ Chronology ], indicating the [ Chronology ] is a gap. Having this property means that the described periodical units through the [ Chronology ] are not held by someone. To relate a [ Chronology ] and a [ Chronology ] use [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart) instead.
+Relation between an item and a [ Chronology ], indicating the [ Chronology ] is a gap. Having this property means that the described periodical units through the [ Chronology ] are not held by someone. To relate a [ Chronology ] and a [ Chronology ] use [ dcterms:hasPart ](http://dublincore.org/documents/dcmi-terms/#terms-hasPart) instead.
 
 	ecpo:hasChronologyGap a owl:ObjectProperty ;
 		rdfs:label "has chronology gap"@en ;
 		rdfs:label "hat Bestandsverlauflücke"@de ;
 		rdfs:range ecpo:Chronology ;
-		rdfs:comment "Relation between a document and a Chronology, indicating the Chronology is a gap"@en ;
+		rdfs:comment "Relation between an item and a Chronology, indicating the Chronology is a gap"@en ;
 		rdfs:isDefinedBy <> .
 
 # Datatype properties
@@ -610,7 +610,7 @@ Refines the value of the property [ hasItemizedTemporal ]
 
 [ Current ]: #current
 
-Instance of [ CurrentChronology ]. Use this individual to simply state that a document has a current [ Chronology ].
+Instance of [ CurrentChronology ]. Use this individual to simply state that an item has a current [ Chronology ].
 
 	ecpo:Current a owl:NamedIndividual ;
 		rdf:type ecpo:CurrentChronology ;
@@ -625,7 +625,7 @@ Instance of [ CurrentChronology ]. Use this individual to simply state that a do
 
 [ Closed ]: #closed
 
-Instance of [ ClosedChronology ]. Use this individual to simply state that a document has a closed [ Chronology ].
+Instance of [ ClosedChronology ]. Use this individual to simply state that an item has a closed [ Chronology ].
 
 	ecpo:Closed a owl:NamedIndividual ;
 		rdf:type ecpo:ClosedChronology ;

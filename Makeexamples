@@ -5,6 +5,6 @@ FORMATS = html
 TITLE = Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 AUTHOR = Carsten Klee (ZDB)
 REVISIONS = 5
-css = code-style.css
+CSS = code-style.css
 
 include makespec/Makefile

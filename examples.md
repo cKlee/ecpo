@@ -1,18 +1,18 @@
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 
-In the following examples a hypothetical document ```:Item``` describes a holding of a periodical held by someone.
+In the following examples a hypothetical copy of a document ```$item``` describes a holding of a periodical held by someone.
 
 ## Statement for a current chronology
 
 	$item ecpo:hasChronology ecpo:Current .
 	
-This statement just says that a document has a current chronology without giving futher information which units are held.
+This statement just says that an item has a current chronology without giving futher information which units are held.
 
 ## Statement for a closed chronology
 
     $item ecpo:hasChronology ecpo:Closed .
 	
-This statement just says that a document has a closed chronology without giving futher information which units are held.
+This statement just says that an item has a closed chronology without giving futher information which units are held.
 
 ## Description of a current Chronology
 
