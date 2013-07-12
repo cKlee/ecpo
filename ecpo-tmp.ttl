@@ -69,13 +69,13 @@ ecpo:hasChronology a owl:ObjectProperty ;
     rdfs:label "has chronology"@en ;
     rdfs:label "hat Bestandsverlauf"@de ;
     rdfs:range ecpo:Chronology ;
-    rdfs:comment "Relation between a document and a Chronology"@en ;
+    rdfs:comment "Relation between an item and a Chronology"@en ;
     rdfs:isDefinedBy <> .
 ecpo:hasChronologyGap a owl:ObjectProperty ;
     rdfs:label "has chronology gap"@en ;
     rdfs:label "hat Bestandsverlauflücke"@de ;
     rdfs:range ecpo:Chronology ;
-    rdfs:comment "Relation between a document and a Chronology, indicating the Chronology is a gap"@en ;
+    rdfs:comment "Relation between an item and a Chronology, indicating the Chronology is a gap"@en ;
     rdfs:isDefinedBy <> .
 ecpo:hasBegin a owl:DatatypeProperty ;
     rdfs:label "has begin"@en ;
