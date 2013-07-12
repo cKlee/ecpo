@@ -1,6 +1,6 @@
 % Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 % Carsten Klee (ZDB)
-% 2013-07-08 13:40:42 +0200
+% 2013-07-12 11:52:52 +0200
 
 # Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
 
