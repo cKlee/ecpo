@@ -703,6 +703,8 @@ Instances of [ Chronology ] which participates in a relation with [ hasEnd ] mus
 
 # Related ontologies
 
+[ related ontologies ]: #relatedontologies
+
 ECPO recommends the use of dcterms:description, dcterms:accrualPeriodicity, dcterms:extent and dc:coverage for some extended chronology description. See [ **`examples.html`** ](examples.html) for usage examples of this terms.
 
 # Extending ECPO
