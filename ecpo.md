@@ -678,7 +678,7 @@ ECPO recommends the use of dcterms:description, dcterms:accrualPeriodicity, dcte
 It is not the intension of ECPO to restrict the ontology extension through other ontologies on purpose. If you have suggestions to make this ontology more useable, please give me [ Feedback ](https://github.com/cklee/ecpo/issues).
 
 # Examples
-See [ **`examples.html`** ](examples.html) for usage examples to this ontology.
+`examples.md`{.include}
 
 # References
 
