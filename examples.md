@@ -1,5 +1,3 @@
-# Examples for Enumeration and Chronology of Periodicals Ontology (ECPO)
-
 In the following examples a hypothetical copy of a document ```$item``` describes a holding of a periodical held by someone.
 
 ## Statement for a current chronology
