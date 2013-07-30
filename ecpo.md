@@ -578,7 +578,7 @@ Refines the value of the property [hasItemizedTemporal]
 
 Used to transport the whole source description of a chronology. See [examples](#ex_dc) for usage.
 
-    dc:coverage a AnnotationProperty ;
+    dc:coverage a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
         rdfs:definedBy <http://purl.org/dc/elements/1.1/> .
 
@@ -588,7 +588,7 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 Used to give information about the frequency with which items are added to the collection. See [examples](#ex_dc) for usage.
 
-    dct:accrualPeriodicity a AnnotationProperty ;
+    dct:accrualPeriodicity a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the frequency with which items are added to the collection."@en ;
         rdfs:definedBy <http://purl.org/dc/elements/1.1/> .
 
@@ -598,7 +598,7 @@ Used to give information about the frequency with which items are added to the c
 
 Used to transport the whole source description of a chronology. See [examples](#ex_dc) for usage.
 
-    dct:description a AnnotationProperty ;
+    dct:description a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
         rdfs:definedBy <http://purl.org/dc/elements/1.1/> .
 
@@ -608,7 +608,7 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 Used to give information about the number of units in the chronology. See [examples](#ex_dc) for usage.
 
-    dct:extend a AnnotationProperty ;
+    dct:extend a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the number of units in the chronology."@en ;
         rdfs:definedBy <http://purl.org/dc/elements/1.1/> .
 
@@ -618,7 +618,7 @@ Used to give information about the number of units in the chronology. See [examp
 
 Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples](#ex_haspart) for usage.
 
-    dct:hasPart a AnnotationProperty ;
+    dct:hasPart a owl:AnnotationProperty ;
         skos:scopeNote "Used to relate a chronology to a sub chronology."@en ;
         rdfs:definedBy <http://purl.org/dc/elements/1.1/> .
 
