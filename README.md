@@ -1,0 +1,1 @@
+This repository contains the specification of the Enumeration and Chronology of Periodicals Ontology (ECPO).
