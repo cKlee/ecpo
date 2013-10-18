@@ -22,9 +22,9 @@ Given description: v.26,issue 1-
 
     $item ecpo:hasChronology [
         a ecpo:CurrentChronology ;
-        ecpo:hasBeginVolumeCapation "v." ;
+        ecpo:hasBeginVolumeCaption "v." ;
         ecpo:hasBeginVolumeNumbering "26" ;
-        ecpo:hasBeginIssueCapation "issue" ;
+        ecpo:hasBeginIssueCaption "issue" ;
         ecpo:hasBeginIssueNumbering "1" 
     ] .
         
@@ -34,13 +34,13 @@ Given description: v.26,issue 1-v.31, issue 6
 
     $item ecpo:hasChronology [
         a ecpo:ClosedChronology ;
-        ecpo:hasBeginVolumeCapation "v." ;
+        ecpo:hasBeginVolumeCaption "v." ;
         ecpo:hasBeginVolumeNumbering "26" ;
-        ecpo:hasBeginIssueCapation "issue" ;
+        ecpo:hasBeginIssueCaption "issue" ;
         ecpo:hasBeginIssueNumbering "1" ;
-        ecpo:hasEndVolumeCapation "v." ;
+        ecpo:hasEndVolumeCaption "v." ;
         ecpo:hasEndVolumeNumbering "31" ;
-        ecpo:hasEndIssueCapation "issue" ;
+        ecpo:hasEndIssueCaption "issue" ;
         ecpo:hasEndIssueNumbering "6" 
     ] .
 
@@ -52,11 +52,11 @@ Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
         a ecpo:ClosedChronology ;
         ecpo:hasBeginTemporal "2001" ;
         ecpo:hasBeginTemporalExtension "Jan.1" ;
-        ecpo:hasBeginIssueCapation "no." ;
+        ecpo:hasBeginIssueCaption "no." ;
         ecpo:hasBeginIssueNumbering "320" ;
         ecpo:hasEndTemporal "2006" ;
         ecpo:hasEndTemporalExtension "June 30" ;
-        ecpo:hasEndIssueCapation "no." ;
+        ecpo:hasEndIssueCaption "no." ;
         ecpo:hasEndIssueNumbering "385" 
     ] .
 
@@ -70,24 +70,24 @@ Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:win
         a ecpo:CurrentChronology ;
         dct:hasPart [
             a ecpo:ClosedChronology ;
-            ecpo:hasBeginVolumeCapation "v." ;
+            ecpo:hasBeginVolumeCaption "v." ;
             ecpo:hasBeginVolumeNumbering "5" ;
-            ecpo:hasBeginIssueCapation "no." ;
+            ecpo:hasBeginIssueCaption "no." ;
             ecpo:hasBeginIssueNumbering "1" ;
             ecpo:hasBeginTemporal "1975" ;
             ecpo:hasBeginTemporalExtension "spring" ;
-            ecpo:hasEndVolumeCapation "v." ;
+            ecpo:hasEndVolumeCaption "v." ;
             ecpo:hasEndVolumeNumbering "7" ;
-            ecpo:hasEndIssueCapation "no." ;
+            ecpo:hasEndIssueCaption "no." ;
             ecpo:hasEndIssueNumbering "4" ;
             ecpo:hasEndTemporal "1977" ;
             ecpo:hasEndTemporalExtension "autumn"
         ] ;
         dct:hasPart [
             a ecpo:ClosedChronology ;
-            ecpo:hasBeginVolumeCapation "v." ;
+            ecpo:hasBeginVolumeCaption "v." ;
             ecpo:hasBeginVolumeNumbering "8" ;
-            ecpo:hasBeginIssueCapation "no." ;
+            ecpo:hasBeginIssueCaption "no." ;
             ecpo:hasBeginIssueNumbering "2" ;
             ecpo:hasBeginTemporal "1978" ;
             ecpo:hasBeginTemporalExtension "winter"
@@ -153,9 +153,9 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 
     $item ecpo:hasChronologyGap [
         a ecpo:Chronology ;
-        ecpo:hasBeginVolumeCapation "v." ;
+        ecpo:hasBeginVolumeCaption "v." ;
         ecpo:hasBeginVolumeNumbering "4" ;
-        ecpo:hasEndVolumeCapation "v." ;
+        ecpo:hasEndVolumeCaption "v." ;
         ecpo:hasEndVolumeNumbering "5"
     ] .
     
@@ -171,13 +171,13 @@ Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
         a ecpo:CurrentChronology ;
         dct:hasPart [
             a ecpo:ClosedChronology ;
-            ecpo:hasBeginVolumeCapation "ser." ;
+            ecpo:hasBeginVolumeCaption "ser." ;
             ecpo:hasBeginVolumeNumbering "1" ;
-            ecpo:hasBeginIssueCapation "no." ;
+            ecpo:hasBeginIssueCaption "no." ;
             ecpo:hasBeginIssueNumbering "1" ;
-            ecpo:hasEndVolumeCapation "ser." ;
+            ecpo:hasEndVolumeCaption "ser." ;
             ecpo:hasEndVolumeNumbering "1" ;
-            ecpo:hasEndIssueCapation "no." ;
+            ecpo:hasEndIssueCaption "no." ;
             ecpo:hasEndIssueNumbering "4" ;	
             dct:description "double number issue 2/3"@en ;
             dct:accrualPeriodicity [ rdfs:label "4 numbers per series"@en ] ;
@@ -185,13 +185,13 @@ Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
         ] ;
         dct:hasPart [
             a ecpo:ClosedChronology ;
-            ecpo:hasBeginVolumeCapation "ser." ;
+            ecpo:hasBeginVolumeCaption "ser." ;
             ecpo:hasBeginVolumeNumbering "2" ;
-            ecpo:hasBeginIssueCapation "no." ;
+            ecpo:hasBeginIssueCaption "no." ;
             ecpo:hasBeginIssueNumbering "1" ;
-            ecpo:hasEndVolumeCapation "ser." ;
+            ecpo:hasEndVolumeCaption "ser." ;
             ecpo:hasEndVolumeNumbering "2" ;
-            ecpo:hasEndIssueCapation "no." ;
+            ecpo:hasEndIssueCaption "no." ;
             ecpo:hasEndIssueNumbering "6" ;
             dct:description "triple number issue 2-4"@en ;
             dct:accrualPeriodicity [ rdfs:label "6 numbers per series"@en ] ;
