@@ -1,0 +1,128 @@
+{
+    "@context": {
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dct": "http://purl.org/dc/terms/",
+        "ecpo": "http://purl.org/ontology/ecpo#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Chronology": {
+            "@id": "ecpo:Chronology",
+            "@type": "@id"
+        },
+        "Closed": {
+            "@id": "ecpo:Closed",
+            "@type": "@id"
+        },
+        "ClosedChronology": {
+            "@id": "ecpo:ClosedChronology",
+            "@type": "@id"
+        },
+        "Current": {
+            "@id": "ecpo:Current",
+            "@type": "@id"
+        },
+        "CurrentChronology": {
+            "@id": "ecpo:CurrentChronology",
+            "@type": "@id"
+        },
+        "hasChronology": {
+            "@id": "ecpo:hasChronology",
+            "@type": "@id"
+        },
+        "hasChronologyGap": {
+            "@id": "ecpo:hasChronologyGap",
+            "@type": "@id"
+        },
+        "hasBegin": {
+            "@id": "ecpo:hasBegin",
+            "@type": "xsd:string"
+        },
+        "hasBeginIssueCaption": {
+            "@id": "ecpo:hasBeginIssueCaption",
+            "@type": "xsd:string"
+        },
+        "hasBeginIssueExtension": {
+            "@id": "ecpo:hasBeginIssueExtension",
+            "@type": "xsd:string"
+        },
+        "hasBeginIssueNumbering": {
+            "@id": "ecpo:hasBeginIssueNumbering",
+            "@type": "xsd:string"
+        },
+        "hasBeginTemporal": {
+            "@id": "ecpo:hasBeginTemporal",
+            "@type": "xsd:string"
+        },
+        "hasBeginTemporalExtension": {
+            "@id": "ecpo:hasBeginTemporalExtension",
+            "@type": "xsd:string"
+        },
+        "hasBeginVolumeCaption": {
+            "@id": "ecpo:hasBeginVolumeCaption",
+            "@type": "xsd:string"
+        },
+        "hasBeginVolumeExtension": {
+            "@id": "ecpo:hasBeginVolumeExtension",
+            "@type": "xsd:string"
+        },
+        "hasBeginVolumeNumbering": {
+            "@id": "ecpo:hasBeginVolumeNumbering",
+            "@type": "xsd:string"
+        },
+        "hasEnd": {
+            "@id": "ecpo:hasEnd",
+            "@type": "xsd:string"
+        },
+        "hasEndIssueCaption": {
+            "@id": "ecpo:hasEndIssueCaption",
+            "@type": "xsd:string"
+        },
+        "hasEndIssueExtension": {
+            "@id": "ecpo:hasEndIssueExtension",
+            "@type": "xsd:string"
+        },
+        "hasEndIssueNumbering": {
+            "@id": "ecpo:hasEndIssueNumbering",
+            "@type": "xsd:string"
+        },
+        "hasEndTemporal": {
+            "@id": "ecpo:hasEndTemporal",
+            "@type": "xsd:string"
+        },
+        "hasEndTemporalExtension": {
+            "@id": "ecpo:hasEndTemporalExtension",
+            "@type": "xsd:string"
+        },
+        "hasEndVolumeCaption": {
+            "@id": "ecpo:hasEndVolumeCaption",
+            "@type": "xsd:string"
+        },
+        "hasEndVolumeExtension": {
+            "@id": "ecpo:hasEndVolumeExtension",
+            "@type": "xsd:string"
+        },
+        "hasEndVolumeNumbering": {
+            "@id": "ecpo:hasEndVolumeNumbering",
+            "@type": "xsd:string"
+        },
+        "coverage": {
+            "@id": "dc:coverage",
+            "@type": "xsd:string"
+        },
+        "accrualPeriodicity": {
+            "@id": "dct:accrualPeriodicity",
+            "@type": "xsd:string"
+        },
+        "description": {
+            "@id": "dct:description",
+            "@type": "xsd:string"
+        },
+        "extend": {
+            "@id": "dct:extend",
+            "@type": "xsd:string"
+        },
+        "hasPart": {
+            "@id": "dct:hasPart",
+            "@type": "@id"
+        }
+    }
+}
