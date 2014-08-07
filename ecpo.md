@@ -576,7 +576,7 @@ Refines the value of the property [hasItemizedTemporal]
 
 [dc:coverage]: #coverage
 
-Used to transport the whole source description of a chronology. See [examples](#ex_dc) for usage.
+Used to transport the whole source description of a chronology. See [examples](#exdc) for usage.
 
     dc:coverage a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
@@ -586,7 +586,7 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 [dct:accrualPeriodicity]: #accrualperiodicity
 
-Used to give information about the frequency with which items are added to the collection. See [examples](#ex_dc) for usage.
+Used to give information about the frequency with which items are added to the collection. See [examples](#exdc) for usage.
 
     dct:accrualPeriodicity a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the frequency with which items are added to the collection."@en ;
@@ -596,7 +596,7 @@ Used to give information about the frequency with which items are added to the c
 
 [dct:description]: #description
 
-Used to transport the whole source description of a chronology. See [examples](#ex_dc) for usage.
+Used to transport the whole source description of a chronology. See [examples](#exdc) for usage.
 
     dct:description a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
@@ -606,7 +606,7 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 [dct:extend]: #extend
 
-Used to give information about the number of units in the chronology. See [examples](#ex_dc) for usage.
+Used to give information about the number of units in the chronology. See [examples](#exdc) for usage.
 
     dct:extend a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the number of units in the chronology."@en ;
@@ -616,7 +616,7 @@ Used to give information about the number of units in the chronology. See [examp
 
 [dct:hasPart]: #haspart
 
-Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples](#ex_haspart) for usage.
+Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples](#exhaspart) for usage.
 
     dct:hasPart a owl:AnnotationProperty ;
         skos:scopeNote "Used to relate a chronology to a sub chronology."@en ;
@@ -629,7 +629,7 @@ Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples]
 
 [Current]: #current
 
-Instance of [CurrentChronology]. Use this individual to simply state that an item has a current [Chronology]. See [examples](#ex_current) for usage.
+Instance of [CurrentChronology]. Use this individual to simply state that an item has a current [Chronology]. See [examples](#excurrent) for usage.
 
     ecpo:Current a owl:NamedIndividual ;
         rdf:type ecpo:CurrentChronology ;
@@ -643,7 +643,7 @@ Instance of [CurrentChronology]. Use this individual to simply state that an ite
 
 [Closed]: #closed
 
-Instance of [ClosedChronology]. Use this individual to simply state that an item has a closed [Chronology]. See [examples](#ex_closed) for usage.
+Instance of [ClosedChronology]. Use this individual to simply state that an item has a closed [Chronology]. See [examples](#exclosed) for usage.
 
     ecpo:Closed a owl:NamedIndividual ;
         rdf:type ecpo:ClosedChronology ;
@@ -730,7 +730,7 @@ It is not the intension of ECPO to restrict the ontology extension through other
 
 # Examples
 
-[Examples]: #exaples
+[Examples]: #examples
 
 `examples.md`{.include}
 

@@ -2,7 +2,7 @@ In the following examples a hypothetical copy of a document ```$item``` describe
 
 ## Statement for a current chronology
 
-[ex_current]: #ex_current
+[excurrent]: #excurrent
 
     $item ecpo:hasChronology ecpo:Current .
 
@@ -10,7 +10,7 @@ This statement just says that an item has a [current chronology](#currentchronol
 
 ## Statement for a closed chronology
 
-[ex_closed]: #ex_closed
+[exclosed]: #exclosed
 
     $item ecpo:hasChronology ecpo:Closed .
 
@@ -62,7 +62,7 @@ Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
 
 ## Description of a current chronology with subchronologies
 
-[ex_haspart]: #ex_haspart
+[exhaspart]: #exhaspart
 
 Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-
 
@@ -127,7 +127,7 @@ In this example Volume 3 was incorrectly numbered by the publisher.
         ]
     ] .
     
-The property [hasItemizedVolumeExtension] is described as "A textual descrimination of the volume". In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property [dct:description] is optional.
+The property [hasItemizedVolumeExtension] is described as "A textual descrimination of the volume". In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property [dct:description](#dctdescription) is optional.
 
 ## Description of a gap in the chronology
 
@@ -161,9 +161,9 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
     
 ## Usage of dct:description, dct:accrualPeriodicity, dct:extend and dc:coverage
 
-[ex_dc]: #ex_dc
+[exdc]: #exdc
 
-The term [dct:description] is recommended to give a description of the chronology. The term [dc:coverage] is recommended to transport the given description if there is one. The term [dct:accrualPeriodicity] is recommended to give information about the frequency with which items are added to the collection. The term [dct:extend] is recommended to give information about the number of units in the chronology.
+The term [dct:description](#dctdescription) is recommended to give a description of the chronology. The term [dc:coverage] is recommended to transport the given description if there is one. The term [dct:accrualPeriodicity] is recommended to give information about the frequency with which items are added to the collection. The term [dct:extend] is recommended to give information about the number of units in the chronology.
 
 Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 
@@ -201,10 +201,10 @@ Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
         dc:coverage "ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6" 
     ] .
     
-In this example the number of issues per series varies, which is expressed through the term [dct:description] in the main chronology.
+In this example the number of issues per series varies, which is expressed through the term [dct:description](#dctdescription) in the main chronology.
 
-Each subchronology has another [dct:description] which give more detailed information on the parts in textual form.
+Each sub-chronology has another [dct:description](#dctdescription) which give more detailed information on the parts in textual form.
 
-The subchronologies also contain the term [dct:accrualPeriodicity] which gives a hint about how many numbers a subchronologies consits of and also the term [dct:extent] which gives the exact number of units in the subchronologies. Both terms must have a resource as range. 
+The sub-chronologies also contain the term [dct:accrualPeriodicity](#dctaccrualPeriodicity) which gives a hint about how many numbers a sub-chronologies consits of and also the term [dct:extent](#dctextent) which gives the exact number of units in the sub-chronologies. Both terms must have a resource as range. 
 
-The term [dc:coverage] holds the whole source description in once, for what ever reason.
+The term [dc:coverage](#dccoverage) holds the whole source description in once, for what ever reason.
