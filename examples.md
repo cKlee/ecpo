@@ -163,7 +163,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
 
 [exdc]: #exdc
 
-The term [dct:description](#dctdescription) is recommended to give a description of the chronology. The term [dc:coverage] is recommended to transport the given description if there is one. The term [dct:accrualPeriodicity] is recommended to give information about the frequency with which items are added to the collection. The term [dct:extend] is recommended to give information about the number of units in the chronology.
+The term [dct:description](#dctdescription) is recommended to give a description of the chronology. The term [dc:coverage](#dccoverage) is recommended to transport the given description if there is one. The term [dct:accrualPeriodicity] is recommended to give information about the frequency with which items are added to the collection. The term [dct:extend](#dcextend) is recommended to give information about the number of units in the chronology.
 
 Given description: ser.1:no.1-ser.1:no.4,ser.2:no.1-ser.2:no.6
 

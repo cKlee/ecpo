@@ -107,7 +107,7 @@ In order to simply state that a Chronology is current or closed, one could easil
 
 While instances of the class [CurrentChronology] must not make use [hasEnd] or the subproperties of [hasEnd], instances of [ClosedChronology] must make use of [hasEnd] or one or more subproperties of [hasEnd]. All Instances of [CurrentChronology] or [ClosedChronology] must make use of [hasBegin] or one or more subproperties of [hasBegin].
 
-In cases of a itemized [Chronologies](#chronology) which are neither current nor closed nor having a beginning or ending group, one should make use of the property [hasItemized] or one of its subproperties. To list multiple single items within a [Chronology] one must make use of the property [dct:hasPart], because one [Chronology] must only describe one item in a itemized way.
+In cases of a itemized [Chronologies](#chronology) which are neither current nor closed nor having a beginning or ending group, one should make use of the property [hasItemized] or one of its subproperties. To list multiple single items within a [Chronology] one must make use of the property [dct:hasPart](#dcthaspart), because one [Chronology] must only describe one item in a itemized way.
 
 # Classes
 
@@ -196,7 +196,7 @@ Instances of [ClosedChronology] must at least participate in a relation with bot
 
 [hasChronology]: #hasChronology
 
-Relation between an item and a [Chronology]. Having this property means that the described periodical units by the [Chronology] are held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart] instead.
+Relation between an item and a [Chronology]. Having this property means that the described periodical units by the [Chronology] are held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
 
     ecpo:hasChronology a owl:ObjectProperty ;
         rdfs:label "has chronology"@en ;
@@ -208,7 +208,7 @@ Relation between an item and a [Chronology]. Having this property means that the
 
 [hasChronologyGap]: #haschronologygap
 
-Relation between an item and a [Chronology], indicating the [Chronology] is a gap. Having this property means that the described periodical units through the [Chronology] are not held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart] instead.
+Relation between an item and a [Chronology], indicating the [Chronology] is a gap. Having this property means that the described periodical units through the [Chronology] are not held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
 
     ecpo:hasChronologyGap a owl:ObjectProperty ;
         rdfs:label "has chronology gap"@en ;
@@ -574,9 +574,9 @@ Refines the value of the property [hasItemizedTemporal]
 
 ## dc:coverage
 
-[dc:coverage]: #coverage
+[dc:coverage]: #dccoverage
 
-Used to transport the whole source description of a chronology. See [examples](#exdc) for usage.
+Used to transport the whole source description of a chronology. See [examples](#usage-of-dctdescription-dctaccrualperiodicity-dctextend-and-dccoverage) for usage.
 
     dc:coverage a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
@@ -584,9 +584,9 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 ## dct:accrualPeriodicity
 
-[dct:accrualPeriodicity]: #accrualperiodicity
+[dct:accrualPeriodicity]: #dctaccrualperiodicity
 
-Used to give information about the frequency with which items are added to the collection. See [examples](#exdc) for usage.
+Used to give information about the frequency with which items are added to the collection. See [examples](#usage-of-dctdescription-dctaccrualperiodicity-dctextend-and-dccoverage) for usage.
 
     dct:accrualPeriodicity a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the frequency with which items are added to the collection."@en ;
@@ -594,9 +594,9 @@ Used to give information about the frequency with which items are added to the c
 
 ## dct:description
 
-[dct:description]: #description
+[dct:description]: #dctdescription
 
-Used to transport the whole source description of a chronology. See [examples](#exdc) for usage.
+Used to transport the whole source description of a chronology. See [examples](#usage-of-dctdescription-dctaccrualperiodicity-dctextend-and-dccoverage) for usage.
 
     dct:description a owl:AnnotationProperty ;
         skos:scopeNote "Used to transport the whole source description of a chronology."@en ;
@@ -604,9 +604,9 @@ Used to transport the whole source description of a chronology. See [examples](#
 
 ## dct:extend
 
-[dct:extend]: #extend
+[dct:extend]: #dctextend
 
-Used to give information about the number of units in the chronology. See [examples](#exdc) for usage.
+Used to give information about the number of units in the chronology. See [examples](#usage-of-dctdescription-dctaccrualperiodicity-dctextend-and-dccoverage) for usage.
 
     dct:extend a owl:AnnotationProperty ;
         skos:scopeNote "Used to give information about the number of units in the chronology."@en ;
@@ -614,9 +614,9 @@ Used to give information about the number of units in the chronology. See [examp
 
 ## dct:hasPart
 
-[dct:hasPart]: #haspart
+[dct:hasPart]: #dcthaspart
 
-Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples](#exhaspart) for usage.
+Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples](#description-of-a-current-chronology-with-subchronologies) for usage.
 
     dct:hasPart a owl:AnnotationProperty ;
         skos:scopeNote "Used to relate a chronology to a sub chronology."@en ;
@@ -722,7 +722,7 @@ Instances of [Chronology] which participates in a relation with [hasEnd] must al
 
 [related ontologies]: #relatedontologies
 
-ECPO recommends the use of [dct:description], [dct:accrualPeriodicity], [dct:extent] and [dc:coverage] for some extended chronology description.
+ECPO recommends the use of [dct:description](#dctdescription), [dct:accrualPeriodicity](#dctaccrualperiodicity), [dct:extent](#dctextend) and [dc:coverage](#dccoverage) for some extended chronology description.
 
 # Extending ECPO
 
