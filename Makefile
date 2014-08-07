@@ -7,4 +7,4 @@ AUTHOR = Carsten Klee (ZDB)
 REVISIONS = 1
 
 
-include makespec/Makefile
+include ../makespec/Makefile
