@@ -765,7 +765,6 @@
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Closed">
     <ecpo:hasEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ecpo:hasEnd>
   </rdf:Description>
-<<<<<<< HEAD
   <rdf:Description rdf:nodeID="genid11">
     <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Current"/>
   </rdf:Description>
@@ -810,77 +809,17 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid17">
     <owl:intersectionOf rdf:nodeID="genid16"/>
-=======
-  <rdf:Description rdf:nodeID="genid10">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Current"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid10">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid11">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Closed"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid11">
-    <rdf:rest rdf:nodeID="genid10"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid12">
-    <owl:distinctMembers rdf:nodeID="genid11"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid13">
-    <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasItemized"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid13">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid14">
-    <rdf:first rdf:nodeID="genid13"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid14">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid15">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid15">
-    <rdf:rest rdf:nodeID="genid14"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid16">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid16">
-    <owl:intersectionOf rdf:nodeID="genid15"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
-    <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasBegin"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
->>>>>>> cab9f3e29b7c64d87e90093667e2c2b22f63bcdf
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid18">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid18">
-<<<<<<< HEAD
     <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasBegin"/>
-=======
-    <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasEnd"/>
->>>>>>> cab9f3e29b7c64d87e90093667e2c2b22f63bcdf
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid18">
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid19">
-<<<<<<< HEAD
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid19">
@@ -927,70 +866,17 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid13">
     <owl:intersectionOf rdf:nodeID="genid24"/>
-=======
-    <rdf:first rdf:nodeID="genid18"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid19">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid20">
-    <rdf:first rdf:nodeID="genid17"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid20">
-    <rdf:rest rdf:nodeID="genid19"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid21">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid21">
-    <owl:unionOf rdf:nodeID="genid20"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid22">
-    <rdf:first rdf:nodeID="genid21"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid22">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid23">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid23">
-    <rdf:rest rdf:nodeID="genid22"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid24">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid24">
-    <owl:disjointWith rdf:nodeID="genid16"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid24">
-    <owl:intersectionOf rdf:nodeID="genid23"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid25">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid25">
-    <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasBegin"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid25">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
->>>>>>> cab9f3e29b7c64d87e90093667e2c2b22f63bcdf
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid26">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid26">
-<<<<<<< HEAD
     <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasBegin"/>
-=======
-    <owl:onProperty rdf:resource="http://purl.org/ontology/ecpo#hasEnd"/>
->>>>>>> cab9f3e29b7c64d87e90093667e2c2b22f63bcdf
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid26">
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid27">
-<<<<<<< HEAD
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid27">
@@ -1019,26 +905,5 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid25">
     <owl:intersectionOf rdf:nodeID="genid29"/>
-=======
-    <rdf:first rdf:nodeID="genid26"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid27">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid28">
-    <rdf:first rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid28">
-    <rdf:rest rdf:nodeID="genid27"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
-    <rdfs:subClassOf rdf:nodeID="genid25"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
-    <owl:intersectionOf rdf:nodeID="genid28"/>
->>>>>>> cab9f3e29b7c64d87e90093667e2c2b22f63bcdf
   </rdf:Description>
 </rdf:RDF>
