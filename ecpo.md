@@ -628,17 +628,16 @@ Instance of [ClosedChronology]. Use this individual to simply state that an item
 
 The individuals [Closed] and [Current] are different from each other.
 
-    [ 
-        rdf:type owl:AllDifferent ;
+    []
+        a owl:AllDifferent ;
         owl:distinctMembers (
-            <http://purl.org/ontology/ecpo#Closed>
-            <http://purl.org/ontology/ecpo#Current>
-        )
-    ] .
+            ecpo:Closed
+            ecpo:Current
+        ) .
 
 Instances of [Chronology] which participate in relations with [hasBegin] and [hasEnd] may not participate in relations with [hasItemized] and vice versa.
 
-    [
+    []
         rdf:type owl:Class ;
         owl:disjointWith [
             rdf:type owl:Class ;
@@ -665,12 +664,11 @@ Instances of [Chronology] which participate in relations with [hasBegin] and [ha
                     ]
                 )
             ]
-        )
-    ] .
+        ) .
 
 Instances of [Chronology] which participates in a relation with [hasEnd] must also participate in a relation with [hasBegin].
 
-    [
+    []
         rdf:type owl:Class ;
         rdfs:subClassOf [
             rdf:type owl:Restriction ;
@@ -683,8 +681,7 @@ Instances of [Chronology] which participates in a relation with [hasEnd] must al
                 owl:onProperty ecpo:hasEnd ;
                 owl:someValuesFrom owl:Thing
             ]
-        )
-    ] .
+        ) .
 
 # Related ontologies
 
