@@ -1,22 +1,23 @@
 In the following examples a hypothetical copy of a document ```$item``` describes a holding of a periodical held by someone.
 
-## Statement for a current chronology
-
 [excurrent]: #excurrent
+<div class="example"> 
+Statement for a current chronology
 
     $item ecpo:hasChronology ecpo:Current .
 
 This statement just says that an item has a [current chronology](#currentchronology) without giving futher information which units are held.
-
-## Statement for a closed chronology
-
+</div>
 [exclosed]: #exclosed
+<div class="example"> 
+Statement for a closed chronology
 
     $item ecpo:hasChronology ecpo:Closed .
 
 This statement just says that an item has a [closed chronology](#closedchronology) without giving futher information which units are held.
-
-## Description of a current Chronology
+</div>
+<div class="example"> 
+Description of a current Chronology
 
 Given description: v.26,issue 1-
 
@@ -27,8 +28,10 @@ Given description: v.26,issue 1-
         ecpo:hasBeginIssueCaption "issue" ;
         ecpo:hasBeginIssueNumbering "1" 
     ] .
-        
-## Description of a closed Chronology
+
+</div>
+<div class="example"> 
+Description of a closed Chronology
 
 Given description: v.26,issue 1-v.31, issue 6
 
@@ -43,8 +46,9 @@ Given description: v.26,issue 1-v.31, issue 6
         ecpo:hasEndIssueCaption "issue" ;
         ecpo:hasEndIssueNumbering "6" 
     ] .
-
-## Description of a closed Chronology with temporal information
+</div>
+<div class="example"> 
+Description of a closed Chronology with temporal information
 
 Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
 
@@ -60,9 +64,10 @@ Given description: (2001:Jan.1-2006:June 30)=no.320-no.385
         ecpo:hasEndIssueNumbering "385" 
     ] .
 
-## Description of a current chronology with subchronologies
-
+</div>
 [exhaspart]: #exhaspart
+<div class="example"> 
+Description of a current chronology with subchronologies
 
 Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:winter)-
 
@@ -92,10 +97,11 @@ Given description: v.5:no.1(1975:spring)-v.7:no.4(1977:autumn),v.8:no.2(1978:win
             ecpo:hasBeginTemporal "1978" ;
             ecpo:hasBeginTemporalExtension "winter"
         ] .
-        
+
 In this example the main chronology is made as an instance of [CurrentChronology] for the sake of expressivity. It also had been made as an instance of [Chronology]. But this way it is easier to tell if the whole chronology is current or not.
-        
-## Description of a chronology in an itemized way and comments
+</div>
+<div class="example"> 
+Description of a chronology in an itemized way and comments
 
 Given description: v.1 v.2 v.2[i.e. 3] v.6
 
@@ -128,12 +134,13 @@ In this example Volume 3 was incorrectly numbered by the publisher.
     ] .
     
 The property [hasItemizedVolumeExtension] is described as "A textual descrimination of the volume". In this example it is used to transport the correction statement for the wron volume numbering. The expression with the property [dct:description](#dctdescription) is optional.
-
-## Description of a gap in the chronology
+</div>
+<div class="example"> 
+Description of a gap in the chronology
 
 As in the example above the volumes v.4 and v.5 are missing. There are two possibilities to express this.
 
-### Itemized way
+Itemized way
 
     $item ecpo:hasChronologyGap [
         a ecpo:Chronology ;
@@ -149,7 +156,7 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
         ]
     ] .
     
-### Range
+Range
 
     $item ecpo:hasChronologyGap [
         a ecpo:Chronology ;
@@ -158,10 +165,11 @@ As in the example above the volumes v.4 and v.5 are missing. There are two possi
         ecpo:hasEndVolumeCaption "v." ;
         ecpo:hasEndVolumeNumbering "5"
     ] .
-    
-## Usage of dct:description, dct:accrualPeriodicity, dct:extend and dc:coverage
 
+</div>
 [exdc]: #exdc
+<div class="example"> 
+Usage of dct:description, dct:accrualPeriodicity, dct:extend and dc:coverage
 
 The term [dct:description](#dctdescription) is recommended to give a description of the chronology. The term [dc:coverage](#dccoverage) is recommended to transport the given description if there is one. The term [dct:accrualPeriodicity] is recommended to give information about the frequency with which items are added to the collection. The term [dct:extend](#dcextend) is recommended to give information about the number of units in the chronology.
 
@@ -208,3 +216,4 @@ Each sub-chronology has another [dct:description](#dctdescription) which give mo
 The sub-chronologies also contain the term [dct:accrualPeriodicity](#dctaccrualPeriodicity) which gives a hint about how many numbers a sub-chronologies consits of and also the term [dct:extent](#dctextent) which gives the exact number of units in the sub-chronologies. Both terms must have a resource as range. 
 
 The term [dc:coverage](#dccoverage) holds the whole source description in once, for what ever reason.
+</div>

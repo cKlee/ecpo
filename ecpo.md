@@ -66,36 +66,7 @@ The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/
 
 The following diagram illustrates the classes and properties defined in this ontology.
 
-``` {.ditaa}
-    
-    +--------------------+   hasChronology    +-------------------------+  dct:hasPart
-    | every item class   +------------------->|        Chronology       +------------------+
-    +---+----------------+  hasChronologyGap  | +---------------------+ |                  |
-        |                                     | |                     | |<-----------------+
-    hasChronology                             | |  CurrentChronology  | |
-        |                                     | |                     | |
-        v                     +---------------+ +---------------------+ +---------------+----------------------+
-    +-----------+             |               | +---------------------+ |               |                      |
-    |  Current  |             |               | |                     | |               |                      |
-    |  Closed   |             |               | |  ClosedChronology   | |               |                      |
-    +-----------+             |               | |                     | |               |                      |
-                              |               | +----------+----------+ |               |                      |
-                              |               +------------|------------+               |                      |
-                              |                            |                            |                      |
-                           hasBegin                      hasEnd                      hasItemized         dct:description
-                              |                            |                            |                dc:coverage
-                    hasBeginVolumeCaption         hasEndVolumeCaption        hasItemizedVolumeCaption    dct:accrualPeriodicity
-                    hasBeginVolumeNumbering       hasEndVolumeNumbering      hasItemizedVolumeNumbering  dct:extend
-                    hasBeginVolumeExtension       hasEndVolumeExtension      hasItemizedVolumeExtension        |
-                    hasBeginIssueCaption          hasEndIssueCaption         hasItemizedIssueCaption           |
-                    hasBeginIssueNumbering        hasEndIssueNumbering       hasItemizedIssueNumbering         |
-                    hasBeginIssueExtension        hasEndIssueExtension       hasItemizedIssueExtension         |
-                    hasBeginTemporal              hasEndTemporal             hasItemizedTemporal               |
-                    hasBeginTemporalExtension     hasEndTemporalExtension    hasItemizedTemporalExtension      |
-                              |                            |                            |                      |
-                              |                            |                            |                      |
-                              v                            v                            v                      v
-```
+![ECPO overview](ecpo.png)
 
 An Agent always holds a copy of a document called item. An item might have a [Chronology] which is related to other [Chronologies](#chronology) via the property [dct:hasPart]. While current [Chronologies](#chronology) should be instances of [CurrentChronology], closed [Chronologies](#chronology) should be instances of [ClosedChronology].
 
@@ -121,7 +92,6 @@ Instances of [Chronology] must at least participate in a relation with one of th
 
 See [General class axioms] for further rules.
 
-
     ecpo:Chronology a owl:Class ;
         rdfs:label "enumeration and chronology"@en ;
         rdfs:label "Bestandsverlauf"@de ;
@@ -140,7 +110,7 @@ See [General class axioms] for further rules.
         ] .
 
 ## CurrentChronology
-        
+
 [CurrentChronology]: #currentchronology
 
 A [CurrentChronology] is a [Chronology] which must not have a property describing an ending group.
@@ -164,8 +134,6 @@ Instances of [CurrentChronology] must at least participate in a relation with th
             owl:onProperty ecpo:hasBegin
         ] .
 
-
-        
 ## ClosedChronology
         
 [ClosedChronology]: #closedchronology
