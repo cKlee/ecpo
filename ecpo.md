@@ -1,24 +1,28 @@
 # Introduction
 
-The **Enumeration and Chronology of Periodicals Ontology (ECPO)** defines the common bibliographic terms for the description of enumeration and chronology of periodicals.
+The **Enumeration and Chronology of Periodicals Ontology (ECPO)** defines the common bibliographic terms for the description of enumeration and chronology typically used for serials.
 
-Institutions like libraries normally describing their holdings of periodically issued media like journals, serials, annuals, newspapers etc. on a more abstract level than on a single unit level like they do it with books.
+Institutions such as libraries usually describe their holdings of periodically appearing media like magazines, series, annual, newspapers as well as multipart monographs on a more abstract level than on a single unit level, as they do with books.
 
-Holding descriptions of periodicals are more on the level of ranges of units. Ranges of periodical units are described by beginning and ending groups. Periodical units are commonly called "issues" mostly grouped into "volumes" but in both cases the caption and hierarchy depth may vary. There are more complex structures than this, like for instance Newspapers descriptions might have multiple subissues (e.g. one in the morning, another in the evening). This ontology is trying to cope this, but not all complex structures might be expressed.
+Descriptions of holdings of serials are more on the level of ranges of units. Ranges of units are described by beginning and ending groups. Units of serials are commonly called "issues" mostly grouped into "volumes" but in both cases the caption and hierarchy depth may vary. There are more complex structures than this, such as descriptions of newspapers, which might have multiple subissues (e.g. one in the morning, another in the evening). This ontology is trying to cope this, but not all complex structures might be expressed.
 
-It it also possible that the enumeration and chronology of periodicals is described in a itemized way. Itemized means that the enumeration and chronology of a periodical is described by a listing of each part of the unit held [see ANSI/NISO Z39.71-2006](http://www.niso.org/apps/group_public/project/details.php?project_id=38 "ANSI/NISO Z39.71-2006") not using ranges.
+It it also possible that the description of an enumeration and chronology of serials is done in a itemized way. The term itemized means that a enumeration and chronology contains a listing of each part of the unit [see ANSI/NISO Z39.71-2006](http://www.niso.org/apps/group_public/project/details.php?project_id=38 "ANSI/NISO Z39.71-2006"), and not using ranges.
 
 A document using this ontology shall give answers to the questions:
 
-  -  What units of a periodical are held by an agent?
-  -  What units of a periodical are not held by an agent?
-  -  Is the chronology of a holding of a periodical closed or open?
+  -  What units of a serial are held by an agent?
+  -  What units of a serial are not held by an agent?
+  -  Is the chronology of a holding of a serial closed or open?
  
 A Question a document using this ontology might not answer:
 
-  -  Does an agent hold a specific unit of a periodical?
+  -  Does an agent hold a specific unit of a serial?
 
-## Status of this document
+# Scope of the ontology
+
+ECPO is designed for the needs of libraries and related organizations to describe the enumeration and chronology of their collected series. But this ontology does not exclude the use of other types of publication or their collectors, nor exclude the use in completely different contexts from.
+
+# Status of this document
 
 This HTML document and RDF serializations of the Enumeration and Chronology of Periodicals Ontology [**`ecpo.ttl`**](ecpo.ttl) in RDF/Turtle and [**`ecpo.owl`**](ecpo.owl) in RDF/XML) are generated automatically from a source file written in Pandoc Markdown syntax. Sources and updates are available at <http://github.com/cklee/ecpo>. The current version of this document was last modified at {GIT_REVISION_DATE} with revision {GIT_REVISION_HASH}.
 
@@ -28,11 +32,11 @@ The current version of this ontology is a preliminary draft for open discussion.
 
 {GIT_CHANGES}
 
-## Terminology
+# Terminology
 
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
-## Namespaces and ontology
+# Namespaces and ontology
 
 The URI namespace of this ontology is <http://purl.org/ontology/ecpo#>. The
 namespace prefix `ecpo` is recommended. The URI of this ontology as a whole
@@ -60,7 +64,7 @@ The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/
         vann:preferredNamespacePrefix "ecpo" ;
         vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
         dc:title "Enumeration and Chronology of Periodicals Ontology"@en ;
-        dc:description "Defines the common bibliographic terms for the description of enumeration and chronology of periodicals"@en .
+        dc:description "Defines the common bibliographic terms for the description of enumeration and chronology"@en .
 
 # Overview
 
@@ -68,9 +72,9 @@ The following diagram illustrates the classes and properties defined in this ont
 
 ![ECPO overview](ecpo.png)
 
-An Agent always holds a copy of a document called item. An item might have a [Chronology] which is related to other [Chronologies](#chronology) via the property [dct:hasPart]. While current [Chronologies](#chronology) should be instances of [CurrentChronology], closed [Chronologies](#chronology) should be instances of [ClosedChronology].
+A thing (typically an iten [e.g see holding:Item](http://purl.org/ontology/holding#item)) might have a [Chronology] which is related to other [Chronologies](#chronology) via the property [dct:hasPart]. While current [Chronologies](#chronology) should be instances of [CurrentChronology], closed [Chronologies](#chronology) should be instances of [ClosedChronology].
 
-While the property [hasChronology] states that the described units of the item are held by someone, the property [hasChronologyGap] states that the described units of the item are not held by someone.
+While the property [hasChronology] might state that the described units of the item are held by someone, the property [hasChronologyGap] might state that the described units of the item are not held by someone.
 
 In order to simply state that a Chronology is current or closed, one could easily relate an item with the individuals [Current] or [Closed] via the property [hasChronology], because they are instances of [CurrentChronology] or [ClosedChronology].
 
@@ -86,7 +90,7 @@ In cases of a itemized [Chronologies](#chronology) which are neither current nor
 
 [Chronology]: #chronology
 
-A [Chronology] is the description of enumeration and chronology of a periodical. Use [CurrentChronology] or [ClosedChronology] to describe either current or closed [Chronlogies](#chronology).
+A [Chronology] is the description of enumeration and chronology typical for serials collected by libraies. Use [CurrentChronology] or [ClosedChronology] to describe either current or closed [Chronlogies](#chronology).
 
 Instances of [Chronology] must at least participate in a relation with one of the properties [hasBegin] or [hasItemized].
 
@@ -95,7 +99,7 @@ See [General class axioms] for further rules.
     ecpo:Chronology a owl:Class ;
         rdfs:label "enumeration and chronology"@en ;
         rdfs:label "Bestandsverlauf"@de ;
-        rdfs:comment "A Chronology is the description of enumeration and chronology of a periodical."@en ;
+        rdfs:comment "A Chronology is the description of enumeration and chronology."@en ;
         rdfs:subClassOf [
             a owl:Class ;
             owl:unionOf (
@@ -164,25 +168,25 @@ Instances of [ClosedChronology] must at least participate in a relation with bot
 
 [hasChronology]: #hasChronology
 
-Relation between an item and a [Chronology]. Having this property means that the described periodical units by the [Chronology] are held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
+Relation between an thing (typically an item [e.g see holding:Item](http://purl.org/ontology/holding#item)) and a [Chronology]. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
 
     ecpo:hasChronology a owl:ObjectProperty ;
         rdfs:label "has chronology"@en ;
         rdfs:label "hat Bestandsverlauf"@de ;
         rdfs:range ecpo:Chronology ;
-        rdfs:comment "Relation between an item and a Chronology"@en .
+        rdfs:comment "Relation between a thing and a Chronology"@en .
 
 ## hasChronologyGap
 
 [hasChronologyGap]: #haschronologygap
 
-Relation between an item and a [Chronology], indicating the [Chronology] is a gap. Having this property means that the described periodical units through the [Chronology] are not held by someone. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
+Relation between a thing (typically an item [e.g see holding:Item](http://purl.org/ontology/holding#item)) and a [Chronology], indicating the [Chronology] is a gap. To relate a [Chronology] and a [Chronology] use [dct:hasPart](#dcthaspart) instead.
 
     ecpo:hasChronologyGap a owl:ObjectProperty ;
         rdfs:label "has chronology gap"@en ;
         rdfs:label "hat Bestandsverlauflücke"@de ;
         rdfs:range ecpo:Chronology ;
-        rdfs:comment "Relation between an item and a Chronology, indicating the Chronology is a gap"@en .
+        rdfs:comment "Relation between a thing and a Chronology, indicating the Chronology is a gap"@en .
 
 # Datatype properties
 
@@ -597,7 +601,7 @@ Used to relate a [Chronology] to a [sub chronology](#chronology). See [examples]
 
 [Current]: #current
 
-Instance of [CurrentChronology]. Use this individual to simply state that an item has a current [Chronology]. See [examples](#excurrent) for usage.
+Instance of [CurrentChronology]. Use this individual to simply state that a thing has a current [Chronology]. See [examples](#excurrent) for usage.
 
     ecpo:Current a owl:NamedIndividual ;
         rdf:type ecpo:CurrentChronology ;
@@ -611,7 +615,7 @@ Instance of [CurrentChronology]. Use this individual to simply state that an ite
 
 [Closed]: #closed
 
-Instance of [ClosedChronology]. Use this individual to simply state that an item has a closed [Chronology]. See [examples](#exclosed) for usage.
+Instance of [ClosedChronology]. Use this individual to simply state that a thing has a closed [Chronology]. See [examples](#exclosed) for usage.
 
     ecpo:Closed a owl:NamedIndividual ;
         rdf:type ecpo:ClosedChronology ;
@@ -688,6 +692,8 @@ Instances of [Chronology] which participates in a relation with [hasEnd] must al
 [related ontologies]: #relatedontologies
 
 ECPO recommends the use of [dct:description](#dctdescription), [dct:accrualPeriodicity](#dctaccrualperiodicity), [dct:extent](#dctextend) and [dc:coverage](#dccoverage) for some extended chronology description.
+
+
 
 # Extending ECPO
 
