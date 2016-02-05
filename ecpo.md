@@ -72,7 +72,7 @@ The following diagram illustrates the classes and properties defined in this ont
 
 ![ECPO overview](ecpo.png)
 
-A thing (typically an iten [e.g see holding:Item](http://purl.org/ontology/holding#item)) might have a [Chronology] which is related to other [Chronologies](#chronology) via the property [dct:hasPart]. While current [Chronologies](#chronology) should be instances of [CurrentChronology], closed [Chronologies](#chronology) should be instances of [ClosedChronology].
+A thing (typically an item [e.g see holding:Item](http://purl.org/ontology/holding#item)) might have a [Chronology] which is related to other [Chronologies](#chronology) via the property [dct:hasPart]. While current [Chronologies](#chronology) should be instances of [CurrentChronology], closed [Chronologies](#chronology) should be instances of [ClosedChronology].
 
 While the property [hasChronology] might state that the described units of the item are held by someone, the property [hasChronologyGap] might state that the described units of the item are not held by someone.
 
@@ -90,7 +90,7 @@ In cases of a itemized [Chronologies](#chronology) which are neither current nor
 
 [Chronology]: #chronology
 
-A [Chronology] is the description of enumeration and chronology typical for serials collected by libraies. Use [CurrentChronology] or [ClosedChronology] to describe either current or closed [Chronlogies](#chronology).
+A [Chronology] is the description of enumeration and chronology typical for serials collected by libraries. Use [CurrentChronology] or [ClosedChronology] to describe either current or closed [Chronologies](#chronology).
 
 Instances of [Chronology] must at least participate in a relation with one of the properties [hasBegin] or [hasItemized].
 
