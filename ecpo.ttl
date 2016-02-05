@@ -34,7 +34,7 @@ dct:hasPart
     skos:scopeNote "Used to relate a chronology to a sub chronology."@en .
 
 <http://purl.org/ontology/ecpo>
-    dc:description "Defines the common bibliographic terms for the description of enumeration and chronology of periodicals"@en ;
+    dc:description "Defines the common bibliographic terms for the description of enumeration and chronology"@en ;
     dc:title "Enumeration and Chronology of Periodicals Ontology"@en ;
     vann:preferredNamespacePrefix "ecpo" ;
     vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
@@ -43,7 +43,7 @@ dct:hasPart
 
 ecpo:Chronology
     a owl:Class ;
-    rdfs:comment "A Chronology is the description of enumeration and chronology of a periodical."@en ;
+    rdfs:comment "A Chronology is the description of enumeration and chronology."@en ;
     rdfs:label "Bestandsverlauf"@de, "enumeration and chronology"@en ;
     rdfs:subClassOf [
         a owl:Class ;
@@ -169,13 +169,13 @@ ecpo:hasBeginVolumeNumbering
 
 ecpo:hasChronology
     a owl:ObjectProperty ;
-    rdfs:comment "Relation between an item and a Chronology"@en ;
+    rdfs:comment "Relation between a thing and a Chronology"@en ;
     rdfs:label "has chronology"@en, "hat Bestandsverlauf"@de ;
     rdfs:range ecpo:Chronology .
 
 ecpo:hasChronologyGap
     a owl:ObjectProperty ;
-    rdfs:comment "Relation between an item and a Chronology, indicating the Chronology is a gap"@en ;
+    rdfs:comment "Relation between a thing and a Chronology, indicating the Chronology is a gap"@en ;
     rdfs:label "has chronology gap"@en, "hat Bestandsverlauflücke"@de ;
     rdfs:range ecpo:Chronology .
 

@@ -19,7 +19,7 @@
     <dc:title xml:lang="en">Enumeration and Chronology of Periodicals Ontology</dc:title>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
-    <dc:description xml:lang="en">Defines the common bibliographic terms for the description of enumeration and chronology of periodicals</dc:description>
+    <dc:description xml:lang="en">Defines the common bibliographic terms for the description of enumeration and chronology</dc:description>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid1">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -67,7 +67,7 @@
     <rdfs:label xml:lang="de">Bestandsverlauf</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Chronology">
-    <rdfs:comment xml:lang="en">A Chronology is the description of enumeration and chronology of a periodical.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A Chronology is the description of enumeration and chronology.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#Chronology">
     <rdfs:subClassOf rdf:nodeID="genid5"/>
@@ -169,7 +169,7 @@
     <rdfs:range rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasChronology">
-    <rdfs:comment xml:lang="en">Relation between an item and a Chronology</rdfs:comment>
+    <rdfs:comment xml:lang="en">Relation between a thing and a Chronology</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasChronologyGap">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -184,7 +184,7 @@
     <rdfs:range rdf:resource="http://purl.org/ontology/ecpo#Chronology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasChronologyGap">
-    <rdfs:comment xml:lang="en">Relation between an item and a Chronology, indicating the Chronology is a gap</rdfs:comment>
+    <rdfs:comment xml:lang="en">Relation between a thing and a Chronology, indicating the Chronology is a gap</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo#hasBegin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
