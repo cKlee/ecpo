@@ -36,11 +36,12 @@ dct:hasPart
 <http://purl.org/ontology/ecpo>
     dc:description "Defines the common bibliographic terms for the description of enumeration and chronology"@en ;
     dc:title "Enumeration and Chronology of Periodicals Ontology"@en ;
+    dct:modified "2017-01-06"^^xsd:date ;
     vann:preferredNamespacePrefix "ecpo" ;
     vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
     a owl:Ontology ;
     rdfs:label "ECPO", "Enumeration and Chronology of Periodicals Ontology"@en ;
-    owl:versionInfo "0.1" .
+    owl:versionInfo "0.1+2" .
 
 ecpo:Chronology
     a owl:Class ;
