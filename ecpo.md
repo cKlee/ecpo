@@ -59,6 +59,7 @@ The following namespace prefixes are used to refer to [related ontologies]:
 The Enumeration and Chronology of Periodicals Ontology (ECPO) is defined in RDF/Turtle as following:
 
     <> a owl:Ontology ;
+        owl:versionInfo "{VERSION}" ;
         rdfs:label "Enumeration and Chronology of Periodicals Ontology"@en ;
         rdfs:label "ECPO" ;
         vann:preferredNamespacePrefix "ecpo" ;
