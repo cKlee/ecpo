@@ -4,6 +4,9 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
+    <owl:versionInfo>0.1</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/ecpo">
     <rdfs:label xml:lang="en">Enumeration and Chronology of Periodicals Ontology</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/ecpo">

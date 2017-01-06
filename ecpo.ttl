@@ -39,7 +39,8 @@ dct:hasPart
     vann:preferredNamespacePrefix "ecpo" ;
     vann:preferredNamespaceUri "http://purl.org/ontology/ecpo#" ;
     a owl:Ontology ;
-    rdfs:label "ECPO", "Enumeration and Chronology of Periodicals Ontology"@en .
+    rdfs:label "ECPO", "Enumeration and Chronology of Periodicals Ontology"@en ;
+    owl:versionInfo "0.1" .
 
 ecpo:Chronology
     a owl:Class ;
